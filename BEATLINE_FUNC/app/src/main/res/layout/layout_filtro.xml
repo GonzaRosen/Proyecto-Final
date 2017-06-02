@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:layout_width="390dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="40dp">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Qué estás buscando?"
+            android:textSize="30dp"
+            android:textColor="#222051"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="100dp">
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/banda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Banda"
+                android:onClick="onRadioButtonClicked"
+                android:textSize="18dp"
+                android:textColor="#222051"/>
+            <RadioButton android:id="@+id/musico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Músicos"
+                android:onClick="onRadioButtonClicked"
+                android:textSize="18dp"
+                android:textColor="#222051"/>
+        </RadioGroup>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instrumento"
+        android:paddingLeft="150dp"
+        android:textSize="21dp"
+        android:textColor="#222051"
+        android:textStyle="italic"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="100dp">
+
+        <Spinner
+            android:id="@+id/Spinner01"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="100dp">
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="80dp" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿No encontras tu insturmento?"
+        android:textColor="#6B6B6B"
+        android:paddingLeft="100dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toca acá para agregar otro."
+        android:textColor="#6B6B6B"
+        android:onClick="link1"
+        android:paddingLeft="100dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Género"
+        android:paddingLeft="150dp"
+        android:textSize="21dp"
+        android:textColor="#222051"
+        android:textStyle="italic"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="100dp">
+        <Spinner
+            android:id="@+id/Spinner02"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="100dp">
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="80dp" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿No encontras tu género?"
+        android:textColor="#6B6B6B"
+        android:paddingLeft="100dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toca acá para agregar otro."
+        android:textColor="#6B6B6B"
+        android:onClick="link2"
+        android:paddingLeft="100dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edad"
+        android:textSize="22dp"
+        android:textColor="#222051"
+        android:paddingLeft="100dp"
+        android:paddingTop="20dp"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="100dp">
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="min."
+            android:textSize="20dp"
+            android:paddingLeft="45dp"
+            android:paddingTop="12dp"
+            android:textColor="#222051"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="100dp">
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="max."
+                android:textSize="20dp"
+                android:paddingLeft="45dp"
+                android:paddingTop="12dp"
+                android:textColor="#222051"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distancia"
+        android:textSize="22dp"
+        android:textColor="#222051"
+        android:paddingLeft="100dp"
+        android:paddingTop="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(en km. a la redonda)"
+        android:textSize="12dp"
+        android:textColor="#222051"
+        android:paddingLeft="100dp"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="100dp">
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="min."
+            android:textSize="20dp"
+            android:paddingLeft="45dp"
+            android:paddingTop="12dp"
+            android:textColor="#222051"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="100dp">
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="max."
+                android:textSize="20dp"
+                android:paddingLeft="45dp"
+                android:paddingTop="12dp"
+                android:textColor="#222051"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="150dp"
+        android:paddingTop="20dp">
+        <Button
+            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/Boton_Buscar"
+            android:onClick="Buscar"
+            android:text="BUSCAR"
+            android:background="#4EFFBB"/>
+        <Button
+            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/Volver"
+            android:onClick="Volver"
+            android:text="VOLVER"
+            android:background="#FF4"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/Boton_Buscar"
+            android:layout_marginStart="33dp" />
+    </RelativeLayout>
+</LinearLayout>
+</ScrollView>

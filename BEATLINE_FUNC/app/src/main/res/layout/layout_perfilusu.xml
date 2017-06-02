@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/retrato"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="30dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leandro Galanterni"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="80dp"
+        android:textSize="28dp"
+        android:id="@+id/nombregrande"
+        android:textColor="#4effbb"
+        android:textStyle="bold"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="80dp"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leandro Galanterni"
+        android:id="@+id/nombrechiquito"
+        android:textSize="28dp"
+        android:textColor="#222051"
+        />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="200dp"
+        android:text="43 años"
+        android:textSize="26dp"
+        android:id="@+id/edadchiquito"
+        android:textColor="#222051"
+        android:textStyle="bold"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="200dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="43 años"
+            android:textSize="26dp"
+            android:id="@+id/edadgrande"
+            android:textColor="#4EFFBB"
+            />
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/recuadro"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="260dp"/>
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum tu vieja en bolas"
+        android:textColor="#222051"
+        android:textSize="18dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="110dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instrumento/s:"
+        android:textColor="#4EFFBB"
+        android:textSize="24dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="15dp"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instrumento/s:"
+            android:textColor="#222051"
+            android:textSize="24dp"
+
+            android:textStyle="bold"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="caca cul pedo pis"
+        android:textColor="#222051"
+        android:textSize="18dp"
+        android:layout_marginTop="410dp"
+        android:layout_marginLeft="10dp"
+        />
+
+</RelativeLayout>
