@@ -20,6 +20,7 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.net.ResponseCache;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -28,42 +29,28 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class CRUD {
+    int idA;
+    String NombreA, ApellidoA, UsuarioA, FechaNacA, EmailA, ContraseñaA;
         String urlDeApi = "http://templateapiort.azurewebsites.net/api/persona/";
     public void  GET (int id)
     {
         String urlGet = urlDeApi+ "id";
         new ConectarAPITask().execute("GET", urlGet);
     }
-    public void POST (int id)
+    public void POST (int Id, String Nombre, String Apellido, String Usuario, String FechaNac, String Email, String Contraseña)
     {
         Persona p = new Persona();
-        p.setId(Integer.valueOf(id_vw.getText().toString()));
-        p.setNombre(nombre_vw.getText().toString());
-        p.setFechaNac(fechanac_vw.getText().toString());
+        p.setId(Integer.valueOf(Id));
+        p.setNombre(Nombre);
+        p.setApellido(Apellido);
+        p.setUsuario(Usuario);
+        p.setEmail(Email);
+        p.setContraseña(Contraseña);
+        p.setFechaNac(FechaNac);
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         System.out.println(gson.toJson(p));
-
         new ConectarAPITask().execute("POST",urlDeApi, gson.toJson(p));
-    }
-
-
-
-                break;
-            case R.id.btnPut:
-                Log.d("Push", "put");
-                break;
-            case R.id.btnDelete:
-                Log.d("Push", "delete");
-                break;
-            case R.id.viewAll:
-                Log.d("Get All", urlDeApi);
-                FragmentManager fm = getFragmentManager();
-                ViewAllFragment viewAllFragment = new ViewAllFragment();
-                viewAllFragment.show(fm,"View all people");
-                break;
-
-        }
     }
 
 
@@ -76,7 +63,7 @@ public class CRUD {
 
             String method = params[0];
             String urlApi = params[1];
-            String resultado;
+            String Resultado;
 
             if (method.equals("GET")) {
                 return  getPersona(urlApi);
@@ -94,10 +81,13 @@ public class CRUD {
         @Override
         protected void onPostExecute(Persona persona) {
             super.onPostExecute(persona);
-            //Log.d("ope :",persona.getNombre());
             if (persona != null) {
-                nombre_vw.setText(persona.getNombre());
-                fechanac_vw.setText(persona.getFechaNac());
+                NombreA = persona.getNombre();
+                FechaNacA = persona.getFechaNac();
+                ApellidoA = persona.getApellido();
+                UsuarioA = persona.getUsuario();
+                EmailA = persona.getEmail();
+                ContraseñaA = persona.getContraseña();
             }
 
         }
@@ -117,7 +107,6 @@ public class CRUD {
                 Response response = client.newCall(request).execute();
                 return;
             } catch (IOException e) {
-                Log.d("Error :", e.getMessage());
                 return;
 
             }
@@ -136,7 +125,6 @@ public class CRUD {
                 return persona;
             }
             catch (IOException e){
-                Log.d("Error :", e.getMessage());
                 return null;
 
             }
@@ -146,18 +134,13 @@ public class CRUD {
         private Persona parsearResultado(String respuesta)   {
             if (respuesta == null || respuesta.length()==0)
                 return null;
-
-            Log.d("Respuesta:", respuesta);
-
             try {
                 Gson gson = new Gson();
                 Persona p = gson.fromJson(respuesta, Persona.class);
-                Log.d("Persona nombre:", p.getNombre());
                 return p;
 
             }
             catch (Exception e) {
-                Log.d("Error :", e.getMessage());
                 return null;
             }
 
