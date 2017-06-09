@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:id="@+id/retrato"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="20dp"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -66,28 +66,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/recuadro"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="260dp"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="180dp"/>
     <TextView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Lorem ipsum tu vieja en bolas"
         android:textColor="#222051"
         android:textSize="18dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginLeft="110dp"/>
+        android:layout_marginTop="265dp"
+        android:layout_marginLeft="95dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Instrumento/s:"
         android:textColor="#4EFFBB"
         android:textSize="24dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="400dp"
         android:layout_marginLeft="15dp"/>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="400dp"
         android:layout_marginLeft="15dp">
         <TextView
             android:layout_width="wrap_content"
@@ -95,7 +95,6 @@
             android:text="Instrumento/s:"
             android:textColor="#222051"
             android:textSize="24dp"
-
             android:textStyle="bold"/>
     </RelativeLayout>
     <TextView
@@ -104,8 +103,59 @@
         android:text="caca cul pedo pis"
         android:textColor="#222051"
         android:textSize="18dp"
-        android:layout_marginTop="410dp"
+        android:layout_marginTop="430dp"
         android:layout_marginLeft="10dp"
         />
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genero/s:"
+        android:textColor="#4EFFBB"
+        android:textSize="24dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="15dp"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genero/s:"
+            android:textColor="#222051"
+            android:textSize="24dp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="cumbia villera"
+    android:textColor="#222051"
+    android:textSize="18dp"
+    android:layout_marginTop="490dp"
+    android:layout_marginLeft="10dp"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genero/s:"
+        android:textColor="#4EFFBB"
+        android:textSize="24dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="15dp"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genero/s:"
+            android:textColor="#222051"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            />
+</RelativeLayout>
 </RelativeLayout>

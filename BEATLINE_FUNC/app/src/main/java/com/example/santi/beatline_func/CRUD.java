@@ -31,7 +31,7 @@ import okhttp3.Response;
 public class CRUD {
     int idA;
     String NombreA, ApellidoA, UsuarioA, FechaNacA, EmailA, ContraseñaA;
-        String urlDeApi = "http://templateapiort.azurewebsites.net/api/persona/";
+        String urlDeApi = "http://beatlineproject.azurewebsites.net/api/persona";
     public void  GET (int id)
     {
         String urlGet = urlDeApi+ "id";
