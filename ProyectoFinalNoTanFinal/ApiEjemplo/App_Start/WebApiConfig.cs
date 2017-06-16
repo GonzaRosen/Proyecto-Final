@@ -15,14 +15,15 @@ namespace ApiEjemplo
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            /*config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }*/
             config.Routes.MapHttpRoute(
-            name: "DefaultApi",
-            routeTemplate: "der/tabla/texto",
-            defaults: new { texto = RouteParameter.Optional }
+               name: "DefaultApi",
+               routeTemplate: "api/{controller}/{texto}",
+               defaults: new { texto = RouteParameter.Optional }
+
+           /*config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{ip}",
+                defaults: new { ip = RouteParameter.Optional }*/
         );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes

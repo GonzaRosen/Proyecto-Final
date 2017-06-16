@@ -20,20 +20,6 @@ namespace ApiEjemplo.Data
         }
 
         /// <summary>
-        /// Realiza un insert,update o delete en la base de datos. 
-        /// </summary>
-        public static void EjecutarIUD(string query)
-        {
-            using (MySqlConnection miConn = new MySqlConnection(ConnectionString))
-            {
-                miConn.Open();
-                MySqlCommand miCommand = new MySqlCommand(query, miConn);
-                miCommand.ExecuteNonQuery();
-                miConn.Close(); //Nos aseguramos de cerrar la conexion
-            }
-        }
-
-        /// <summary>
         /// Ejecutar un comando select y devolver su datatable correspondiente
         /// </summary>
         /// <param name="select"></param>

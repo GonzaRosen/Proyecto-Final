@@ -5,15 +5,16 @@ using System.Data;
 using System.Linq;
 using System.Web;
 
+
 namespace ApiEjemplo.Data
 {
-    public class PersonaData
+    public class TablaData
     {
         public static List<Tabla> ObtenerTodoDeTabla()
-        {
-            string select = "select * from Tabla";
+        {            
+            string select = "select * from tabla";
             DataTable dt = DBHelper.EjecutarSelect(select);
-            List<Tabla> lista = new List<Persona>();
+            List<Tabla> lista = new List<Tabla>();
             Tabla oTabla;
             if (dt.Rows.Count > 0)
             {
@@ -25,6 +26,13 @@ namespace ApiEjemplo.Data
                 oTabla = ObtenerPorRow(dt.Rows[0]);                
             }
             return lista;
+        }
+
+        public static Tabla ObtenerPorRow(DataRow Row)
+        {
+            Tabla oTabla = new Tabla();
+            oTabla.texto = Row.Field<string>("texto");
+            return oTabla;
         }
     }
 }
