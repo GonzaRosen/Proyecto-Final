@@ -2,9 +2,6 @@ package com.example.santi.beatline_func;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +28,7 @@ import okhttp3.Response;
 public class CRUD {
     int idA;
     String NombreA, ApellidoA, UsuarioA, FechaNacA, EmailA, ContraseñaA;
-        String urlDeApi = "http://beatlineproject.azurewebsites.net/api/tabla";
+        String urlDeApi = "http://beatlineproject.azurewebsites.net/der/tusuarios";
     public void  GET (int id)
     {
         String urlGet = urlDeApi+ "id";
