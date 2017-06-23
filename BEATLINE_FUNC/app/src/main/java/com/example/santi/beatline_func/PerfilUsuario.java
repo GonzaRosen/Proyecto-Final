@@ -5,6 +5,7 @@ import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,8 +51,7 @@ public class PerfilUsuario extends Activity{
     }
 
         private class ConectarAPITask extends AsyncTask<String, Void,  Persona> {
-            public final MediaType JSON
-                    = MediaType.parse("application/json; charset=utf-8");
+            public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
             @Override
             protected void onPostExecute(Persona p) {
@@ -73,7 +73,7 @@ public class PerfilUsuario extends Activity{
             }
 
             private Persona getPersona(String urlApi) {
-
+    String strResultado;
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
                         .url(urlApi)
@@ -81,7 +81,9 @@ public class PerfilUsuario extends Activity{
 
                 try {
                     Response response = client.newCall(request).execute();
-                    Persona p = parsearResultado(response.body().string());
+                    strResultado = response.body().string();
+                    Log.d("Santi", strResultado );
+                    Persona p = parsearResultado(strResultado );
                     return p;
                 }
                 catch (IOException e){

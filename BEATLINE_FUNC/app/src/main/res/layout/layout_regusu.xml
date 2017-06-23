@@ -23,7 +23,6 @@
             android:textSize="42dp"
             android:textColor="#222051"
             android:text="Registrarse"
-
             />
     </RelativeLayout>
     <RelativeLayout
