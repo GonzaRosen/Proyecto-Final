@@ -12,7 +12,7 @@ namespace ApiEjemplo.Controllers
 {
     public class TablaController : ApiController
     {
-        // GET: api/tabla
+        // GET: api/ObtenerTodoDeTabla
         public IList<Tabla> Get()
         {
             return TablaData.ObtenerTodoDeTabla();
