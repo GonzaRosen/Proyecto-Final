@@ -90,7 +90,7 @@ namespace ApiEjemplo.Data
             oUsuario.Apellido = Row.Field<string>("Apellido");
             oUsuario.Email = Row.Field<string>("Email");
             oUsuario.Password = Row.Field<string>("Password");
-            oUsuario.FechaNacimiento = Row.Field<DateTime>("Fecha_Nacimiento");
+            oUsuario.FechaNacimiento = Row.Field<DateTime?>("Fecha_Nacimiento");
             //oUsuario.Generos = Row.Field<Array>("Generos");
             //oUsuario.Instrumentos = Row.Field<Array>("Instrumentos");
             oUsuario.Influencias = Row.Field<string>("Influencias");
