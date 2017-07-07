@@ -12,16 +12,25 @@ namespace ApiEjemplo.Controllers
 {
     public class UsuariosController : ApiController
     {
-        /*[ResponseType(typeof(Usuarios))]
+        [ResponseType(typeof(Usuarios))]
         public IHttpActionResult Post(Usuarios oUsuario)
         {
             if (oUsuario == null || string.IsNullOrEmpty(oUsuario.Nombre) || string.IsNullOrEmpty(oUsuario.Apellido))//validamos nombre(validar todoooo)
             {
                 return BadRequest("Datos incorrectos.");
             }
-            UsuariosData.Insert(oUsuario);
+            try
+            {
+                UsuariosData.Insert(oUsuario);
+
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest("Se ha producido un error al intentar realizar la consulta.");
+            }
             return Ok();
-        }*/
+        }
 
         public IList<Usuarios> Get()
         {
