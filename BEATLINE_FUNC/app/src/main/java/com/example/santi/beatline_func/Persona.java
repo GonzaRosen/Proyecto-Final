@@ -1,6 +1,10 @@
 package com.example.santi.beatline_func;
 
 
+import android.support.v4.media.MediaDescriptionCompat;
+
+import javax.crypto.spec.DESKeySpec;
+
 public class Persona {
     private int Id;
     private String Nombre;
@@ -9,6 +13,10 @@ public class Persona {
     private String Usuario;
     private String Email;
     private String Contraseña;
+    private String Descripcion;
+    private String Influencias;
+    private String Genero;
+    private String Instrumentos;
 
     public int getId() { return Id; }
 
@@ -41,4 +49,20 @@ public class Persona {
     public String getContraseña() { return Contraseña; }
 
     public void setContraseña(String contraseña) { Contraseña = contraseña; }
+
+    public String getDescripcion() { return Descripcion; }
+
+    public void setDescripcion(String descripcion) { Descripcion = descripcion; }
+
+    public String getGenero() { return Genero; }
+
+    public void setGenero(String genero) { Genero = genero; }
+
+    public String getInfluencias() { return Influencias; }
+
+    public void setInfluencias(String influencias) { Influencias = influencias; }
+
+    public String getInstrumentos() { return Instrumentos; }
+
+    public void setInstrumentos(String instrumentos) { Instrumentos = instrumentos; }
 }

@@ -22,16 +22,20 @@ import okhttp3.Response;
 
 
 public class PerfilUsuario extends Activity{
+    TextView NombreG;
+    TextView NombreC;
     TextView Desc;
+    TextView EdadG;
+    TextView EdadC;
+    TextView Genero;
+    TextView Influ;
+    TextView Instru;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_perfilusu);
 
         Intent intent = getIntent();
-
-        ImageView retrato = (ImageView) findViewById(R.id.retrato);
-        retrato.setImageResource(R.drawable.retrato_u);
 
         TextView txt1 = (TextView) findViewById(R.id.nombrechiquito);
         TextView txt2 = (TextView) findViewById(R.id.nombregrande);
@@ -40,13 +44,21 @@ public class PerfilUsuario extends Activity{
         ImageView cuadrodesc = (ImageView) findViewById(R.id.recuadro);
         cuadrodesc.setImageResource(R.drawable.cuadro);
 
+        NombreG = (TextView) findViewById(R.id.nombregrande);
+        NombreC = (TextView) findViewById(R.id.nombrechiquito);
         Desc = (TextView) findViewById(R.id.Descripcion);
+        EdadG = (TextView) findViewById(R.id.edadgrande);
+        EdadC = (TextView) findViewById(R.id.edadchiquito);
+        Influ = (TextView) findViewById(R.id.influsu);
+        Genero = (TextView) findViewById(R.id.generousu);
+        Instru = (TextView) findViewById(R.id.instrusu);
+
         //Persona oPersona = new Persona();
         //Desc.setText(oPersona.getNombre());
 
-        String urlDeApi = "http://templateapiort.azurewebsites.net/api/persona";
+        String urlDeApi = "http://beatlineproject.azurewebsites.net/api/usuarios";
 
-            String urlGet = urlDeApi + "/4"               ;
+            String urlGet = urlDeApi + "/Get?Nombre=Santiago";
             new ConectarAPITask().execute("GET", urlGet);
     }
 
@@ -56,7 +68,14 @@ public class PerfilUsuario extends Activity{
             @Override
             protected void onPostExecute(Persona p) {
                 super.onPostExecute(p);
-                Desc.setText(p.getNombre());
+                NombreG.setText(p.getNombre());
+                NombreC.setText(p.getNombre());
+                EdadG.setText(p.getFechaNac());
+                EdadC.setText(p.getFechaNac());
+                Desc.setText(p.getDescripcion());
+                Influ.setText(p.getInfluencias());
+                Genero.setText(p.getDescripcion());
+                Instru.setText(p.getDescripcion());
             }
 
             @Override
@@ -98,8 +117,8 @@ public class PerfilUsuario extends Activity{
                     return null;
                 try {
                     Gson gson = new Gson();
-                    Persona p = gson.fromJson(respuesta, Persona.class);
-                    return p;
+                    Persona[] p = gson.fromJson(respuesta, Persona[].class);
+                    return p[0];
 
                 }
                 catch (Exception e) {
