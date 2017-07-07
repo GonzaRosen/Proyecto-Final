@@ -88,15 +88,15 @@ namespace ApiEjemplo.Data
             oUsuario.IdUsuario = Row.Field<int>("IdUsuario");
             oUsuario.Nombre = Row.Field<string>("Nombre");
             oUsuario.Apellido = Row.Field<string>("Apellido");
-            //oUsuario.Email = Row.Field<string>("Email");
-            //oUsuario.Contraseña = Row.Field<string>("Contraseña");
-            //oUsuario.FechaNacimiento = Row.Field<DateTime>("FechaNacimiento");
+            oUsuario.Email = Row.Field<string>("Email");
+            oUsuario.Password = Row.Field<string>("Password");
+            oUsuario.FechaNacimiento = Row.Field<DateTime>("Fecha_Nacimiento");
             //oUsuario.Generos = Row.Field<Array>("Generos");
             //oUsuario.Instrumentos = Row.Field<Array>("Instrumentos");
-            //oUsuario.Influencias = Row.Field<string>("Influencias");
-            //oUsuario.URLimagen = Row.Field<string>("URLimagen");
-            //oUsuario.Descripcion = Row.Field<string>("Descripcion");
-            //oUsuario.Ubicacion = Row.Field<double>("Ubicacion");
+            oUsuario.Influencias = Row.Field<string>("Influencias");
+            oUsuario.URLimagen = Row.Field<string>("URLimagen");
+            oUsuario.Descripcion = Row.Field<string>("Descripcion");
+            oUsuario.Ubicacion = Row.Field<double>("Ubicacion");
             return oUsuario;
         }
     }
