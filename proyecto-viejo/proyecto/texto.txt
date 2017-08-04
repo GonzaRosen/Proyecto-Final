@@ -1,1 +1,0 @@
-Acá esta el ejemplo del profe y el mio, en el mio yo tengo que hacer funcionar las apis de, traer por nombre que en realidad debería ser traer por distintos parámetros, insertar usuario y traer todos los usuarios que ya funciona. (Para probar esto yo creo una base de datos local en worckbench o phpmyadmin)

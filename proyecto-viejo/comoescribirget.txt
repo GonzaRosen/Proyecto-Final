@@ -1,8 +1,0 @@
- api/{controller}/{action}
- controller es el nombre del model ("controller" lo agrega pq lo pide el framework asi si no seria una clase parcial)
- action es un metodo que sea httpaction dentro del controller
- 
- definiste el parametro nombre 
- entonces
- api/usuarios/get?nombre=valor 
- 
