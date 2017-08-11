@@ -178,16 +178,25 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\App_Data\BundleConfig.cs" />
+    <Compile Include="Data\App_Data\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BandasController.cs" />
+    <Compile Include="Controllers\GenerosController.cs" />
+    <Compile Include="Controllers\InstrumentosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Data\BandasData.cs" />
     <Compile Include="Data\DBHelper.cs" />
+    <Compile Include="Data\GenerosData.cs" />
+    <Compile Include="Data\InstrumentosData.cs" />
     <Compile Include="Data\UsuariosData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bandas.cs" />
+    <Compile Include="Models\Generos.cs" />
+    <Compile Include="Models\Instrumentos.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -212,6 +221,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Bandas\" />
+    <Folder Include="Views\Instrumentos\" />
     <Folder Include="Views\Usuarios\" />
   </ItemGroup>
   <PropertyGroup>

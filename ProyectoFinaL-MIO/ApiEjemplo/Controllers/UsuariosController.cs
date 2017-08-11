@@ -15,26 +15,60 @@ namespace ApiEjemplo.Controllers
         [ResponseType(typeof(Usuarios))]
         public IHttpActionResult Post(Usuarios oUsuario)
         {
-            if (oUsuario == null || string.IsNullOrEmpty(oUsuario.Nombre) || string.IsNullOrEmpty(oUsuario.Apellido))//validamos nombre(validar todoooo)
+            if (oUsuario == null || string.IsNullOrEmpty(oUsuario.Nombre) || string.IsNullOrEmpty(oUsuario.Apellido))
             {
                 return BadRequest("Datos incorrectos.");
             }
             try
             {
-                UsuariosData.Insert(oUsuario);
+                UsuariosData.InsertarUsuario(oUsuario);
 
             }
             catch (Exception e)
             {
-
                 return BadRequest("Se ha producido un error al intentar realizar la consulta.");
             }
             return Ok();
         }
 
+        /*public IHttpActionResult Put(int IdUsuario, Usuarios oUsuario)
+        {
+            if (IdUsuario != oUsuario.IdUsuario)//Nos tiene que llegar el objeto correctamente
+            {
+                return BadRequest("El id de la persona es incorrecto.");
+            }
+            if (UsuariosData.ObtenerPorId(IdUsuario) == null)
+            {
+                return NotFound();
+            }
+            UsuariosData.Update(oUsuario);
+            return Ok();
+        }*/
+
+        public IHttpActionResult Delete(int IdUsuario)
+        {
+            if (UsuariosData.ObtenerPorId(IdUsuario) == null)
+            {
+                return NotFound();
+            }
+            UsuariosData.Delete(IdUsuario);
+            return Ok();
+        }
+
+        [ResponseType(typeof(Usuarios))]
+        public IHttpActionResult Get(int IdUsuario)
+        {
+            Usuarios oUsuario = UsuariosData.ObtenerPorId(IdUsuario);
+            if (oUsuario == null)
+            {
+                return NotFound();
+            }
+            return Ok(oUsuario);
+        }
+
         public IList<Usuarios> Get()
         {
-            return UsuariosData.ObtenerTodoDeUsuarios();
+            return UsuariosData.ObtenerUsuarios();
         }
 
 
@@ -42,7 +76,7 @@ namespace ApiEjemplo.Controllers
         public IHttpActionResult Get(string Nombre)
         {
             List<Usuarios> lista = new List<Usuarios>();
-            lista = UsuariosData.ObtenerPorNombre(Nombre);
+            lista = UsuariosData.ObtenerUsuariosPorNombre(Nombre);
             if (lista.Count == 0)
             {
                 return NotFound();

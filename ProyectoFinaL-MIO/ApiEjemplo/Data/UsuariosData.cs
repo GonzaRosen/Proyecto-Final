@@ -10,7 +10,7 @@ namespace ApiEjemplo.Data
 {
     public class UsuariosData
     { 
-        public static void Insert(Usuarios oUsuario)
+        public static void InsertarUsuario(Usuarios oUsuario)
         {
             #region comments
             //     te conviene usar string.Format lo voy a usar te das cuenta enseguida.
@@ -40,13 +40,38 @@ namespace ApiEjemplo.Data
                 oUsuario.Email,
                 oUsuario.Password,
                 oUsuario.FechaNacimiento == null ? "NULL": string.Format("'{0}'", oUsuario.FechaNacimiento)
-                , oUsuario.Influencias,oUsuario.URLimagen,oUsuario.Descripcion,
+                , oUsuario.Influencias,oUsuario.UrlImagen,oUsuario.Descripcion,
                 oUsuario.Ubicacion
                     );
             DBHelper.EjecutarIUD(sInsert);
         }
 
-        public static List<Usuarios> ObtenerTodoDeUsuarios()
+        /*public static void Update(Usuarios oUsuario)
+        {
+            string sUpdate = "update tusuario set Nombre='" + oUsuario.Nombre + "',FechaNac='" + oUsuario.FechaNacimiento.ToString("yyyy-MM-dd HH:mm") + "' where IdUsuario = " + oUsuario.IdUsuario.ToString();
+            DBHelper.EjecutarIUD(sUpdate);
+        }*/
+
+        public static void Delete(int IdUsuario)
+        {
+            string sUpdate = "delete from tusuarios where IdUsuario = " + IdUsuario.ToString();
+            DBHelper.EjecutarIUD(sUpdate);
+        }
+
+        public static Usuarios ObtenerPorId(int IdUsuario)
+        {
+            string select = "select * from tusuarios where IdUsuario = " + IdUsuario.ToString();
+            DataTable dt = DBHelper.EjecutarSelect(select);
+            Usuarios oUsuario;
+            if (dt.Rows.Count > 0)
+            {
+                oUsuario = ObtenerPorRow(dt.Rows[0]);
+                return oUsuario;
+            }
+            return null;
+        }
+
+        public static List<Usuarios> ObtenerUsuarios()
         {            
             string select = "select * from tusuarios";
             DataTable dt = DBHelper.EjecutarSelect(select);
@@ -64,9 +89,9 @@ namespace ApiEjemplo.Data
             return lista;
         }
 
-        public static List<Usuarios> ObtenerPorNombre(string Nombre)//cambiar por nombre por mismos intereses
+        public static List<Usuarios> ObtenerUsuariosPorNombre(string Nombre)
         {
-            string select = "select * from tusuarios where Nombre like '%" + Nombre + "%'";//cambiar por nombre por influencias,genero,instrumentos
+            string select = "select * from tusuarios where Nombre like '%" + Nombre + "%'";
             DataTable dt = DBHelper.EjecutarSelect(select);
             List<Usuarios> lista = new List<Usuarios>();
             Usuarios oUsuario;
@@ -94,7 +119,7 @@ namespace ApiEjemplo.Data
             //oUsuario.Generos = Row.Field<Array>("Generos");
             //oUsuario.Instrumentos = Row.Field<Array>("Instrumentos");
             oUsuario.Influencias = Row.Field<string>("Influencias");
-            oUsuario.URLimagen = Row.Field<string>("URLimagen");
+            oUsuario.UrlImagen = Row.Field<string>("UrlImagen");
             oUsuario.Descripcion = Row.Field<string>("Descripcion");
             oUsuario.Ubicacion = Row.Field<double>("Ubicacion");
             return oUsuario;
