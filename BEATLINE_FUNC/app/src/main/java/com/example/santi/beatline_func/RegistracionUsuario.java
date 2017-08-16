@@ -143,32 +143,40 @@ public class RegistracionUsuario extends Activity {
         startActivity(Activity);
     }
 
-        public void Grabar (View view) {
+    public void Grabar (View view) {
 
+        String Edit1 = Nombre.getText().toString();
+        String Edit2 = Apellido.getText().toString();
+        String Edit3 = Usuario.getText().toString();
+        String Edit4 = Email.getText().toString();
+        String Edit5 = Pass.getText().toString();
+        String Edit6 = Dia.getSelectedItem().toString();
+        String Edit7 = Mes.getSelectedItem().toString();
+        String Edit8 = Año.getSelectedItem().toString();
+
+        if(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || Edit5.equals("") || Edit6.equals("") || Edit7.equals("") || Edit8.equals(""))
+        {
             if (Terminos.isChecked())
             {
-            String urlApi = "http://beatlineproject.azurewebsites.net/api/usuarios";
-            String urlPost = urlApi + "";
+                String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/post";
+                Persona p = new Persona();
+                p.setNombre(Nombre.getText().toString());
+                p.setApellido(Apellido.getText().toString());
+                p.setEmail(Email.getText().toString());
+                String FechaNac = Dia + "-" + Mes + "-" + Año;
+                p.setFechaNac(FechaNac.toString());
+                p.setUsuario(Usuario.getText().toString());
+                p.setContraseña(Pass.getText().toString());
 
-            Persona p = new Persona();
-            p.setNombre(.getText().ToString());
-                p.setApellido().getText().toString());
-            p.(.getText().ToString());
-                p.(.getText().ToString());
-                p.(.getText().ToString());
-                p.(.getText().ToString());
+                GsonBuilder builder = new GsonBuilder();
+                Gson gson = builder.create();
+                System.out.println(gson.toJson(p));
 
+                new ConectarAPITask().execute("POST",urlApi, gson.toJson(p));
 
-
-            GsonBuilder builder = new GsonBuilder();
-            Gson gson = builder.create();
-            System.out.println(gson.toJson(p));
-
-            new ConectarAPITask().execute("POST",urlApi, gson.toJson(p));
-
-            Intent Activity;
-            Activity = new Intent(this,MainActivity.class);
-            startActivity(Activity);
+                Intent Activity;
+                Activity = new Intent(this,MainActivity.class);
+                startActivity(Activity);
             }
             else
             {
@@ -177,6 +185,13 @@ public class RegistracionUsuario extends Activity {
                 toast1.show();
             }
         }
+        else
+        {
+            Toast toast1;
+            toast1 = Toast.makeText(RegistracionUsuario.this, "No deje campos en blanco", Toast.LENGTH_SHORT);
+            toast1.show();
+        }
+    }
 
     private class ConectarAPITask extends AsyncTask<String, Void,  Persona> {
         public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");

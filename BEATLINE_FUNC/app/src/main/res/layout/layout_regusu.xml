@@ -17,201 +17,179 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="42dp"
+            android:textSize="40dp"
             android:textColor="#222051"
-            android:text="Registrarse"
-            />
+            android:text="Registrarse"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre"
-                android:textSize="32dp"
-                android:textColor="#222051"
+                android:layout_marginLeft="50dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="50dp"
                 android:fontFamily="sans-serif-condensed"
+                android:text="Nombre"
+                android:textColor="#222051"
+                android:textSize="20sp"
 
                 />
 
             <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="32dp"
-                android:textColor="#222051"
-                android:layout_marginLeft="50dp"
-                android:width="280dp"
                 android:id="@+id/Nombre"
-                />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:width="280dp"
+                android:textColor="#222051"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="sans-serif-condensed"
                 android:text="Apellido"
-                android:textSize="32dp"
                 android:textColor="#222051"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginLeft="50dp"/>
+                android:textSize="20sp" />
 
             <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="32dp"
-                android:textColor="#222051"
-                android:width="280dp"
                 android:id="@+id/Apellido"
-                android:layout_marginLeft="50dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:width="280dp"
+                android:textColor="#222051"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="sans-serif-condensed"
                 android:text="Usuario"
-                android:textSize="32dp"
                 android:textColor="#222051"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginLeft="50dp"/>
+                android:textSize="20sp" />
 
             <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="32dp"
-                android:textColor="#222051"
-                android:width="280dp"
                 android:id="@+id/Usuario"
-                android:layout_marginLeft="50dp"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:width="280dp"
+                android:textColor="#222051"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="sans-serif-condensed"
                 android:text="Fecha de Nacimiento"
-                android:textSize="32dp"
                 android:textColor="#222051"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginLeft="50dp"/>
+                android:textSize="20sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginRight="150dp"
-                android:gravity="center_horizontal"
-                android:layout_marginLeft="50dp">
-                <Spinner
-                    android:layout_width="75dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/SpinnerDia"
-                    >
-                </Spinner>
-                <Spinner
-                    android:layout_width="75dp"
-                    android:layout_height="40dp"
-                    android:id="@+id/SpinnerMes"
-                    android:layout_marginTop="10dp">
-                </Spinner>
-                <Spinner
-                    android:layout_width="75dp"
-                    android:layout_height="40dp"
-                    android:id="@+id/SpinnerAño"
-                    android:layout_marginTop="10dp">
-                </Spinner>
-
-            </LinearLayout>
+            <CalendarView
+                android:id="@+id/FechaNac"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center" />
 
             <TextView
+                android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed"
                 android:text="Email"
-                android:textSize="32dp"
                 android:textColor="#222051"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginLeft="50dp"/>
+                android:textSize="20sp" />
 
             <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="32dp"
-                android:textColor="#222051"
-                android:width="280dp"
                 android:id="@+id/Email"
-                android:layout_marginLeft="50dp"/>
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Contraseña"
-                android:textSize="32dp"
-                android:textColor="#222051"
-                android:fontFamily="sans-serif-condensed"
-                android:id="@+id/Contraseña"
-                android:layout_marginLeft="50dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(Mínimo 8 caracteres)"
-                android:textSize="18dp"
-                android:textColor="#000"
                 android:layout_marginLeft="50dp"
-                android:fontFamily="sans-serif-condensed"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="32dp"
-                android:textColor="#222051"
                 android:width="280dp"
-                android:layout_marginLeft="50dp"
-                />
+                android:textColor="#222051"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Confirmar contraseña"
-                android:textSize="32dp"
-                android:textColor="#222051"
+                android:layout_marginLeft="50dp"
                 android:fontFamily="sans-serif-condensed"
-                android:layout_marginLeft="50dp"/>
+                android:text="Contraseña"
+                android:textColor="#222051"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="(Mínimo 8 caracteres)"
+                android:textColor="#000"
+                android:textSize="12dp" />
+
+            <EditText
+                android:id="@+id/Contraseña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:width="280dp"
+                android:textColor="#222051"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Confirmar contraseña"
+                android:textColor="#222051"
+                android:textSize="20sp" />
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="32dp"
+                android:width="280dp"
                 android:textColor="#222051"
-                android:width="280dp"/>
+                android:textSize="20sp" 
+                android:layout_marginLeft="50dp"/>
 
             <CheckBox
+                android:id="@+id/ChkBox"
                 style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="wrap_content"
-                android:lyout_height="wrap_content"
+                android:layout_height="wrap_content"
                 android:checked="false"
-                android:textColor="#222051"
-                android:text="He leido y acepto los terminos y condiciones de uso."
-                android:textSize="20dp"
                 android:fontFamily="sans-serif-condensed"
-                android:id="@+id/ChkBox"/>
+                android:text="He leido y acepto los terminos y condiciones de uso."
+                android:textColor="#222051"
+                android:textSize="18dp" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Registrarse"
-                    android:textColor="#222051"
-                    android:fontFamily="sans-serif-condensed"
-                    android:textSize="32dp"
-                    android:background="#4EFFBB"
-                    android:id="@+id/Grabar"
-                    android:layout_marginLeft="80dp"
+            <Button
+                android:id="@+id/GrabarB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="#4EFFBB"
+                android:fontFamily="sans-serif-condensed"
+                android:onClick="Grabar"
+                android:text="Registrarse"
+                android:textColor="#222051"
+                android:textSize="32dp" />
 
-                    />
+        </LinearLayout>
 
-            </LinearLayout>
-
-            <Space
+        <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 

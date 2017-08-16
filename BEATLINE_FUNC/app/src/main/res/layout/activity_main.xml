@@ -24,11 +24,21 @@
         />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/PerfilUsu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#7D22"
         android:text="Perfil de Usuario"
         android:onClick="PerfilU"
         />
+
+    <Button
+        android:id="@+id/RecuPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#D39A"
+        android:text="Reestablecer Contraseña"
+        android:onClick="RecuPass"
+        />
+
 </LinearLayout>

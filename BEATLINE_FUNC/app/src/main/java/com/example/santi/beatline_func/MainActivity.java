@@ -28,4 +28,9 @@ public class MainActivity extends AppCompatActivity {
         Intent Activity = new Intent(getApplicationContext(), PerfilUsuario.class);
         startActivity(Activity);
     }
+    public void RecuPass (View view)
+    {
+        Intent Activity = new Intent(getApplicationContext(), PerfilUsuario.class);
+        startActivity(Activity);
+    }
 }
