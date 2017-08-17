@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -18,6 +19,10 @@ import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -26,20 +31,10 @@ import okhttp3.Response;
 
 public class RegistracionUsuario extends Activity {
 
-    Spinner spinnerdia,spinnermes,spinneraño;
-
-    String [] opcDia = new String[] {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
-    String [] opcMes = new String[] {"Enero", "Febrero", "Marzo", "Mayo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
-    String [] opcAño = new String[] {"1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000"};
-    String[] dias,meses,años;
-    private boolean firstTime = true;
-
     EditText Nombre;
     EditText Apellido;
     EditText Usuario;
-    Spinner Dia;
-    Spinner Mes;
-    Spinner Año;
+    CalendarView FechaNac;
     EditText Email;
     EditText Pass;
 
@@ -52,87 +47,12 @@ public class RegistracionUsuario extends Activity {
             Nombre = (EditText)findViewById(R.id.Nombre);
             Apellido = (EditText)findViewById(R.id.Apellido);
             Usuario = (EditText)findViewById(R.id.Usuario);
-            Dia = (Spinner) findViewById(R.id.SpinnerDia);
-            Mes = (Spinner)findViewById(R.id.SpinnerMes);
-            Año = (Spinner)findViewById(R.id.SpinnerAño);
+            FechaNac = (CalendarView)findViewById(R.id.FechaNac);
             Email = (EditText)findViewById(R.id.Email);
             Pass = (EditText)findViewById(R.id.Contraseña);
 
             super.onCreate(savedInstanceState);
             setContentView(R.layout.layout_regusu);
-            Intent Activity = getIntent();
-            spinnerdia = (Spinner) findViewById(R.id.SpinnerDia);
-            dias = getResources().getStringArray(R.array.dias);
-            ArrayAdapter<String> aaDia = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_item, dias);
-            aaDia.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinnerdia.setAdapter(aaDia);
-            spinnerdia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                                     @Override
-                                                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                                         if (firstTime = true)
-                                                         {
-                                                             firstTime = false;
-                                                         }
-                                                         else{
-                                                             Toast.makeText(getApplicationContext(), dias[position], Toast.LENGTH_LONG).show();
-                                                         }
-                                                     }
-
-                                                     @Override
-                                                     public void onNothingSelected(AdapterView<?> parent)
-                                                     {
-
-                                                     }
-                                                 }
-            );
-
-
-            spinnermes = (Spinner) findViewById(R.id.SpinnerMes);
-            meses = getResources().getStringArray(R.array.meses);
-            ArrayAdapter<String> aaMes = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_item, meses);
-            aaMes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinnermes.setAdapter(aaMes);
-            spinnermes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    if (firstTime = true)
-                    {
-                        firstTime = false;
-                    }
-                    else{
-                        Toast.makeText(getApplicationContext(), meses[position], Toast.LENGTH_LONG).show();
-                    }
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent)
-                {
-
-                }
-            });
-
-
-            spinneraño = (Spinner) findViewById(R.id.SpinnerAño);
-            años = getResources().getStringArray(R.array.años);
-            ArrayAdapter<String> aaAño = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_spinner_item, años);
-            aaAño.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinnermes.setAdapter(aaAño);
-            spinnermes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    if (firstTime = true)
-                    {
-                        firstTime = false;
-                    }
-                    else{
-                        Toast.makeText(getApplicationContext(), años[position], Toast.LENGTH_LONG).show();
-                    }
-                }
-                @Override
-                public void onNothingSelected(AdapterView<?> parent)
-                {
-                }
-            });
         }
     }
 
@@ -150,23 +70,19 @@ public class RegistracionUsuario extends Activity {
         String Edit3 = Usuario.getText().toString();
         String Edit4 = Email.getText().toString();
         String Edit5 = Pass.getText().toString();
-        String Edit6 = Dia.getSelectedItem().toString();
-        String Edit7 = Mes.getSelectedItem().toString();
-        String Edit8 = Año.getSelectedItem().toString();
 
-        if(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || Edit5.equals("") || Edit6.equals("") || Edit7.equals("") || Edit8.equals(""))
+        if(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || Edit5.equals(""))
         {
             if (Terminos.isChecked())
             {
                 String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/post";
                 Persona p = new Persona();
-                p.setNombre(Nombre.getText().toString());
-                p.setApellido(Apellido.getText().toString());
-                p.setEmail(Email.getText().toString());
-                String FechaNac = Dia + "-" + Mes + "-" + Año;
-                p.setFechaNac(FechaNac.toString());
-                p.setUsuario(Usuario.getText().toString());
-                p.setContraseña(Pass.getText().toString());
+                p.setNombre(Edit1);
+                p.setApellido(Edit2);
+                p.setEmail(Edit4);
+                p.setFechaNac(FechaNac.getDate());
+                p.setUsuario(Edit3);
+                p.setContraseña(Edit5);
 
                 GsonBuilder builder = new GsonBuilder();
                 Gson gson = builder.create();

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\42660700\.android\build-cache\e03dce754f39731ba66f1d031121da7c3f8efd82\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_73f188c4222ced6786615320d17a76b8214f6243\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_dce0f5dc4ec87302d879250c45fe5f3f72f02917\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.0.0_3f77e93e5ed0a0d7276beffe8309c2818d2dc483\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42660700\.android\build-cache\c44fd693872fbfaf6226bafb7ec010e9c5088c1e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9ffea2727a6372170f60009e0e3fbc074b4b44c5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42660700\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\1.7.2\112366d8158749e25532ebce162232c6e0fb20a5\gson-1.7.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="112366d8158749e25532ebce162232c6e0fb20a5">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-1.7.2_aeff2b6ae8254513ca388354221b15766d07e7a2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42660700\.android\build-cache\320770101d25cf09e62f2ee923992912399cee64\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4e352d230f222ff76f91f9b57082a00862c9056d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42660700\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.13.0_3d2b4e7a82968bffa0cd26f58776901a46d98612\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42660700\.android\build-cache\e03dce754f39731ba66f1d031121da7c3f8efd82\output\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_a75552f61145ad2e5432f8150f7f5e44e247582f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_8bcddb15bc31fcdf74a4e67035845fcb606ef7bf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="698c1fed06405f7efab6c5093537a73ceb1bf73b">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_36294903e5a2875878bdc3d60173ed8adf8a2732\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42660700\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.8.0\5a11f020cce2d11eb71ba916700600e18c4547e7\okhttp-3.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5a11f020cce2d11eb71ba916700600e18c4547e7">
+        <dex dex="Z:\Proyecto-Final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.8.0_b7ec0db6f28048c929d5dd09890a08548f3d28aa\classes.dex" />
+    </item>
+
+</items>
