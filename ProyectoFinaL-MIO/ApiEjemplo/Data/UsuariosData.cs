@@ -39,7 +39,7 @@ namespace ApiEjemplo.Data
                 oUsuario.Apellido,
                 oUsuario.Email,
                 oUsuario.Password,
-                oUsuario.Fecha_Nacimiento == null ? "NULL": string.Format("'{0}'", oUsuario.Fecha_Nacimiento), 
+                oUsuario.Fecha_Nacimiento == null ? "NULL": "'"+oUsuario.Fecha_Nacimiento.ToString("yyyy-MM-dd")+"'", 
                 oUsuario.Influencias,
                 oUsuario.UrlImagen,
                 oUsuario.Descripcion,
@@ -117,7 +117,7 @@ namespace ApiEjemplo.Data
             oUsuario.Apellido = Row.Field<string>("Apellido");
             oUsuario.Email = Row.Field<string>("Email");
             oUsuario.Password = Row.Field<string>("Password");
-            oUsuario.Fecha_Nacimiento = Row.Field<DateTime?>("Fecha_Nacimiento");
+            oUsuario.Fecha_Nacimiento = Row.Field<DateTime>("Fecha_Nacimiento");
             //oUsuario.Generos = Row.Field<Array>("Generos");
             //oUsuario.Instrumentos = Row.Field<Array>("Instrumentos");
             oUsuario.Influencias = Row.Field<string>("Influencias");
