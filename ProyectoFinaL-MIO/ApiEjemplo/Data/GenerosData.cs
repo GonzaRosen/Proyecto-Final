@@ -18,7 +18,7 @@ namespace ApiEjemplo.Data
                     );
             DBHelper.EjecutarIUD(sInsert);
         }
-        /
+     
         public static void DeleteGenero(int IdGenero)
         {
             string sUpdate = "delete from tgenero where IdGenero = " + IdGenero.ToString();

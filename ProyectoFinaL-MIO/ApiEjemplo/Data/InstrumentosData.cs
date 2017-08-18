@@ -28,16 +28,16 @@ namespace ApiEjemplo.Data
         public static List<Instrumentos> ObtenerInstrumentosPorUsuario(int IdUsuario)
         {
             string select = "select tinstrumentos.Nombre from tusuarios inner join tusuarios_has_tinstrumentos on" +
-            "tusuarios.IdUsuario = tusuarios_has_tinstrumentos.tUsuarios_IdUsuario inner join tinstrumentos on" +
-            "tusuarios_has_tinstrumentos.tInstrumentos_IdInstrumento = tinstrumentos.IdInstrumento" +
-            "WHERE tusuarios.IdUsuario = " + IdUsuario;
+            " tusuarios.IdUsuario = tusuarios_has_tinstrumentos.tUsuarios_IdUsuario inner join tinstrumentos on" +
+            " tusuarios_has_tinstrumentos.tInstrumentos_IdInstrumento = tinstrumentos.IdInstrumento" +
+            " WHERE tusuarios.IdUsuario = " + IdUsuario.ToString();
             DataTable dt = DBHelper.EjecutarSelect(select);
             List<Instrumentos> lista = new List<Instrumentos>();
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow row in dt.Rows)
                 {
-                    lista.Add(ObtenerPorRow(row));
+                    lista.Add(ObtenerPorRow2(row));
                 }
             }
             return lista;
@@ -77,6 +77,13 @@ namespace ApiEjemplo.Data
         {
             Instrumentos oInstrumento = new Instrumentos();
             oInstrumento.IdInstrumento = Row.Field<int>("IdInstrumento");
+            oInstrumento.Nombre = Row.Field<string>("Nombre");
+            return oInstrumento;
+        }
+
+        public static Instrumentos ObtenerPorRow2(DataRow Row)
+        {
+            Instrumentos oInstrumento = new Instrumentos();
             oInstrumento.Nombre = Row.Field<string>("Nombre");
             return oInstrumento;
         }

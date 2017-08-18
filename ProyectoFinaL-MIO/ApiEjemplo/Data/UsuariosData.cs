@@ -39,8 +39,10 @@ namespace ApiEjemplo.Data
                 oUsuario.Apellido,
                 oUsuario.Email,
                 oUsuario.Password,
-                oUsuario.FechaNacimiento == null ? "NULL": string.Format("'{0}'", oUsuario.FechaNacimiento)
-                , oUsuario.Influencias,oUsuario.UrlImagen,oUsuario.Descripcion,
+                oUsuario.FechaNacimiento == null ? "NULL": string.Format("'{0}'", oUsuario.FechaNacimiento), 
+                oUsuario.Influencias,
+                oUsuario.UrlImagen,
+                oUsuario.Descripcion,
                 oUsuario.Ubicacion
                     );
             DBHelper.EjecutarIUD(sInsert);
