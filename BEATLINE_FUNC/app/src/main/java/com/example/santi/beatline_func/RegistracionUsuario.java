@@ -1,4 +1,4 @@
-package com.example.santi.beatline_func;
+﻿package com.example.santi.beatline_func;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -43,6 +43,9 @@ public class RegistracionUsuario extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.layout_regusu);
+
             Terminos = (CheckBox)findViewById(R.id.ChkBox);
             Nombre = (EditText)findViewById(R.id.Nombre);
             Apellido = (EditText)findViewById(R.id.Apellido);
@@ -51,8 +54,7 @@ public class RegistracionUsuario extends Activity {
             Email = (EditText)findViewById(R.id.Email);
             Pass = (EditText)findViewById(R.id.Contraseña);
 
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.layout_regusu);
+
         }
     }
 
@@ -71,7 +73,7 @@ public class RegistracionUsuario extends Activity {
         String Edit4 = Email.getText().toString();
         String Edit5 = Pass.getText().toString();
 
-        if(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || Edit5.equals(""))
+        if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || Edit5.equals("")))
         {
             if (Terminos.isChecked())
             {
@@ -80,7 +82,7 @@ public class RegistracionUsuario extends Activity {
                 p.setNombre(Edit1);
                 p.setApellido(Edit2);
                 p.setEmail(Edit4);
-                p.setFechaNac(FechaNac.getDate());
+                //p.setFechaNac(FechaNac.getDate());
                 p.setUsuario(Edit3);
                 p.setContraseña(Edit5);
 
@@ -193,3 +195,4 @@ public class RegistracionUsuario extends Activity {
 
     }
 }
+ aaa
