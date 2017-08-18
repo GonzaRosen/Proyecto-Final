@@ -91,6 +91,24 @@ namespace ApiEjemplo.Data
             return lista;
         }
 
+        public static List<Usuarios> Login(string Email, string Password)
+        {
+            string select = "select * from tusuarios WHERE tusuarios.Email = " + Email + " AND tusuarios.Password = " + Password;
+            DataTable dt = DBHelper.EjecutarSelect(select);
+            List<Usuarios> lista = new List<Usuarios>();
+            Usuarios oUsuario;
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    oUsuario = ObtenerPorRow(row);
+                    lista.Add(oUsuario);
+                }
+                oUsuario = ObtenerPorRow(dt.Rows[0]);
+            }
+            return lista;
+        }
+
         public static List<Usuarios> ObtenerUsuariosPorNombre(string Nombre)
         {
             string select = "select * from tusuarios where Nombre like '%" + Nombre + "%'";
@@ -118,8 +136,6 @@ namespace ApiEjemplo.Data
             oUsuario.Email = Row.Field<string>("Email");
             oUsuario.Password = Row.Field<string>("Password");
             oUsuario.Fecha_Nacimiento = Row.Field<DateTime>("Fecha_Nacimiento");
-            //oUsuario.Generos = Row.Field<Array>("Generos");
-            //oUsuario.Instrumentos = Row.Field<Array>("Instrumentos");
             oUsuario.Influencias = Row.Field<string>("Influencias");
             oUsuario.UrlImagen = Row.Field<string>("UrlImagen");
             oUsuario.Descripcion = Row.Field<string>("Descripcion");

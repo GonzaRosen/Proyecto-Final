@@ -83,5 +83,18 @@ namespace ApiEjemplo.Controllers
             }
             return Ok(lista);
         }
+
+        [ResponseType(typeof(IList<Usuarios>))]
+        public IHttpActionResult Get2(string Email, string Password)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+            lista = UsuariosData.Login(Email, Password);
+            if (lista.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(lista);
+        }
+        //http://localhost:8080/api/usuarios/Get2?Email=lkristal@gmail.com%20Password=aguantepf
     }
 }
