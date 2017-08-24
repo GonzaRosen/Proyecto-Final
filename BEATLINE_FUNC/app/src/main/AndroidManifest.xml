@@ -22,7 +22,8 @@
         <activity android:name=".FiltrosBusqueda" />
         <activity android:name=".RegistracionUsuario" />
         <activity android:name=".RecuperarContrasenia" />
-        <activity android:name=".ConfirmacionRecu"></activity>
+        <activity android:name=".ConfirmacionRecu" />
+        <activity android:name=".Loginn"></activity>
     </application>
 
 </manifest>
