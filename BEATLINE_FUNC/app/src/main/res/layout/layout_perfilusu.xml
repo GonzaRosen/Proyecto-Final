@@ -2,130 +2,68 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_gravity="center">
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_marginLeft="75dp"
-            android:layout_marginTop="20dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/nombre"
+            android:textColor="@color/Negro"
+            android:text="Nombre"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:layout_marginLeft="85dp"
-            android:textSize="28dp"
-            android:id="@+id/nombregrande"
-            android:textColor="#4effbb"
-            android:textStyle="bold"
-            android:text="sample"
+            android:textSize="20dp"
+            android:id="@+id/apellido"
+            android:textColor="@color/Negro"
+            android:text="Apellido"
             />
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:layout_marginLeft="85dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/nombrechiquito"
-                android:textSize="28dp"
-                android:textColor="#222051"
-                android:text="sample"
-                />
-        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="85dp"
-            android:layout_marginTop="200dp"
-            android:text=""
-            android:textSize="26dp"
-            android:id="@+id/edadchiquito"
-            android:textColor="#222051"
-            android:textStyle="bold"
+            android:text="Fecha Nacimiento"
+            android:textSize="20dp"
+            android:id="@+id/edad"
+            android:textColor="@color/Negro"
             />
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="85dp"
-            android:layout_marginTop="200dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="26dp"
-                android:id="@+id/edadgrande"
-                android:textColor="#4EFFBB"
-                />
-        </RelativeLayout>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/recuadro"
-            android:layout_marginLeft="10dp" />
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#222051"
-            android:textSize="18dp"
-            android:layout_marginTop="265dp"
-            android:layout_marginLeft="90dp"
-            android:id="@+id/Descripcion"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Instrumento/s:"
-            android:textColor="#222051"
-            android:textSize="24dp"
-            android:layout_marginTop="400dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="caca cul pedo pis"
-            android:textColor="#222051"
-            android:textSize="18dp"
-            android:layout_marginTop="430dp"
-            android:id="@+id/instrusu"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Genero/s:"
-            android:textColor="#222051"
-            android:textSize="24dp"
-            android:layout_marginTop="460dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="cumbia villera"
-            android:textColor="#222051"
-            android:textSize="18dp"
-            android:layout_marginTop="490dp"
-            android:id="@+id/generousu"/>
+            android:text="Descripcion"
+            android:textColor="@color/Negro"
+            android:textSize="20dp"
+            android:id="@+id/descripcion"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Influencia/s:"
-            android:textColor="#222051"
-            android:textSize="24dp"
-            android:layout_marginTop="520dp"/>
+            android:text="Instrumentos"
+            android:textColor="@color/Negro"
+            android:textSize="20dp"
+            android:id="@+id/instrumentos"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sample"
-            android:textColor="#222051"
-            android:textSize="18dp"
-            android:layout_marginTop="550dp"
-            android:id="@+id/influsu"/>
-    </RelativeLayout>
+            android:text="Generos"
+            android:textColor="@color/Negro"
+            android:textSize="20dp"
+            android:id="@+id/generos"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Influencias"
+            android:textColor="@color/Negro"
+            android:textSize="20dp"
+            android:id="@+id/influencias"/>
+
+    </LinearLayout>
 </ScrollView>

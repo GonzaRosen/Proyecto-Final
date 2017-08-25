@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    public static Persona usuario_logeado = new Persona();
+    public static Filtros filtros_busqueda = new Filtros();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

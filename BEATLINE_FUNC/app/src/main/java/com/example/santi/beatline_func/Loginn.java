@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewDebug;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ public class Loginn extends AppCompatActivity {
 
     EditText Email;
     EditText Password;
+    Boolean coincide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +38,12 @@ public class Loginn extends AppCompatActivity {
     public void Login (View view) {
         String Mail = Email.getText().toString();
         String Contraseña = Password.getText().toString();
-        Boolean Coincide;
 
         if(!(Mail.equals("") || Contraseña.equals("")))
         {
-            if (Incorrecto(Coincide) == false)
+            if (MainActivity.usuario_logeado.getLogin() == true)
             {
+
                 String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/APILOGIN";
                 Persona p = new Persona();
                 p.setEmail(Mail);
@@ -49,9 +51,7 @@ public class Loginn extends AppCompatActivity {
                 GsonBuilder builder = new GsonBuilder();
                 Gson gson = builder.create();
                 System.out.println(gson.toJson(p));
-
                 new Loginn.ConectarAPITask().execute("POST",urlApi, gson.toJson(p));
-
                 Intent Activity;
                 Activity = new Intent(this,MainActivity.class);
                 startActivity(Activity);
@@ -61,6 +61,7 @@ public class Loginn extends AppCompatActivity {
                 Toast toast1;
                 toast1 = Toast.makeText(Loginn.this, "Usuario y/o contraseña incorrectos.", Toast.LENGTH_SHORT);
                 toast1.show();
+                Password.setText("");
             }
         }
         else
@@ -75,13 +76,27 @@ public class Loginn extends AppCompatActivity {
         public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
         @Override
-        protected void onPostExecute(Persona persona) {
-            super.onPostExecute(persona);
-            super.onPostExecute(persona);
-            if (persona != null) {
-
+        protected void onPostExecute(Persona p) {
+            super.onPostExecute(p);
+            MainActivity.usuario_logeado.setLogin(p.getLogin());
+            if (p.getLogin() == true)
+            {
+                MainActivity.usuario_logeado.setNombre(p.getNombre());
+                MainActivity.usuario_logeado.setFechaNac(p.getFechaNac());
+                MainActivity.usuario_logeado.setDescripcion(p.getDescripcion());
+                MainActivity.usuario_logeado.setInfluencias(p.getInfluencias());
+                MainActivity.usuario_logeado.setGenero(p.getGenero());
+                MainActivity.usuario_logeado.setInstrumentos(p.getInstrumentos());
             }
-
+            else
+            {
+                MainActivity.usuario_logeado.setNombre(null);
+                MainActivity.usuario_logeado.setFechaNac(null);
+                MainActivity.usuario_logeado.setDescripcion(null);
+                MainActivity.usuario_logeado.setInfluencias(null);
+                MainActivity.usuario_logeado.setGenero(null);
+                MainActivity.usuario_logeado.setInstrumentos(null);
+            }
         }
 
 
@@ -108,7 +123,6 @@ public class Loginn extends AppCompatActivity {
 
             String method = params[0];
             String urlApi = params[1];
-            String Resultado;
 
             if (method.equals("POST")) {
                 String json = params[2];
@@ -127,7 +141,6 @@ public class Loginn extends AppCompatActivity {
             try {
                 Response response = client.newCall(request).execute();
                 strResultado = response.body().string();
-                Log.d("Santi", strResultado );
                 Persona p = parsearResultado(strResultado );
                 return p;
             }
@@ -152,10 +165,5 @@ public class Loginn extends AppCompatActivity {
 
         }
 
-    }
-
-    public boolean Incorrecto(boolean NoCoincide)
-    {
-        return NoCoincide;
     }
 }

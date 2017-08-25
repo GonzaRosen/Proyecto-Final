@@ -22,11 +22,10 @@ import okhttp3.Response;
 
 
 public class PerfilUsuario extends Activity{
-    TextView NombreG;
-    TextView NombreC;
+    TextView Nombre;
+    TextView Apellido;
     TextView Desc;
-    TextView EdadG;
-    TextView EdadC;
+    TextView FechaNac;
     TextView Genero;
     TextView Influ;
     TextView Instru;
@@ -34,98 +33,22 @@ public class PerfilUsuario extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_perfilusu);
-
         Intent intent = getIntent();
 
-        TextView txt1 = (TextView) findViewById(R.id.nombrechiquito);
-        TextView txt2 = (TextView) findViewById(R.id.nombregrande);
-        txt1.bringToFront();
+        Nombre = (TextView) findViewById(R.id.nombre);
+        Apellido = (TextView) findViewById(R.id.apellido);
+        Desc = (TextView) findViewById(R.id.descripcion);
+        FechaNac = (TextView) findViewById(R.id.edad);
+        Influ = (TextView) findViewById(R.id.influencias);
+        Genero = (TextView) findViewById(R.id.generos);
+        Instru = (TextView) findViewById(R.id.instrumentos);
 
-        ImageView cuadrodesc = (ImageView) findViewById(R.id.recuadro);
-        cuadrodesc.setImageResource(R.drawable.cuadro);
-
-        NombreG = (TextView) findViewById(R.id.nombregrande);
-        NombreC = (TextView) findViewById(R.id.nombrechiquito);
-        Desc = (TextView) findViewById(R.id.Descripcion);
-        EdadG = (TextView) findViewById(R.id.edadgrande);
-        EdadC = (TextView) findViewById(R.id.edadchiquito);
-        Influ = (TextView) findViewById(R.id.influsu);
-        Genero = (TextView) findViewById(R.id.generousu);
-        Instru = (TextView) findViewById(R.id.instrusu);
-
-        //Persona oPersona = new Persona();
-        //Desc.setText(oPersona.getNombre());
-
-        String urlDeApi = "http://beatlineproject.azurewebsites.net/api/usuarios";
-
-            String urlGet = urlDeApi + "/Get?Nombre=Santiago";
-            new ConectarAPITask().execute("GET", urlGet);
+        Nombre.setText("Nombre: " + MainActivity.usuario_logeado.getNombre());
+        Apellido.setText("Apellido: " + MainActivity.usuario_logeado.getApellido());
+        FechaNac.setText("Fecha de Nacimiento: " + MainActivity.usuario_logeado.getFechaNac());
+        Desc.setText("Descripción: " + MainActivity.usuario_logeado.getDescripcion());
+        Influ.setText("Influencias: " + MainActivity.usuario_logeado.getInfluencias());
+        Genero.setText("Géneros: " + MainActivity.usuario_logeado.getGenero());
+        Instru.setText("Instrumentos: " + MainActivity.usuario_logeado.getInstrumentos());
     }
-
-        private class ConectarAPITask extends AsyncTask<String, Void,  Persona> {
-            public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-
-            @Override
-            protected void onPostExecute(Persona p) {
-                super.onPostExecute(p);
-                NombreG.setText(p.getNombre());
-                NombreC.setText(p.getNombre());
-                EdadG.setText(p.getFechaNac());
-                EdadC.setText(p.getFechaNac());
-                Desc.setText(p.getDescripcion());
-                Influ.setText(p.getInfluencias());
-                Genero.setText(p.getDescripcion());
-                Instru.setText(p.getDescripcion());
-            }
-
-            @Override
-            protected Persona doInBackground(String... params) {
-
-                String method = params[0];
-                String urlApi = params[1];
-                String Resultado;
-
-                if (method.equals("GET")) {
-                    return  getPersona(urlApi);
-                }
-                return null;
-            }
-
-            private Persona getPersona(String urlApi) {
-    String strResultado;
-                OkHttpClient client = new OkHttpClient();
-                Request request = new Request.Builder()
-                        .url(urlApi)
-                        .build();
-
-                try {
-                    Response response = client.newCall(request).execute();
-                    strResultado = response.body().string();
-                    Log.d("Santi", strResultado );
-                    Persona p = parsearResultado(strResultado );
-                    return p;
-                }
-                catch (IOException e){
-                    return null;
-
-                }
-            }
-
-
-            private Persona parsearResultado(String respuesta)   {
-                if (respuesta == null || respuesta.length()==0)
-                    return null;
-                try {
-                    Gson gson = new Gson();
-                    Persona[] p = gson.fromJson(respuesta, Persona[].class);
-                    return p[0];
-
-                }
-                catch (Exception e) {
-                    return null;
-                }
-
-            }
-
-        }
-    }
+}
