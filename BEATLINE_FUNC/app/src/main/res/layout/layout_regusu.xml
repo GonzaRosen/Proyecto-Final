@@ -172,18 +172,18 @@
                 android:fontFamily="sans-serif-condensed"
                 android:text="He leido y acepto los terminos y condiciones de uso."
                 android:textColor="#222051"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:layout_marginLeft="45dp"/>
 
             <Button
-                android:id="@+id/GrabarB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="#4EFFBB"
                 android:fontFamily="sans-serif-condensed"
-                android:onClick="Grabar"
-                android:text="Registrarse"
+                android:onClick="Continuar"
+                android:text="Continuar"
                 android:textColor="#222051"
                 android:textSize="32dp" />
 

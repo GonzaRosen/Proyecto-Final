@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-30:12
+ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:3:5-46
 		INJECTED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
@@ -22,7 +22,7 @@ ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\A
 	android:name
 		ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:6:22-76
 application
-ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:8:5-28:19
+ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:8:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\42660700\.android\build-cache\320770101d25cf09e62f2ee923992912399cee64\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:23.4.0] C:\Users\42660700\.android\build-cache\09d39b97587aa8e576955c6190822951bf36cacd\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\42660700\.android\build-cache\d6a24af79496941a7e73476298afeb518ca93d28\output\AndroidManifest.xml:25:5-20
@@ -30,7 +30,7 @@ MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\42660
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\42660700\.android\build-cache\b847395b29fe136ddfc66f15dd24ad1fb5156332\output\AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\42660700\.android\build-cache\e0a4a155af8f5b184adb2ba1e80a9abf1ee08038\output\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:11:9-41
+		ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:11:9-45
 	android:supportsRtl
 		ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:12:9-35
 	android:allowBackup
@@ -78,9 +78,13 @@ ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\A
 	android:name
 		ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:26:19-41
 activity#com.example.santi.beatline_func.Settings
-ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:27:9-55
+ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:27:9-46
 	android:name
 		ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:27:19-43
+activity#com.example.santi.beatline_func.RegistracionPreferencias
+ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:28:9-71
+	android:name
+		ADDED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:28:19-59
 uses-sdk
 INJECTED from C:\Users\42660700\Desktop\Proyecto-Final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\42660700\.android\build-cache\320770101d25cf09e62f2ee923992912399cee64\output\AndroidManifest.xml:5:5-7:41

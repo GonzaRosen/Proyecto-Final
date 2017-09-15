@@ -65,7 +65,7 @@ public class RegistracionUsuario extends Activity {
         startActivity(Activity);
     }
 
-    public void Grabar (View view) {
+    public void Continuar (View view) {
 
         String Edit1 = Nombre.getText().toString();
         String Edit2 = Apellido.getText().toString();
@@ -83,7 +83,6 @@ public class RegistracionUsuario extends Activity {
                 p.setApellido(Edit2);
                 p.setEmail(Edit4);
                 //p.setFechaNac(FechaNac.getDate());
-                p.setUsuario(Edit3);
                 p.setContraseña(Edit5);
 
                 GsonBuilder builder = new GsonBuilder();
