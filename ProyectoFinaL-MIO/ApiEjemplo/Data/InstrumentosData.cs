@@ -60,6 +60,25 @@ namespace ApiEjemplo.Data
             }
             return lista;
         }
+
+        public static List<Instrumentos> ObtenerInstrumentosPorNombre(string Nombre)
+        {
+            string select = "select IdInstrumento from tinstrumentos where Nombre like '%" + Nombre + "%'";
+            DataTable dt = DBHelper.EjecutarSelect(select);
+            List<Instrumentos> lista = new List<Instrumentos>();
+            Instrumentos oInstrumento;
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    oInstrumento = ObtenerPorRow(row);
+                    lista.Add(oInstrumento);
+                }
+                oInstrumento = ObtenerPorRow(dt.Rows[0]);
+            }
+            return lista;
+        }
+
         public static Instrumentos ObtenerPorId(int IdInstrumento)
         {
             string select = "select * from tinstrumentos where IdInstrumento = " + IdInstrumento.ToString();

@@ -93,7 +93,7 @@ namespace ApiEjemplo.Data
 
         public static List<Usuarios> Login(string Email, string Password)
         {
-            string select = "select * from tusuarios WHERE tusuarios.Email = " + Email + " AND tusuarios.Password = " + Password;
+            string select = "select * from tusuarios WHERE tusuarios.Email = '" + Email + "' AND tusuarios.Password = '" + Password + "'";
             DataTable dt = DBHelper.EjecutarSelect(select);
             List<Usuarios> lista = new List<Usuarios>();
             Usuarios oUsuario;
@@ -111,7 +111,7 @@ namespace ApiEjemplo.Data
 
         public static List<Usuarios> ObtenerUsuariosPorNombre(string Nombre)
         {
-            string select = "select * from tusuarios where Nombre like '%" + Nombre + "%'";
+            string select = "select IdUsuario from tusuarios where Nombre like '%" + Nombre + "%'";
             DataTable dt = DBHelper.EjecutarSelect(select);
             List<Usuarios> lista = new List<Usuarios>();
             Usuarios oUsuario;
