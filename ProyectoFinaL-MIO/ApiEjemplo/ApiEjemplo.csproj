@@ -178,6 +178,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\UsuariosHasInstrumentosController.cs" />
     <Compile Include="Data\App_Data\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -191,6 +192,7 @@
     <Compile Include="Data\GenerosData.cs" />
     <Compile Include="Data\InstrumentosData.cs" />
     <Compile Include="Data\UsuariosData.cs" />
+    <Compile Include="Data\UsuariosHasInstrumentosData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,6 +200,7 @@
     <Compile Include="Models\Generos.cs" />
     <Compile Include="Models\Instrumentos.cs" />
     <Compile Include="Models\Usuarios.cs" />
+    <Compile Include="Models\UsuariosHasInstrumentos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
