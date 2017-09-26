@@ -76,26 +76,24 @@ public class Loginn extends AppCompatActivity {
         public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
         @Override
-        protected void onPostExecute(Persona p) {
+        protected void onPostExecute(Persona p, Preferencias pre) {
             super.onPostExecute(p);
+            super.onPostExecute(pre);
             MainActivity.usuario_logeado.setLogin(p.getLogin());
+            String Mail = Email.getText().toString();
+            String Contraseña = Password.getText().toString();
             if (p.getLogin() == true)
             {
                 MainActivity.usuario_logeado.setNombre(p.getNombre());
+                MainActivity.usuario_logeado.setApellido(p.getApellido());
                 MainActivity.usuario_logeado.setFechaNac(p.getFechaNac());
                 MainActivity.usuario_logeado.setDescripcion(p.getDescripcion());
                 MainActivity.usuario_logeado.setInfluencias(p.getInfluencias());
                 MainActivity.usuario_logeado.setGenero(p.getGenero());
                 MainActivity.usuario_logeado.setInstrumentos(p.getInstrumentos());
-            }
-            else
-            {
-                MainActivity.usuario_logeado.setNombre(null);
-                MainActivity.usuario_logeado.setFechaNac(null);
-                MainActivity.usuario_logeado.setDescripcion(null);
-                MainActivity.usuario_logeado.setInfluencias(null);
-                MainActivity.usuario_logeado.setGenero(null);
-                MainActivity.usuario_logeado.setInstrumentos(null);
+                MainActivity.usuario_logeado.setEmail(Mail);
+                MainActivity.usuario_logeado.setContraseña(Contraseña);
+                MainActivity.preferencias_usuario.setGeneros();
             }
         }
 

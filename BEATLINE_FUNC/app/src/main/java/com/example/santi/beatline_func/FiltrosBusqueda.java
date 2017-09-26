@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -23,6 +24,7 @@ import okhttp3.Response;
 public class FiltrosBusqueda extends Activity {
     EditText Generos;
     EditText Influencias;
+    ArrayList<String> ArrayGeneros;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

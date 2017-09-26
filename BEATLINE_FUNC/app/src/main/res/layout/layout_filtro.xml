@@ -47,7 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Instrumento"
-        android:paddingLeft="150dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="10dp"
         android:textSize="21dp"
         android:textColor="@color/Violeta"
         android:textStyle="italic"/>
