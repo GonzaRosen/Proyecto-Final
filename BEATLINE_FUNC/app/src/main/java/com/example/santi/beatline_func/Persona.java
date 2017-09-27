@@ -15,8 +15,8 @@ public class Persona {
     private String Contraseña;
     private String Descripcion;
     private String Influencias;
-    private String Genero;
-    private String Instrumentos;
+    private String[] Genero;
+    private String[] Instrumentos;
     private Boolean Login;
 
     public int getId() { return Id; }

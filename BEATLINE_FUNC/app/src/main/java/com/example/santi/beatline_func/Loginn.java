@@ -78,7 +78,6 @@ public class Loginn extends AppCompatActivity {
         @Override
         protected void onPostExecute(Persona p, Preferencias pre) {
             super.onPostExecute(p);
-            super.onPostExecute(pre);
             MainActivity.usuario_logeado.setLogin(p.getLogin());
             String Mail = Email.getText().toString();
             String Contraseña = Password.getText().toString();
