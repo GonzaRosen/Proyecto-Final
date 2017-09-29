@@ -63,7 +63,8 @@
     <EditText
         android:layout_width="180dp"
         android:layout_height="80dp"
-        android:layout_marginLeft="100dp" />
+        android:layout_marginLeft="100dp"
+        android:id="@+id/Instrumento"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -100,7 +101,8 @@
         <EditText
             android:layout_width="180dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="100dp"/>
+            android:layout_marginLeft="100dp"
+            android:id="@+id/Genero"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -134,8 +136,7 @@
         <EditText
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-
-            />
+            android:id="@+id/EdadMin"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -147,7 +148,8 @@
         <EditText
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"/>
+            android:layout_marginLeft="100dp"
+            android:id="@+id/EdadMax"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -182,7 +184,7 @@
         <EditText
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            />
+            android:id="@+id/DistanciaMin"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -195,7 +197,8 @@
         <EditText
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"/>
+            android:layout_marginLeft="100dp"
+            android:id="@+id/DistanciaMax"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

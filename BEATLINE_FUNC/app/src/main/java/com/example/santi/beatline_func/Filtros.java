@@ -7,40 +7,35 @@ import java.lang.reflect.Array;
  */
 
 public class Filtros {
-    private String[] Instrumentos;
-    private String[] Generos;
-    private String[] Influencias;
-    private int EdadMinima;
-    private int EdadMaxima;
-    private int DistanciaMinima;
-    private int DistanciaMaxima;
+    private String Instrumentos;
+    private String Generos;
+    private String EdadMinima;
+    private String EdadMaxima;
+    private String DistanciaMinima;
+    private String DistanciaMaxima;
 
-    public String[] getInstrumentos() { return Instrumentos; }
+    public String getInstrumentos() { return Instrumentos; }
 
-    public void setInstrumentos(String[] instrumentos) { Instrumentos = instrumentos; }
+    public void setInstrumentos(String instrumentos) { Instrumentos = instrumentos; }
 
-    public String[] getGeneros() { return Generos; }
+    public String getGeneros() { return Generos; }
 
-    public void setGeneros(String[] generos) { Generos = generos; }
+    public void setGeneros(String generos) { Generos = generos; }
 
-    public String[] getInfluencias() { return Influencias; }
+    public String getEdadMinima() { return EdadMinima; }
 
-    public void setInfluencias(String[] influencias) { Influencias = influencias; }
+    public void setEdadMinima(String edadMinima) { EdadMinima = edadMinima; }
 
-    public int getEdadMinima() { return EdadMinima; }
+    public String getEdadMaxima() { return EdadMaxima; }
 
-    public void setEdadMinima(int edadMinima) { EdadMinima = edadMinima; }
+    public void setEdadMaxima(String edadMaxima) { EdadMaxima = edadMaxima; }
 
-    public int getEdadMaxima() { return EdadMaxima; }
+    public String getDistanciaMinima() { return DistanciaMinima; }
 
-    public void setEdadMaxima(int edadMaxima) { EdadMaxima = edadMaxima; }
+    public void setDistanciaMinima(String distanciaMinima) { DistanciaMinima = distanciaMinima; }
 
-    public int getDistanciaMinima() { return DistanciaMinima; }
+    public String getGetDistanciaMaxima() { return DistanciaMaxima; }
 
-    public void setDistanciaMinima(int distanciaMinima) { DistanciaMinima = distanciaMinima; }
-
-    public int getGetDistanciaMaxima() { return DistanciaMaxima; }
-
-    public void setGetDistanciaMaxima(int distanciaMaxima) { DistanciaMaxima = distanciaMaxima; }
+    public void setDistanciaMaxima(String distanciaMaxima) { DistanciaMaxima = distanciaMaxima; }
 
 }

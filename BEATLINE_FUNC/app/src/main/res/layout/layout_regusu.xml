@@ -71,24 +71,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:fontFamily="sans-serif-condensed"
-                android:text="Usuario"
-                android:textColor="#222051"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/Usuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:width="280dp"
-                android:textColor="#222051"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:fontFamily="sans-serif-condensed"
                 android:text="Fecha de Nacimiento"
                 android:textColor="#222051"
                 android:textSize="20sp" />

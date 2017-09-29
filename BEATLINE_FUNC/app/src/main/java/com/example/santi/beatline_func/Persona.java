@@ -8,32 +8,36 @@ import javax.crypto.spec.DESKeySpec;
 
 public class Persona {
     private int Id;
+    private String TodosInstrumentos;
+    private String TodosGeneros;
+    private String TodosInfluencias;
     private String Nombre;
     private String Apellido;
-    private String FechaNac;
+    private String Fecha_Nacimiento;
     private String Email;
-    private String Contraseña;
+    private String Password;
     private String Descripcion;
     private String Influencias;
+<<<<<<< HEAD
+    private String Generos;
+    private String Instrumentos;
+=======
     private String[] Genero;
     private String[] Instrumentos;
+>>>>>>> 731539760113f1fdecf58b5b58dfc6cc27809810
     private Boolean Login;
 
     public int getId() { return Id; }
 
-    public void setId(int id) {
-        Id = id;
-    }
+    public void setId(int id) { Id = id; }
 
     public String getNombre() { return Nombre; }
 
     public void setNombre(String nombre) { Nombre = nombre; }
 
-    public String getFechaNac() { return FechaNac; }
+    public String getFechaNac() { return Fecha_Nacimiento; }
 
-    public void setFechaNac(String fechaNac) {
-        FechaNac = fechaNac;
-    }
+    public void setFechaNac(String fechaNac) { Fecha_Nacimiento = fechaNac; }
 
     public String getApellido() { return Apellido; }
 
@@ -43,17 +47,17 @@ public class Persona {
 
     public void setEmail(String email) { Email = email; }
 
-    public String getContraseña() { return Contraseña; }
+    public String getContraseña() { return Password; }
 
-    public void setContraseña(String contraseña) { Contraseña = contraseña; }
+    public void setContraseña(String password) { Password = password; }
 
     public String getDescripcion() { return Descripcion; }
 
     public void setDescripcion(String descripcion) { Descripcion = descripcion; }
 
-    public String getGenero() { return Genero; }
+    public String getGenero() { return Generos; }
 
-    public void setGenero(String genero) { Genero = genero; }
+    public void setGenero(String generos) { Generos = generos; }
 
     public String getInfluencias() { return Influencias; }
 
@@ -66,4 +70,16 @@ public class Persona {
     public Boolean getLogin() { return Login; }
 
     public void setLogin(Boolean login) { Login = login; }
+
+    public String getTodosInstrumentos() { return TodosInstrumentos; }
+
+    public void setTodosInstrumentos(String todosInstrumentos) { TodosInstrumentos = todosInstrumentos; }
+
+    public String getTodosGeneros() { return TodosGeneros; }
+
+    public void setTodosGeneros(String todosGeneros) { TodosGeneros = todosGeneros; }
+
+    public String getTodosInfluencias() { return TodosInfluencias; }
+
+    public void setTodosInfluencias(String todosInfluencias) { TodosInfluencias= todosInfluencias; }
 }

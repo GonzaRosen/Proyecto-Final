@@ -49,7 +49,6 @@ public class RegistracionUsuario extends Activity {
             Terminos = (CheckBox)findViewById(R.id.ChkBox);
             Nombre = (EditText)findViewById(R.id.Nombre);
             Apellido = (EditText)findViewById(R.id.Apellido);
-            Usuario = (EditText)findViewById(R.id.Usuario);
             FechaNac = (CalendarView)findViewById(R.id.FechaNac);
             Email = (EditText)findViewById(R.id.Email);
             Pass = (EditText)findViewById(R.id.Contraseña);
@@ -69,21 +68,21 @@ public class RegistracionUsuario extends Activity {
 
         String Edit1 = Nombre.getText().toString();
         String Edit2 = Apellido.getText().toString();
-        String Edit3 = Usuario.getText().toString();
-        String Edit4 = Email.getText().toString();
-        String Edit5 = Pass.getText().toString();
+        String Edit3 = Email.getText().toString();
+        String Edit4 = Pass.getText().toString();
+        //long Calen = FechaNac.getDate();
 
-        if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || Edit5.equals("")))
+        if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("")))
         {
             if (Terminos.isChecked())
             {
-                String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/post";
+                String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/PONER ACA URL API QUE ME LA OLVIDE";
                 Persona p = new Persona();
                 p.setNombre(Edit1);
                 p.setApellido(Edit2);
-                p.setEmail(Edit4);
-                //p.setFechaNac(FechaNac.getDate());
-                p.setContraseña(Edit5);
+                p.setEmail(Edit3);
+                //p.setFechaNac(Calen);
+                p.setContraseña(Edit4);
 
                 GsonBuilder builder = new GsonBuilder();
                 Gson gson = builder.create();
