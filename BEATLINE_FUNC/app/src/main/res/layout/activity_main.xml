@@ -41,4 +41,11 @@
         android:onClick="RecuPass"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Login"
+        android:background="#94ADFF"
+        android:text="Login"/>
+
 </LinearLayout>

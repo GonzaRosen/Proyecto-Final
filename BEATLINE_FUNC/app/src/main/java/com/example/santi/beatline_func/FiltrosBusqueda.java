@@ -16,6 +16,7 @@ import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -40,7 +41,28 @@ public class FiltrosBusqueda extends Activity {
     public void Buscar(View vista)
     {
         Filtros f = new Filtros();
-        String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get2";
+        String strGenero = Genero.getText().toString();
+        String strInstrumento = Instrumento.getText().toString();
+        String strEdadMin = EdadMin.getText().toString();
+        String strEdadMax = EdadMax.getText().toString();
+        String strDistanciaMin = DistanciaMin.getText().toString();
+        String strDistanciaMax = DistanciaMax.getText().toString();
+        if (strGenero.equals("") || strInstrumento.equals("") ||strEdadMin.equals("") ||strEdadMax.equals("") ||strDistanciaMin.equals("") ||strDistanciaMax.equals(""))
+        {
+            Toast t = Toast.makeText(FiltrosBusqueda.this, "No deje campos en blanco", Toast.LENGTH_LONG);
+            t.show();
+        }
+        else
+        {
+            f.setInstrumentos(strInstrumento);
+            f.setGeneros(strGenero);
+            f.setEdadMaxima(strEdadMax);
+            f.setEdadMinima(strEdadMin);
+            f.setDistanciaMinima(strDistanciaMin);
+            f.setDistanciaMaxima(strDistanciaMax);
+        }
+
+        String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/";
 
         ArrayList<Persona> p = new ArrayList<>();
 
@@ -53,37 +75,29 @@ public class FiltrosBusqueda extends Activity {
         startActivity(Activity);
     }
 
-    private class ConectarAPITask extends AsyncTask<String, Void,  Filtros> {
+    ArrayList<Persona> parseResultGSON(String resultado) {
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+        Persona[] arr = gson.fromJson(resultado, Persona[].class);
+        return new ArrayList<>(Arrays.asList(arr));
+    }
+
+    private class ConectarAPITask extends AsyncTask<String, Void,  ArrayList<Persona>> {
         public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
         @Override
-        protected void onPostExecute(Filtros f) {
-            super.onPostExecute(f);
-            String strGenero = Genero.getText().toString();
-            String strInstrumento = Instrumento.getText().toString();
-            String strEdadMin = EdadMin.getText().toString();
-            String strEdadMax = EdadMax.getText().toString();
-            String strDistanciaMin = DistanciaMin.getText().toString();
-            String strDistanciaMax = DistanciaMax.getText().toString();
+        protected ArrayList<Persona> doInBackground(String... params) {
 
-            if (strGenero.equals("") || strInstrumento.equals("") ||strEdadMin.equals("") ||strEdadMax.equals("") ||strDistanciaMin.equals("") ||strDistanciaMax.equals(""))
-            {
-                Toast t = Toast.makeText(FiltrosBusqueda.this, "No deje campos en blanco", Toast.LENGTH_LONG);
-                t.show();
-            }
-            else
-            {
-                f.setInstrumentos(strInstrumento);
-                f.setGeneros(strGenero);
-                f.setEdadMaxima(strEdadMax);
-                f.setEdadMinima(strEdadMin);
-                f.setDistanciaMinima(strDistanciaMin);
-                f.setDistanciaMaxima(strDistanciaMax);
-            }
+            String method = params[0];
+            String urlApi = params[1];
 
+            if (method.equals("POST")) {
+                String json = params[2];
+                return postFiltros(urlApi, json);
+            }
+            return null;
         }
 
-        private void postFiltros(String urlApi, String json) {
+        private ArrayList<Persona> postFiltros(String urlApi, String json) {
             OkHttpClient client = new OkHttpClient();
             RequestBody body = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
@@ -93,26 +107,24 @@ public class FiltrosBusqueda extends Activity {
 
             try {
                 Response response = client.newCall(request).execute();
-                return;
+                String strResultado = response.body().string();
+                ArrayList<Persona> p = parseResultGSON(strResultado);
+                return p;
             } catch (IOException e) {
                 Log.d("Error :", e.getMessage());
-                return;
-
+                return null;
             }
         }
 
         @Override
-        protected Filtros doInBackground(String... params) {
+        protected void onPostExecute(ArrayList<Persona> p) {
+            super.onPostExecute(p);
 
-            String method = params[0];
-            String urlApi = params[1];
+            //ACA TENGO QUE CARGAR LOS DATOS AL LISTVIEW
 
-            if (method.equals("POST")) {
-                String json = params[2];
-                postFiltros(urlApi, json);
-            }
-            return null;
         }
+
+
 
         private Filtros getFiltros(String urlApi) {
             String strResultado;

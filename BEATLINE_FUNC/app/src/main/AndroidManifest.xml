@@ -25,6 +25,7 @@
         <activity android:name=".ConfirmacionRecu" />
         <activity android:name=".Loginn" />
         <activity android:name=".Settings" />
+        <activity android:name=".RegistracionPreferencias" />
     </application>
 
 </manifest>

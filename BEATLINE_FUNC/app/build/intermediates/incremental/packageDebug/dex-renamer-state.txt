@@ -1,7 +1,7 @@
-#Fri Aug 11 09:57:53 ART 2017
-base.0=Z\:\\Proyecto-Final\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_36294903e5a2875878bdc3d60173ed8adf8a2732
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=Z\:\\Proyecto-Final\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_8bcddb15bc31fcdf74a4e67035845fcb606ef7bf\\classes.dex
-base.1=Z\:\\Proyecto-Final\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_8bcddb15bc31fcdf74a4e67035845fcb606ef7bf
-file.0=Z\:\\Proyecto-Final\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_36294903e5a2875878bdc3d60173ed8adf8a2732\\classes.dex
+#Fri Sep 29 12:03:27 ART 2017
+base.0=F\:\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_e9c81de01aec5c049883a79550dc909782b7ad50
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=F\:\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c9b02e0e2bcfa73a285ba4863b9cb9509f68c687\\classes.dex
+base.1=F\:\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c9b02e0e2bcfa73a285ba4863b9cb9509f68c687
+file.0=F\:\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_e9c81de01aec5c049883a79550dc909782b7ad50\\classes.dex

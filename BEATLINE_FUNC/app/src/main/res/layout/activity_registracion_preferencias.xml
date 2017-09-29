@@ -24,7 +24,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="Caracteristicas"
         android:textSize="29sp"
         android:textAlignment="center"
@@ -52,7 +51,16 @@
         android:textColor="#222051"
         android:textSize="20sp"/>
 
-    <Spinner
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/instru"
+        android:textColor="@color/Negro"
+        android:textSize="14sp"
+        android:layout_marginTop="5dp"/>
+
+    <!--<Spinner
         android:id="@+id/instrumentos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,7 +68,7 @@
         android:layout_marginTop="5dp"
         android:width="280dp"
         android:textColor="@color/Negro"
-        android:textSize="20sp" />
+        android:textSize="20sp" />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,7 +80,16 @@
         android:textColor="#222051"
         android:textSize="20sp" />
 
-    <Spinner
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/gene"
+        android:textColor="@color/Negro"
+        android:textSize="14sp"
+        android:layout_marginTop="5dp"/>
+
+    <!--<Spinner
         android:id="@+id/generos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,7 +97,7 @@
         android:layout_marginTop="5dp"
         android:width="280dp"
         android:textColor="@color/Negro"
-        android:textSize="20sp" />
+        android:textSize="20sp" />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -92,7 +109,16 @@
         android:textColor="#222051"
         android:textSize="20sp" />
 
-    <Spinner
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/influ"
+        android:textColor="@color/Negro"
+        android:textSize="14sp"
+        android:layout_marginTop="5dp"/>
+
+    <!--<Spinner
         android:id="@+id/influencias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,7 +126,7 @@
         android:layout_marginTop="5dp"
         android:width="280dp"
         android:textColor="@color/Negro"
-        android:textSize="20sp" />
+        android:textSize="20sp" />-->
 
     <Button
         android:layout_width="wrap_content"

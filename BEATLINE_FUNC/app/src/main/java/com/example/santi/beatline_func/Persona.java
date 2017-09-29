@@ -18,14 +18,8 @@ public class Persona {
     private String Password;
     private String Descripcion;
     private String Influencias;
-<<<<<<< HEAD
     private String Generos;
     private String Instrumentos;
-=======
-    private String[] Genero;
-    private String[] Instrumentos;
->>>>>>> 731539760113f1fdecf58b5b58dfc6cc27809810
-    private Boolean Login;
 
     public int getId() { return Id; }
 
@@ -66,10 +60,6 @@ public class Persona {
     public String getInstrumentos() { return Instrumentos; }
 
     public void setInstrumentos(String instrumentos) { Instrumentos = instrumentos; }
-
-    public Boolean getLogin() { return Login; }
-
-    public void setLogin(Boolean login) { Login = login; }
 
     public String getTodosInstrumentos() { return TodosInstrumentos; }
 

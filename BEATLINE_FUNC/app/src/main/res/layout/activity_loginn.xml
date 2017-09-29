@@ -40,4 +40,14 @@
         android:background="@color/Verde"
         android:onClick="Login"/>
 
+    <Button
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="221dp"
+        android:layout_marginTop="10dp"
+        android:text="Continuar"
+        android:background="#7D22"
+        android:onClick="Continuar"
+        android:id="@+id/conti"/>
+
 </LinearLayout>

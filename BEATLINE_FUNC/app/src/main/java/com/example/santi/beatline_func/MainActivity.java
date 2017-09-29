@@ -35,4 +35,9 @@ public class MainActivity extends AppCompatActivity {
         Intent Activity = new Intent(getApplicationContext(), PerfilUsuario.class);
         startActivity(Activity);
     }
+    public void Login (View view)
+    {
+        Intent Activity = new Intent(getApplicationContext(), Loginn.class);
+        startActivity(Activity);
+    }
 }

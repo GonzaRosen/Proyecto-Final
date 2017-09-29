@@ -1,4 +1,4 @@
-﻿package com.example.santi.beatline_func;
+package com.example.santi.beatline_func;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -76,7 +76,6 @@ public class RegistracionUsuario extends Activity {
         {
             if (Terminos.isChecked())
             {
-                String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/PONER ACA URL API QUE ME LA OLVIDE";
                 Persona p = new Persona();
                 p.setNombre(Edit1);
                 p.setApellido(Edit2);
@@ -84,14 +83,8 @@ public class RegistracionUsuario extends Activity {
                 //p.setFechaNac(Calen);
                 p.setContraseña(Edit4);
 
-                GsonBuilder builder = new GsonBuilder();
-                Gson gson = builder.create();
-                System.out.println(gson.toJson(p));
-
-                new ConectarAPITask().execute("POST",urlApi, gson.toJson(p));
-
                 Intent Activity;
-                Activity = new Intent(this,MainActivity.class);
+                Activity = new Intent(this,RegistracionPreferencias.class);
                 startActivity(Activity);
             }
             else
@@ -107,89 +100,5 @@ public class RegistracionUsuario extends Activity {
             toast1 = Toast.makeText(RegistracionUsuario.this, "No deje campos en blanco", Toast.LENGTH_SHORT);
             toast1.show();
         }
-    }
-
-    private class ConectarAPITask extends AsyncTask<String, Void,  Persona> {
-        public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-
-        @Override
-        protected void onPostExecute(Persona persona) {
-            super.onPostExecute(persona);
-            super.onPostExecute(persona);
-            //Log.d("ope :",persona.getNombre());
-            if (persona != null) {
-
-            }
-
-        }
-
-
-        private void postPersona(String urlApi, String json) {
-            OkHttpClient client = new OkHttpClient();
-            RequestBody body = RequestBody.create(JSON, json);
-            Request request = new Request.Builder()
-                    .url(urlApi)
-                    .post(body)
-                    .build();
-
-            try {
-                Response response = client.newCall(request).execute();
-                return;
-            } catch (IOException e) {
-                Log.d("Error :", e.getMessage());
-                return;
-
-            }
-        }
-
-        @Override
-        protected Persona doInBackground(String... params) {
-
-            String method = params[0];
-            String urlApi = params[1];
-            String Resultado;
-
-            if (method.equals("POST")) {
-                String json = params[2];
-                postPersona(urlApi, json);
-            }
-            return null;
-        }
-
-        private Persona getPersona(String urlApi) {
-            String strResultado;
-            OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder()
-                    .url(urlApi)
-                    .build();
-
-            try {
-                Response response = client.newCall(request).execute();
-                strResultado = response.body().string();
-                Log.d("Santi", strResultado );
-                Persona p = parsearResultado(strResultado );
-                return p;
-            }
-            catch (IOException e){
-                return null;
-
-            }
-        }
-
-        private Persona parsearResultado(String respuesta)   {
-            if (respuesta == null || respuesta.length()==0)
-                return null;
-            try {
-                Gson gson = new Gson();
-                Persona[] p = gson.fromJson(respuesta, Persona[].class);
-                return p[0];
-
-            }
-            catch (Exception e) {
-                return null;
-            }
-
-        }
-
     }
 }
