@@ -13,10 +13,9 @@ namespace ApiEjemplo.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public DateTime Fecha_Nacimiento { get; set; }
-        
-        //public List<Generos> Generos { get; set; }
-        //public List<Instrumentos> Instrumentos { get; set; }
-        public string Influencias { get; set; }      
+        public string  Instrumentos { get; set; }   
+        public string  Generos { get; set; }
+        public string Influencias { get; set; }  
         public string UrlImagen { get; set; }
         public HttpPostedFileBase Foto { get; set; }
         public string Descripcion { get; set; }

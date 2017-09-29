@@ -32,14 +32,16 @@ namespace ApiEjemplo.Data
             #endregion
             string sInsert =
                 string.Format(
-            "Insert into tusuarios (Nombre,Apellido,Email,Password,Fecha_Nacimiento,Influencias" +
+            "Insert into tusuarios (Nombre,Apellido,Email,Password,Fecha_Nacimiento,Instrumentos,Generos,Influencias" +
                 ",UrlImagen," + "Descripcion,Ubicacion) " +
-                "values ('{0}','{1}','{2}','{3}',{4},'{5}','{6}','{7}',{8})" ,
+                "values ('{0}','{1}','{2}','{3}',{4},'{5}','{6}','{7}','{8}','{9}',{10})",
                 oUsuario.Nombre,
                 oUsuario.Apellido,
                 oUsuario.Email,
                 oUsuario.Password,
                 oUsuario.Fecha_Nacimiento == null ? "NULL": "'"+oUsuario.Fecha_Nacimiento.ToString("yyyy-MM-dd")+"'", 
+                oUsuario.Instrumentos,
+                oUsuario.Generos,
                 oUsuario.Influencias,
                 oUsuario.UrlImagen,
                 oUsuario.Descripcion,
@@ -136,6 +138,8 @@ namespace ApiEjemplo.Data
             oUsuario.Email = Row.Field<string>("Email");
             oUsuario.Password = Row.Field<string>("Password");
             oUsuario.Fecha_Nacimiento = Row.Field<DateTime>("Fecha_Nacimiento");
+            oUsuario.Instrumentos = Row.Field<string>("Instrumentos");
+            oUsuario.Generos = Row.Field<string>("Generos");
             oUsuario.Influencias = Row.Field<string>("Influencias");
             oUsuario.UrlImagen = Row.Field<string>("UrlImagen");
             oUsuario.Descripcion = Row.Field<string>("Descripcion");

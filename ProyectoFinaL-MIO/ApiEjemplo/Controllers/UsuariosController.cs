@@ -17,7 +17,7 @@ namespace ApiEjemplo.Controllers
         {
             if (oUsuario == null || string.IsNullOrEmpty(oUsuario.Nombre) || string.IsNullOrEmpty(oUsuario.Apellido))
             {
-                return BadRequest("Datos incorrectos.");
+                return BadRequest("Datos vacios.");
             }
             try
             {

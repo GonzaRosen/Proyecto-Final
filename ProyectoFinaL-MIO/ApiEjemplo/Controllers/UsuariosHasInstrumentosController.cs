@@ -12,14 +12,14 @@ namespace ApiEjemplo.Controllers
 {
     public class UsuariosHasInstrumentosController
     {
-        [ResponseType(typeof(UsuariosHasInstrumentos))]
-        public IHttpActionResult Post(UsuariosHasInstrumentos oUsuario, string NombreUsu, string NombreInst)
+        /*[ResponseType(typeof(UsuariosHasInstrumentos))]
+        public IHttpActionResult PostIUHI(UsuariosHasInstrumentos oUsuario, string NombreUsu, string NombreInst)
         {
             int IdInstrumento = InstrumentosData.ObtenerInstrumentosPorNombre(NombreInst);
             int IdUsuario = UsuariosData.ObtenerUsuariosPorNombre(NombreUsu);   
             UsuariosHasInstrumentosData.InsertarUHI(oUsuario, IdUsuario, IdInstrumento);
 
             return Ok();
-        }
+        }*/
     }
 }
