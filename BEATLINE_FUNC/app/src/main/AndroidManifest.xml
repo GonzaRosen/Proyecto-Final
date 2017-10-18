@@ -26,6 +26,10 @@
         <activity android:name=".Loginn" />
         <activity android:name=".Settings" />
         <activity android:name=".RegistracionPreferencias" />
+        <activity
+            android:name=".ListaPersonas"
+            android:label="@string/title_activity_lista_personas"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
