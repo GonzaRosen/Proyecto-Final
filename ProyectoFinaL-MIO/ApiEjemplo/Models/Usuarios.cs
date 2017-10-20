@@ -19,7 +19,7 @@ namespace ApiEjemplo.Models
         public string UrlImagen { get; set; }
         public HttpPostedFileBase Foto { get; set; }
         public string Descripcion { get; set; }
-        public double Ubicacion { get; set; }
+        public string Ubicacion { get; set; }
 
     }
 }

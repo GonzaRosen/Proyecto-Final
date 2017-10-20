@@ -34,7 +34,7 @@ namespace ApiEjemplo.Data
                 string.Format(
             "Insert into tusuarios (Nombre,Apellido,Email,Password,Fecha_Nacimiento,Instrumentos,Generos,Influencias" +
                 ",UrlImagen," + "Descripcion,Ubicacion) " +
-                "values ('{0}','{1}','{2}','{3}',{4},'{5}','{6}','{7}','{8}','{9}',{10})",
+                "values ('{0}','{1}','{2}','{3}',{4},'{5}','{6}','{7}','{8}','{9}','{10}')",
                 oUsuario.Nombre,
                 oUsuario.Apellido,
                 oUsuario.Email,
@@ -129,6 +129,24 @@ namespace ApiEjemplo.Data
             return lista;
         }
 
+        public static List<Usuarios> ObtenerUsuariosPorRequisitos(string Instrumentos, string Generos, string Influencias, string Ubicacion)
+        {
+            string select = "select * from tusuarios where Instrumentos like '%" + Instrumentos + "%' || Generos like '%" + Generos + "%' || Influencias like '%" + Influencias + "%' && Ubicacion  = '" + Ubicacion + "'";
+            DataTable dt = DBHelper.EjecutarSelect(select);
+            List<Usuarios> lista = new List<Usuarios>();
+            Usuarios oUsuario;
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    oUsuario = ObtenerPorRow(row);
+                    lista.Add(oUsuario);
+                }
+                oUsuario = ObtenerPorRow(dt.Rows[0]);
+            }
+            return lista;
+        }
+
         public static Usuarios ObtenerPorRow(DataRow Row)
         {
             Usuarios oUsuario = new Usuarios();
@@ -143,7 +161,7 @@ namespace ApiEjemplo.Data
             oUsuario.Influencias = Row.Field<string>("Influencias");
             oUsuario.UrlImagen = Row.Field<string>("UrlImagen");
             oUsuario.Descripcion = Row.Field<string>("Descripcion");
-            oUsuario.Ubicacion = Row.Field<double>("Ubicacion");
+            oUsuario.Ubicacion = Row.Field<string>("Ubicacion");
             return oUsuario;
         }
     }
