@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -26,6 +27,7 @@ import okhttp3.Response;
 
 public class FiltrosBusqueda extends Activity {
     EditText Genero, Instrumento, EdadMin, EdadMax, DistanciaMin, DistanciaMax;
+    LinearLayout layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

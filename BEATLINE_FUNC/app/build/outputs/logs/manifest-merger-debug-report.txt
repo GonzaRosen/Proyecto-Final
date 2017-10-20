@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-35:12
+ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:3:5-46
 		INJECTED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
@@ -22,7 +22,7 @@ ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\A
 	android:name
 		ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:6:22-76
 application
-ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:8:5-33:19
+ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:8:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\42660700\.android\build-cache\320770101d25cf09e62f2ee923992912399cee64\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:23.4.0] C:\Users\42660700\.android\build-cache\09d39b97587aa8e576955c6190822951bf36cacd\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\42660700\.android\build-cache\d6a24af79496941a7e73476298afeb518ca93d28\output\AndroidManifest.xml:25:5-20
@@ -85,14 +85,6 @@ activity#com.example.santi.beatline_func.RegistracionPreferencias
 ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:28:9-62
 	android:name
 		ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:28:19-59
-activity#com.example.santi.beatline_func.ListaPersonas
-ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:29:9-32:68
-	android:label
-		ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:31:13-66
-	android:theme
-		ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:32:13-56
-	android:name
-		ADDED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:30:13-42
 uses-sdk
 INJECTED from C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\42660700\.android\build-cache\320770101d25cf09e62f2ee923992912399cee64\output\AndroidManifest.xml:5:5-7:41
