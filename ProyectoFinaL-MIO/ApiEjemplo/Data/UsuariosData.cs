@@ -131,7 +131,7 @@ namespace ApiEjemplo.Data
 
         public static List<Usuarios> ObtenerUsuariosPorRequisitos(string Instrumentos, string Generos, string Influencias, string Ubicacion)
         {
-            string select = "select * from tusuarios where Instrumentos like '%" + Instrumentos + "%' || Generos like '%" + Generos + "%' || Influencias like '%" + Influencias + "%' && Ubicacion  = '" + Ubicacion + "'";
+            string select = "select * from tusuarios where Ubicacion  = '" + Ubicacion + "' && Instrumentos like '%" + Instrumentos + "%' || Generos like '%" + Generos + "%' || Influencias like '%" + Influencias + "%'";
             DataTable dt = DBHelper.EjecutarSelect(select);
             List<Usuarios> lista = new List<Usuarios>();
             Usuarios oUsuario;
