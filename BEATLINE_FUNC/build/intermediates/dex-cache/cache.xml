@@ -17,7 +17,7 @@
         optimize="true"
         revision="25.0.0"
         sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_fc18a0fdc80391aaf9a93e629f1a6f03cf6a9cf4\classes.dex" />
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_fc18a0fdc80391aaf9a93e629f1a6f03cf6a9cf4\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -57,21 +57,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="F:\BEATLINE_FUNC\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b56fb3e1dd69a1ccb55b9af7d72b275c825b9de2">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_c9b02e0e2bcfa73a285ba4863b9cb9509f68c687\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\42660700\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.4\695b63d702f505b9b916e02272e3b6381bade7f\gson-2.4.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.4_4481842c32e53cfff36d5b51215ea42cccccc1ce\classes.dex" />
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.4_4481842c32e53cfff36d5b51215ea42cccccc1ce\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -80,7 +71,7 @@
         optimize="true"
         revision="25.0.0"
         sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_769064fe3efb135a14f187bc5c200af0ef48b78c\classes.dex" />
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_769064fe3efb135a14f187bc5c200af0ef48b78c\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -89,7 +80,16 @@
         optimize="true"
         revision="25.0.0"
         sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f7806b3147fafe250331f5c663145922f9c6f963\classes.dex" />
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f7806b3147fafe250331f5c663145922f9c6f963\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d62ad248cda160c704798e39cba5b957398533e4\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -98,7 +98,7 @@
         optimize="true"
         revision="25.0.0"
         sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_106c02d8a97cbabdc41e9681ca559dc24246143b\classes.dex" />
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_106c02d8a97cbabdc41e9681ca559dc24246143b\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -116,7 +116,7 @@
         optimize="true"
         revision="25.0.0"
         sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_da7d76effda2acbbb775d7810c7a174f98e7c902\classes.dex" />
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_da7d76effda2acbbb775d7810c7a174f98e7c902\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -125,16 +125,16 @@
         optimize="true"
         revision="25.0.0"
         sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_84855eab8194ce6d2a946b5f951384f3cef1c1b0\classes.dex" />
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_84855eab8194ce6d2a946b5f951384f3cef1c1b0\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="F:\BEATLINE_FUNC\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_e9c81de01aec5c049883a79550dc909782b7ad50\classes.dex" />
+        sha1="67052af317e201695d6e57708f8c56e05f8a31a3">
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_c4fc1b5bccb86e5c4f96bfd17328df36dec0baea\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -143,7 +143,7 @@
         optimize="true"
         revision="25.0.0"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9ec33b928bfeafca62ea47820e670f7d7c055c7e\classes.dex" />
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9ec33b928bfeafca62ea47820e670f7d7c055c7e\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -152,7 +152,7 @@
         optimize="true"
         revision="25.0.0"
         sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
-        <dex dex="F:\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_11eacf30340edf71b8393820e08b8d5629014108\classes.dex" />
+        <dex dex="C:\Users\42660700\Desktop\proyecto-final\BEATLINE_FUNC\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_11eacf30340edf71b8393820e08b8d5629014108\classes.dex" />
     </item>
     <item
         is-multidex="true"

@@ -65,5 +65,12 @@
             android:textSize="20dp"
             android:id="@+id/influencias"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubciacion"
+            android:textColor="@color/Negro"
+            android:textSize="20dp"
+            android:id="@+id/Ubicacion"/>
     </LinearLayout>
 </ScrollView>

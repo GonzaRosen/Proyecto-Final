@@ -8,12 +8,17 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,18 +31,32 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class FiltrosBusqueda extends Activity {
-    EditText Genero, Instrumento, EdadMin, EdadMax, DistanciaMin, DistanciaMax;
+    EditText Genero, Instrumento, Influencia, Ubicacion;
+    TextView tv1, tv2, tv3, tv4, tv5;
+    ImageView Logo;
+    Button volver, buscar;
     LinearLayout layout;
+    AdapterPersona adapterPersona;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_filtro);
         Genero = (EditText)findViewById(R.id.Genero);
         Instrumento = (EditText)findViewById(R.id.Instrumento);
-        EdadMin = (EditText)findViewById(R.id.EdadMin);
-        EdadMax = (EditText)findViewById(R.id.EdadMax);
-        DistanciaMin = (EditText)findViewById(R.id.DistanciaMin);
-        DistanciaMax = (EditText)findViewById(R.id.DistanciaMax);
+        Influencia = (EditText)findViewById(R.id.Influenciaa);
+        Ubicacion = (EditText)findViewById(R.id.Ubicacionn);
+        tv1 = (TextView) findViewById(R.id.textView);
+        tv2 = (TextView) findViewById(R.id.tvInstrumento);
+        tv3 = (TextView) findViewById(R.id.tvInfluencia);
+        tv4 = (TextView) findViewById(R.id.tvGenero);
+        tv5 = (TextView) findViewById(R.id.tvUbiacion);
+        Logo = (ImageView) findViewById(R.id.Logo);
+        volver = (Button) findViewById(R.id.Volver);
+        buscar =(Button) findViewById(R.id.Buscar);
+
+        ListView lv = (ListView) findViewById(R.id.Lista);
+        adapterPersona = new AdapterPersona(getBaseContext(),new ArrayList<Persona>());
+        lv.setAdapter(adapterPersona);
     }
 
     public void Buscar(View vista)
@@ -45,11 +64,9 @@ public class FiltrosBusqueda extends Activity {
         Filtros f = new Filtros();
         String strGenero = Genero.getText().toString();
         String strInstrumento = Instrumento.getText().toString();
-        String strEdadMin = EdadMin.getText().toString();
-        String strEdadMax = EdadMax.getText().toString();
-        String strDistanciaMin = DistanciaMin.getText().toString();
-        String strDistanciaMax = DistanciaMax.getText().toString();
-        if (strGenero.equals("") || strInstrumento.equals("") ||strEdadMin.equals("") ||strEdadMax.equals("") ||strDistanciaMin.equals("") ||strDistanciaMax.equals(""))
+        String strInfluencia = Influencia.getText().toString();
+        String strUbicacion = Ubicacion.getText().toString();
+        if (strGenero.equals("") || strInstrumento.equals("") ||strInfluencia.equals("") ||strUbicacion.equals(""))
         {
             Toast t = Toast.makeText(FiltrosBusqueda.this, "No deje campos en blanco", Toast.LENGTH_LONG);
             t.show();
@@ -58,102 +75,63 @@ public class FiltrosBusqueda extends Activity {
         {
             f.setInstrumentos(strInstrumento);
             f.setGeneros(strGenero);
-            f.setEdadMaxima(strEdadMax);
-            f.setEdadMinima(strEdadMin);
-            f.setDistanciaMinima(strDistanciaMin);
-            f.setDistanciaMaxima(strDistanciaMax);
+            f.setUbicacion(strUbicacion);
+            f.setInfluencias(strInfluencia);
         }
 
         String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/";
-
-        ArrayList<Persona> p = new ArrayList<>();
-
-        GsonBuilder builder = new GsonBuilder();
-        Gson gson = builder.create();
-        System.out.println(gson.toJson(f));
-        new FiltrosBusqueda.ConectarAPITask().execute("POST",urlApi, gson.toJson(f));
-        Intent Activity;
-        Activity = new Intent(this,MainActivity.class);
-        startActivity(Activity);
+        new ConectarAPITask().execute(urlApi);
+        Genero.setVisibility(View.GONE);
+        Instrumento.setVisibility(View.GONE);
+        Influencia.setVisibility(View.GONE);
+        Ubicacion.setVisibility(View.GONE);
+        tv1.setVisibility(View.GONE);
+        tv2.setVisibility(View.GONE);
+        tv3.setVisibility(View.GONE);
+        tv4.setVisibility(View.GONE);
+        tv5.setVisibility(View.GONE);
+        Logo.setVisibility(View.GONE);
+        volver.setVisibility(View.GONE);
+        buscar.setVisibility(View.GONE);
     }
 
-    ArrayList<Persona> parseResultGSON(String resultado) {
-        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
-        Persona[] arr = gson.fromJson(resultado, Persona[].class);
-        return new ArrayList<>(Arrays.asList(arr));
-    }
-
-    private class ConectarAPITask extends AsyncTask<String, Void,  ArrayList<Persona>> {
+    private class ConectarAPITask extends AsyncTask<String, Void, Persona[]> {
         public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
         @Override
-        protected ArrayList<Persona> doInBackground(String... params) {
+        protected Persona[] doInBackground(String... params) {
 
-            String method = params[0];
-            String urlApi = params[1];
-
-            if (method.equals("POST")) {
-                String json = params[2];
-                return postFiltros(urlApi, json);
-            }
-            return null;
-        }
-
-        private ArrayList<Persona> postFiltros(String urlApi, String json) {
+            String urlApi = params[0];
             OkHttpClient client = new OkHttpClient();
-            RequestBody body = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
                     .url(urlApi)
-                    .post(body)
                     .build();
 
             try {
                 Response response = client.newCall(request).execute();
-                String strResultado = response.body().string();
-                ArrayList<Persona> p = parseResultGSON(strResultado);
-                return p;
-            } catch (IOException e) {
+                Persona[] personas = parsearResultado(response.body().string());
+                return personas;
+            }
+            catch (IOException e){
                 Log.d("Error :", e.getMessage());
                 return null;
+
             }
         }
 
         @Override
-        protected void onPostExecute(ArrayList<Persona> p) {
-            super.onPostExecute(p);
-
-            //ACA TENGO QUE CARGAR LOS DATOS AL LISTVIEW
-
+        protected void onPostExecute(Persona[] personas) {
+            super.onPostExecute(personas);
+            adapterPersona.setPersonas(personas);
         }
 
-
-
-        private Filtros getFiltros(String urlApi) {
-            String strResultado;
-            OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder()
-                    .url(urlApi)
-                    .build();
-
-            try {
-                Response response = client.newCall(request).execute();
-                strResultado = response.body().string();
-                Filtros f = parsearResultado(strResultado );
-                return f;
-            }
-            catch (IOException e){
-                return null;
-
-            }
-        }
-
-        private Filtros parsearResultado(String respuesta)   {
+        private Persona[] parsearResultado(String respuesta)   {
             if (respuesta == null || respuesta.length()==0)
                 return null;
             try {
                 Gson gson = new Gson();
-                Filtros[] p = gson.fromJson(respuesta, Filtros[].class);
-                return p[0];
+                Persona[] p = gson.fromJson(respuesta, Persona[].class);
+                return p;
 
             }
             catch (Exception e) {
@@ -174,6 +152,12 @@ public class FiltrosBusqueda extends Activity {
     {
         Toast toast1;
         toast1 = Toast.makeText(FiltrosBusqueda.this, "Vista agregar género nuevo", Toast.LENGTH_SHORT);
+        toast1.show();
+    }
+    public void link3(View Vista)
+    {
+        Toast toast1;
+        toast1 = Toast.makeText(FiltrosBusqueda.this, "Vista agregar influencia nueva", Toast.LENGTH_SHORT);
         toast1.show();
     }
     public void Volver (View vista)

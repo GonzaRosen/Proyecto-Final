@@ -3,216 +3,97 @@
     android:layout_width="match_parent"
     android:gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<LinearLayout android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <ImageView
-        android:layout_width="390dp"
-        android:layout_height="100dp"
-        android:src="@drawable/logo"/>
+        <ImageView
+            android:layout_width="390dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            android:id="@+id/Logo"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿Qué estás buscando?"
-        android:textSize="30dp"
-        android:textColor="@color/Violeta"
-        android:layout_marginLeft="40dp"/>
-
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="100dp">
-        <RadioButton android:id="@+id/banda"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Banda"
-            android:onClick="onRadioButtonClicked"
-            android:textSize="18dp"
-            android:textColor="#222051"/>
-        <RadioButton android:id="@+id/musico"
+            android:text="¿Qué estás buscando?"
+            android:textSize="30dp"
+            android:textColor="@color/Violeta"
+            android:layout_marginLeft="40dp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Músicos"
-            android:onClick="onRadioButtonClicked"
-            android:textSize="18dp"
-            android:textColor="@color/Violeta"/>
-    </RadioGroup>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Instrumento"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="10dp"
-        android:textSize="21dp"
-        android:textColor="@color/Violeta"
-        android:textStyle="italic"/>
-
-    <Spinner
-        android:id="@+id/Spinner01"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dropdown"
-        android:layout_marginLeft="100dp"/>
-
-    <EditText
-        android:layout_width="180dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="100dp"
-        android:id="@+id/Instrumento"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿No encontras tu insturmento?"
-        android:textColor="#6B6B6B"
-        android:layout_marginLeft="100dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Toca acá para agregar otro."
-        android:textColor="#6B6B6B"
-        android:onClick="link1"
-        android:layout_marginLeft="100dp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Género"
-        android:layout_marginLeft="150dp"
-        android:textSize="21dp"
-        android:textColor="#222051"
-        android:textStyle="italic"/>
-
-        <Spinner
-            android:id="@+id/Spinner02"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dropdown"
-            android:layout_marginLeft="100dp" />
+            android:text="Instrumento"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:textSize="21dp"
+            android:textColor="@color/Violeta"
+            android:textStyle="italic"
+            android:id="@+id/tvInstrumento"/>
 
         <EditText
             android:layout_width="180dp"
-            android:layout_height="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:id="@+id/Instrumento"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Género"
+            android:layout_marginLeft="100dp"
+            android:textSize="21dp"
+            android:textColor="#222051"
+            android:textStyle="italic"
+            android:id="@+id/tvGenero"/>
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="100dp"
             android:id="@+id/Genero"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿No encontras tu género?"
-        android:textColor="#6B6B6B"
-        android:layout_marginLeft="100dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Toca acá para agregar otro."
-        android:textColor="#6B6B6B"
-        android:onClick="link2"
-        android:layout_marginLeft="100dp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edad"
-        android:textSize="22dp"
-        android:textColor="@color/Violeta"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"/>
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        >
-        <EditText
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/EdadMin"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="min."
-            android:textSize="20dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="12dp"
-            android:textColor="@color/Violeta"/>
-        <EditText
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
+            android:text="Influencia"
+            android:textSize="22dp"
+            android:textColor="@color/Violeta"
             android:layout_marginLeft="100dp"
-            android:id="@+id/EdadMax"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="max."
-            android:textSize="20dp"
-            android:layout_marginLeft="145dp"
-            android:layout_marginTop="12dp"
-            android:textColor="@color/Violeta"/>
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Distancia"
-        android:textSize="22dp"
-        android:textColor="@color/Violeta"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="(en km. a la redonda)"
-        android:textSize="12dp"
-        android:textColor="@color/Violeta"
-        android:layout_marginLeft="100dp"
-        />
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp">
-        <EditText
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/DistanciaMin"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="min."
-            android:textSize="20dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="12dp"
-            android:textColor="@color/Violeta"/>
+            android:layout_marginTop="20dp"
+            android:id="@+id/tvInfluencia"/>
 
         <EditText
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="100dp"
-            android:id="@+id/DistanciaMax"/>
+            android:id="@+id/Influenciaa"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="max."
+            android:text="Ubicación"
+            android:textSize="22dp"
+            android:textColor="@color/Violeta"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/tvUbicacion"/>
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="40dp"
             android:textSize="20dp"
-            android:layout_marginLeft="145dp"
-            android:layout_marginTop="12dp"
-            android:textColor="@color/Violeta"/>
-    </RelativeLayout>
+            android:layout_marginLeft="100dp"
+            android:id="@+id/Ubicacion"/>
 
         <Button
             android:layout_height="40dp"
             android:layout_width="wrap_content"
-            android:id="@+id/Boton_Buscar"
+            android:id="@+id/Buscar"
             android:onClick="Buscar"
             android:text="BUSCAR"
             android:background="@color/Verde"
@@ -227,12 +108,12 @@
             android:background="#FF4"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Lista"></ListView>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Lista"></ListView>
 
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>

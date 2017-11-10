@@ -29,6 +29,7 @@ public class PerfilUsuario extends Activity{
     TextView Genero;
     TextView Influ;
     TextView Instru;
+    TextView Ubicacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,7 @@ public class PerfilUsuario extends Activity{
         Influ = (TextView) findViewById(R.id.influencias);
         Genero = (TextView) findViewById(R.id.generos);
         Instru = (TextView) findViewById(R.id.instrumentos);
+        Ubicacion = (TextView) findViewById(R.id.Ubicacion);
 
         Nombre.setText("Nombre: " + MainActivity.usuario_logeado.getNombre());
         Apellido.setText("Apellido: " + MainActivity.usuario_logeado.getApellido());
@@ -50,5 +52,6 @@ public class PerfilUsuario extends Activity{
         Influ.setText("Influencias: " + MainActivity.usuario_logeado.getInfluencias());
         Genero.setText("Géneros: " + MainActivity.usuario_logeado.getGenero());
         Instru.setText("Instrumentos: " + MainActivity.usuario_logeado.getInstrumentos());
+        Ubicacion.setText("Ubicacion: " + MainActivity.usuario_logeado.getUbicacion());
     }
 }

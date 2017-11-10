@@ -9,10 +9,8 @@ import java.lang.reflect.Array;
 public class Filtros {
     private String Instrumentos;
     private String Generos;
-    private String EdadMinima;
-    private String EdadMaxima;
-    private String DistanciaMinima;
-    private String DistanciaMaxima;
+    private String Influencias;
+    private String Ubicacion;
 
     public String getInstrumentos() { return Instrumentos; }
 
@@ -22,20 +20,12 @@ public class Filtros {
 
     public void setGeneros(String generos) { Generos = generos; }
 
-    public String getEdadMinima() { return EdadMinima; }
+    public String getUbicacion() { return Ubicacion; }
 
-    public void setEdadMinima(String edadMinima) { EdadMinima = edadMinima; }
+    public void setUbicacion(String ubicacion) { Ubicacion = ubicacion; }
 
-    public String getEdadMaxima() { return EdadMaxima; }
+    public String getInfluencias() { return Influencias; }
 
-    public void setEdadMaxima(String edadMaxima) { EdadMaxima = edadMaxima; }
-
-    public String getDistanciaMinima() { return DistanciaMinima; }
-
-    public void setDistanciaMinima(String distanciaMinima) { DistanciaMinima = distanciaMinima; }
-
-    public String getGetDistanciaMaxima() { return DistanciaMaxima; }
-
-    public void setDistanciaMaxima(String distanciaMaxima) { DistanciaMaxima = distanciaMaxima; }
+    public void setInfluencias(String influencias) { Influencias = influencias; }
 
 }

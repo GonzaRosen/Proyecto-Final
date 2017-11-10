@@ -20,6 +20,7 @@ public class Persona {
     private String Influencias;
     private String Generos;
     private String Instrumentos;
+    private String Ubicacion;
 
     public int getId() { return Id; }
 
@@ -72,4 +73,8 @@ public class Persona {
     public String getTodosInfluencias() { return TodosInfluencias; }
 
     public void setTodosInfluencias(String todosInfluencias) { TodosInfluencias= todosInfluencias; }
+
+    public String getUbicacion() { return Ubicacion; }
+
+    public void setUbicacion(String ubicacion) { Ubicacion = ubicacion; }
 }

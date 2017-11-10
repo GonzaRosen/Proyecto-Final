@@ -33,10 +33,10 @@ public class RegistracionUsuario extends Activity {
 
     EditText Nombre;
     EditText Apellido;
-    EditText Usuario;
     CalendarView FechaNac;
     EditText Email;
     EditText Pass;
+    EditText Ubicacion;
 
     CheckBox Terminos;
 
@@ -52,7 +52,7 @@ public class RegistracionUsuario extends Activity {
             FechaNac = (CalendarView)findViewById(R.id.FechaNac);
             Email = (EditText)findViewById(R.id.Email);
             Pass = (EditText)findViewById(R.id.Contraseña);
-
+            Ubicacion = (EditText)findViewById(R.id.Ubicacionn);
 
         }
     }
@@ -70,9 +70,9 @@ public class RegistracionUsuario extends Activity {
         String Edit2 = Apellido.getText().toString();
         String Edit3 = Email.getText().toString();
         String Edit4 = Pass.getText().toString();
-        //long Calen = FechaNac.getDate();
+        String Edit5 = Ubicacion.getText().toString();
 
-        if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("")))
+        if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || Edit5.equals("") || FechaNac.isSelected()))
         {
             if (Terminos.isChecked())
             {
@@ -80,8 +80,8 @@ public class RegistracionUsuario extends Activity {
                 p.setNombre(Edit1);
                 p.setApellido(Edit2);
                 p.setEmail(Edit3);
-                //p.setFechaNac(Calen);
                 p.setContraseña(Edit4);
+                p.setUbicacion(Edit5);
 
                 Intent Activity;
                 Activity = new Intent(this,RegistracionPreferencias.class);
