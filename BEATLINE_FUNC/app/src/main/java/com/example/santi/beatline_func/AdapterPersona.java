@@ -13,11 +13,11 @@ import java.util.Arrays;
 
 
 public class AdapterPersona extends BaseAdapter {
-    private ArrayList<Persona> ListaPersonas;
+    private ArrayList<UsuariosBusqueda> ListaPersonas;
     Context context;
 
-    AdapterPersona(Context context, ArrayList<Persona> personas) {
-        this.ListaPersonas = personas;
+    AdapterPersona(Context context, ArrayList<UsuariosBusqueda> usuariosBusquedas) {
+        this.ListaPersonas = usuariosBusquedas;
         this.context = context;
     }
 
@@ -35,8 +35,8 @@ public class AdapterPersona extends BaseAdapter {
     public long getItemId(int position) {
         return position;
     }
-    public void setPersonas(Persona[] personas) {
-        this.ListaPersonas = new ArrayList<>(Arrays.asList(personas));
+    public void setPersonas(UsuariosBusqueda[] usuariosBusquedas) {
+        this.ListaPersonas = new ArrayList<>(Arrays.asList(usuariosBusquedas));
     }
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
@@ -54,15 +54,14 @@ public class AdapterPersona extends BaseAdapter {
         TextView Influencia = (TextView) view.findViewById(R.id.Influencia);
         TextView Email =(TextView) view.findViewById(R.id.E_Mail);
 
-        Persona p = ListaPersonas.get(position);
-        Nombre.setText(p.getNombre() + " ");
-        Apellido.setText(p.getNombre() + ", ");
-        Ubicacion.setText(p.getUbicacion());
-        Instrumento.setText(p.getInstrumentos() + ", ");
-        Genero.setText(p.getGenero() + ", ");
-        Influencia.setText(p.getInfluencias());
-        Email.setText(p.getEmail());
+        UsuariosBusqueda ub = ListaPersonas.get(position);
+        Nombre.setText(ub.getNombre() + " ");
+        Apellido.setText(ub.getNombre() + ", ");
+        Ubicacion.setText(ub.getUbicacion());
+        Instrumento.setText(ub.getInstrumento() + ", ");
+        Genero.setText(ub.getGenero() + ", ");
+        Influencia.setText(ub.getInfluencia());
+        Email.setText(ub.getEmail());
         return view;
-
     }
 }

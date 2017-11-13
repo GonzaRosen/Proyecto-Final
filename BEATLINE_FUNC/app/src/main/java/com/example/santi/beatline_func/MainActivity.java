@@ -7,7 +7,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     public static Persona usuario_logeado = new Persona();
-    public static Filtros filtros_busqueda = new Filtros();
+    public static UsuariosBusqueda usuarios = new UsuariosBusqueda();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

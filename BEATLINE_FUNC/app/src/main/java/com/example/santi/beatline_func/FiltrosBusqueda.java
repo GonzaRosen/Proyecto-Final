@@ -53,15 +53,10 @@ public class FiltrosBusqueda extends Activity {
         Logo = (ImageView) findViewById(R.id.Logo);
         volver = (Button) findViewById(R.id.Volver);
         buscar =(Button) findViewById(R.id.Buscar);
-
-        ListView lv = (ListView) findViewById(R.id.Lista);
-        adapterPersona = new AdapterPersona(getBaseContext(),new ArrayList<Persona>());
-        lv.setAdapter(adapterPersona);
     }
 
     public void Buscar(View vista)
     {
-        Filtros f = new Filtros();
         String strGenero = Genero.getText().toString();
         String strInstrumento = Instrumento.getText().toString();
         String strInfluencia = Influencia.getText().toString();
@@ -73,33 +68,33 @@ public class FiltrosBusqueda extends Activity {
         }
         else
         {
-            f.setInstrumentos(strInstrumento);
-            f.setGeneros(strGenero);
-            f.setUbicacion(strUbicacion);
-            f.setInfluencias(strInfluencia);
+            String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get?Ubicacion=" + strUbicacion + "&Instrumentos=" + strInstrumento + "&Generos=" + strGenero + "&Influencias=" + strInfluencia;
+            new ConectarAPITask().execute("GET", urlApi);
+            Genero.setVisibility(View.GONE);
+            Instrumento.setVisibility(View.GONE);
+            Influencia.setVisibility(View.GONE);
+            Ubicacion.setVisibility(View.GONE);
+            tv1.setVisibility(View.GONE);
+            tv2.setVisibility(View.GONE);
+            tv3.setVisibility(View.GONE);
+            tv4.setVisibility(View.GONE);
+            tv5.setVisibility(View.GONE);
+            Logo.setVisibility(View.GONE);
+            volver.setVisibility(View.GONE);
+            buscar.setVisibility(View.GONE);
+            ListView lv = (ListView) findViewById(R.id.Lista);
+            adapterPersona = new AdapterPersona(getBaseContext(),new ArrayList<UsuariosBusqueda>());
+            lv.setAdapter(adapterPersona);
         }
 
-        String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/";
-        new ConectarAPITask().execute(urlApi);
-        Genero.setVisibility(View.GONE);
-        Instrumento.setVisibility(View.GONE);
-        Influencia.setVisibility(View.GONE);
-        Ubicacion.setVisibility(View.GONE);
-        tv1.setVisibility(View.GONE);
-        tv2.setVisibility(View.GONE);
-        tv3.setVisibility(View.GONE);
-        tv4.setVisibility(View.GONE);
-        tv5.setVisibility(View.GONE);
-        Logo.setVisibility(View.GONE);
-        volver.setVisibility(View.GONE);
-        buscar.setVisibility(View.GONE);
+
     }
 
-    private class ConectarAPITask extends AsyncTask<String, Void, Persona[]> {
+    private class ConectarAPITask extends AsyncTask<String, Void, UsuariosBusqueda[]> {
         public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
         @Override
-        protected Persona[] doInBackground(String... params) {
+        protected UsuariosBusqueda[] doInBackground(String... params) {
 
             String urlApi = params[0];
             OkHttpClient client = new OkHttpClient();
@@ -109,29 +104,27 @@ public class FiltrosBusqueda extends Activity {
 
             try {
                 Response response = client.newCall(request).execute();
-                Persona[] personas = parsearResultado(response.body().string());
-                return personas;
+                UsuariosBusqueda[] usuariosBusquedas = parsearResultado(response.body().string());
+                return usuariosBusquedas;
             }
             catch (IOException e){
-                Log.d("Error :", e.getMessage());
                 return null;
-
             }
         }
 
         @Override
-        protected void onPostExecute(Persona[] personas) {
-            super.onPostExecute(personas);
-            adapterPersona.setPersonas(personas);
+        protected void onPostExecute(UsuariosBusqueda[] usuariosBusquedas) {
+            super.onPostExecute(usuariosBusquedas);
+            adapterPersona.setPersonas(usuariosBusquedas);
         }
 
-        private Persona[] parsearResultado(String respuesta)   {
+        private UsuariosBusqueda[] parsearResultado(String respuesta)   {
             if (respuesta == null || respuesta.length()==0)
                 return null;
             try {
                 Gson gson = new Gson();
-                Persona[] p = gson.fromJson(respuesta, Persona[].class);
-                return p;
+                UsuariosBusqueda[] usuariosBusquedas = gson.fromJson(respuesta, UsuariosBusqueda[].class);
+                return usuariosBusquedas;
 
             }
             catch (Exception e) {
