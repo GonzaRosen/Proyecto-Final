@@ -1,43 +1,27 @@
 package com.example.santi.beatline_func;
 
-import android.appwidget.AppWidgetProviderInfo;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 
-public class AdapterPersona extends BaseAdapter {
+public class AdapterPersona extends ArrayAdapter<UsuariosBusqueda> {
     private ArrayList<UsuariosBusqueda> ListaPersonas;
-    Context context;
+    private Context context;
 
     AdapterPersona(Context context, ArrayList<UsuariosBusqueda> usuariosBusquedas) {
+        super(context, 0, usuariosBusquedas);
         this.ListaPersonas = usuariosBusquedas;
         this.context = context;
     }
 
-    @Override
-    public int getCount() {
-        return ListaPersonas.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return ListaPersonas.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-    public void setPersonas(UsuariosBusqueda[] usuariosBusquedas) {
-        this.ListaPersonas = new ArrayList<>(Arrays.asList(usuariosBusquedas));
-    }
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
 
@@ -45,8 +29,6 @@ public class AdapterPersona extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.lista_persona, viewGroup, false);
         }
-
-        TextView Apellido = (TextView) view.findViewById(R.id.Apellido);
         TextView Nombre = (TextView) view.findViewById(R.id.Nombre);
         TextView Ubicacion = (TextView) view.findViewById(R.id.Distancia);
         TextView Instrumento = (TextView) view.findViewById(R.id.Instrumento);
@@ -54,14 +36,20 @@ public class AdapterPersona extends BaseAdapter {
         TextView Influencia = (TextView) view.findViewById(R.id.Influencia);
         TextView Email =(TextView) view.findViewById(R.id.E_Mail);
 
-        UsuariosBusqueda ub = ListaPersonas.get(position);
-        Nombre.setText(ub.getNombre() + " ");
-        Apellido.setText(ub.getNombre() + ", ");
+        UsuariosBusqueda ub = getItem(position);
+        Nombre.setText(ub.getNombre() + " " + ub.getApellido() + ", ");
         Ubicacion.setText(ub.getUbicacion());
-        Instrumento.setText(ub.getInstrumento() + ", ");
-        Genero.setText(ub.getGenero() + ", ");
-        Influencia.setText(ub.getInfluencia());
+        Instrumento.setText(ub.getInstrumentos() + ", ");
+        Genero.setText(ub.getGeneros() + ", ");
+        Influencia.setText(ub.getInfluencias());
         Email.setText(ub.getEmail());
         return view;
+    }
+
+    public void notifyDataChanged(List<UsuariosBusqueda> list){
+        this.ListaPersonas.clear();
+        this.ListaPersonas.addAll(list);
+        Toast.makeText(context, String.valueOf(ListaPersonas.size()) ,Toast.LENGTH_LONG).show();
+        this.notifyDataSetChanged();
     }
 }

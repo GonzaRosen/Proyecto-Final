@@ -7,10 +7,6 @@ import android.util.Log;
 import javax.crypto.spec.DESKeySpec;
 
 public class Persona {
-    private int Id;
-    private String TodosInstrumentos;
-    private String TodosGeneros;
-    private String TodosInfluencias;
     private String Nombre;
     private String Apellido;
     private String Fecha_Nacimiento;
@@ -21,10 +17,6 @@ public class Persona {
     private String Generos;
     private String Instrumentos;
     private String Ubicacion;
-
-    public int getId() { return Id; }
-
-    public void setId(int id) { Id = id; }
 
     public String getNombre() { return Nombre; }
 
@@ -61,18 +53,6 @@ public class Persona {
     public String getInstrumentos() { return Instrumentos; }
 
     public void setInstrumentos(String instrumentos) { Instrumentos = instrumentos; }
-
-    public String getTodosInstrumentos() { return TodosInstrumentos; }
-
-    public void setTodosInstrumentos(String todosInstrumentos) { TodosInstrumentos = todosInstrumentos; }
-
-    public String getTodosGeneros() { return TodosGeneros; }
-
-    public void setTodosGeneros(String todosGeneros) { TodosGeneros = todosGeneros; }
-
-    public String getTodosInfluencias() { return TodosInfluencias; }
-
-    public void setTodosInfluencias(String todosInfluencias) { TodosInfluencias= todosInfluencias; }
 
     public String getUbicacion() { return Ubicacion; }
 

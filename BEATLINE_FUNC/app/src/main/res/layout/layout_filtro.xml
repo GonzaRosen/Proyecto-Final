@@ -71,7 +71,7 @@
             android:layout_width="180dp"
             android:layout_height="40dp"
             android:layout_marginLeft="100dp"
-            android:id="@+id/Influenciaa"/>
+            android:id="@+id/Influencia"/>
 
         <TextView
             android:layout_width="wrap_content"

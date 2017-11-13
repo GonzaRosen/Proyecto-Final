@@ -5,7 +5,7 @@ package com.example.santi.beatline_func;
  */
 
 public class UsuariosBusqueda {
-    private String Nombre, Apellido, Instrumento, Genero, Influencia, Ubicacion, Email;
+    private String Nombre, Apellido, Instrumentos, Generos, Influencias, Ubicacion, Email;
 
     public String getNombre() { return Nombre; }
 
@@ -15,17 +15,17 @@ public class UsuariosBusqueda {
 
     public void setApellido(String apellido) { Apellido = apellido; }
 
-    public String getInstrumento() { return Instrumento; }
+    public String getInstrumentos() { return Instrumentos; }
 
-    public void setInstrumento(String instrumento) { Instrumento = instrumento; }
+    public void setInstrumentos(String instrumentos) { Instrumentos = instrumentos; }
 
-    public String getInfluencia() { return Influencia; }
+    public String getInfluencias() { return Influencias; }
 
-    public void setInfluencia(String influencia) { Influencia = influencia; }
+    public void setInfluencias(String influencias) { Influencias = influencias; }
 
-    public String getGenero() { return Genero; }
+    public String getGeneros() { return Generos; }
 
-    public void setGenero(String genero) { Genero = genero; }
+    public void setGeneros(String generos) { Generos = generos; }
 
     public String getUbicacion() { return Ubicacion; }
 

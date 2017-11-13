@@ -37,64 +37,88 @@ public class FiltrosBusqueda extends Activity {
     Button volver, buscar;
     LinearLayout layout;
     AdapterPersona adapterPersona;
+    ListView lv;
+    ArrayList<UsuariosBusqueda> Juan = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_filtro);
         Genero = (EditText)findViewById(R.id.Genero);
         Instrumento = (EditText)findViewById(R.id.Instrumento);
-        Influencia = (EditText)findViewById(R.id.Influenciaa);
-        Ubicacion = (EditText)findViewById(R.id.Ubicacionn);
+        Influencia = (EditText)findViewById(R.id.Influencia);
+        Ubicacion = (EditText)findViewById(R.id.Ubicacion);
         tv1 = (TextView) findViewById(R.id.textView);
         tv2 = (TextView) findViewById(R.id.tvInstrumento);
         tv3 = (TextView) findViewById(R.id.tvInfluencia);
         tv4 = (TextView) findViewById(R.id.tvGenero);
-        tv5 = (TextView) findViewById(R.id.tvUbiacion);
+        tv5 = (TextView) findViewById(R.id.tvUbicacion);
         Logo = (ImageView) findViewById(R.id.Logo);
         volver = (Button) findViewById(R.id.Volver);
         buscar =(Button) findViewById(R.id.Buscar);
+        lv = (ListView) findViewById(R.id.Lista);
+
+        buscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String strUbicacion = Ubicacion == null ? "" : Ubicacion.getText().toString();
+                String strGenero = Genero == null ? "" : Genero.getText().toString();
+                String strInstrumento = Instrumento == null ? "" : Instrumento.getText().toString();
+                String strInfluencia = Influencia == null ? "" : Influencia.getText().toString();
+                String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get?";
+                if (strUbicacion.length() > 0) {
+                    urlApi+=  "Ubicacion=" + strUbicacion;
+                }
+                if (strUbicacion.length() == 0 && strGenero.length() != 0){
+                    urlApi+= "Genero=" + strGenero;
+                }
+                else {
+                    if (strGenero.length() != 0) {
+                        urlApi += "&Genero=" + strGenero;
+                    }
+                }
+                if (strGenero.length() == 0 && strUbicacion.length() == 0 && strInstrumento.length() != 0){
+                    urlApi+= "Instrumento=" + strInstrumento;
+                }
+                else
+                {
+                    if (strInstrumento.length() != 0) {
+                        urlApi += "&Instrumento=" + strInstrumento;
+                    }
+                }
+                if (strUbicacion.length() == 0 && strGenero.length() == 0 && strInfluencia.length() == 0 && strInfluencia.length() != 0){
+                    urlApi+= "Influencia=" + strInfluencia;
+                }
+                else
+                {
+                    if (strInfluencia.length() != 0) {
+                        urlApi += "&Influencia=" + strInfluencia;
+                    }
+                }
+                Log.d("url", urlApi);
+                new ConectarAPITask().execute(urlApi);
+                Genero.setVisibility(View.GONE);
+                Instrumento.setVisibility(View.GONE);
+                Influencia.setVisibility(View.GONE);
+                tv1.setVisibility(View.GONE);
+                tv2.setVisibility(View.GONE);
+                Ubicacion.setVisibility(View.GONE);
+                tv3.setVisibility(View.GONE);
+                tv4.setVisibility(View.GONE);
+                tv5.setVisibility(View.GONE);
+                Logo.setVisibility(View.GONE);
+                volver.setVisibility(View.GONE);
+                buscar.setVisibility(View.GONE);
+                adapterPersona = new AdapterPersona(getApplicationContext(), new ArrayList<UsuariosBusqueda>());
+                lv.setAdapter(adapterPersona);
+            }
+        });
     }
 
-    public void Buscar(View vista)
-    {
-        String strGenero = Genero.getText().toString();
-        String strInstrumento = Instrumento.getText().toString();
-        String strInfluencia = Influencia.getText().toString();
-        String strUbicacion = Ubicacion.getText().toString();
-        if (strGenero.equals("") || strInstrumento.equals("") ||strInfluencia.equals("") ||strUbicacion.equals(""))
-        {
-            Toast t = Toast.makeText(FiltrosBusqueda.this, "No deje campos en blanco", Toast.LENGTH_LONG);
-            t.show();
-        }
-        else
-        {
-            String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get?Ubicacion=" + strUbicacion + "&Instrumentos=" + strInstrumento + "&Generos=" + strGenero + "&Influencias=" + strInfluencia;
-            new ConectarAPITask().execute("GET", urlApi);
-            Genero.setVisibility(View.GONE);
-            Instrumento.setVisibility(View.GONE);
-            Influencia.setVisibility(View.GONE);
-            Ubicacion.setVisibility(View.GONE);
-            tv1.setVisibility(View.GONE);
-            tv2.setVisibility(View.GONE);
-            tv3.setVisibility(View.GONE);
-            tv4.setVisibility(View.GONE);
-            tv5.setVisibility(View.GONE);
-            Logo.setVisibility(View.GONE);
-            volver.setVisibility(View.GONE);
-            buscar.setVisibility(View.GONE);
-            ListView lv = (ListView) findViewById(R.id.Lista);
-            adapterPersona = new AdapterPersona(getBaseContext(),new ArrayList<UsuariosBusqueda>());
-            lv.setAdapter(adapterPersona);
-        }
-
-
-    }
-
-    private class ConectarAPITask extends AsyncTask<String, Void, UsuariosBusqueda[]> {
+    private class ConectarAPITask extends AsyncTask<String, Void, ArrayList<UsuariosBusqueda>> {
         public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
         @Override
-        protected UsuariosBusqueda[] doInBackground(String... params) {
+        protected ArrayList<UsuariosBusqueda> doInBackground(String... params) {
 
             String urlApi = params[0];
             OkHttpClient client = new OkHttpClient();
@@ -104,8 +128,8 @@ public class FiltrosBusqueda extends Activity {
 
             try {
                 Response response = client.newCall(request).execute();
-                UsuariosBusqueda[] usuariosBusquedas = parsearResultado(response.body().string());
-                return usuariosBusquedas;
+                Juan = parsearResultado(response.body().string());
+                return Juan;
             }
             catch (IOException e){
                 return null;
@@ -113,19 +137,19 @@ public class FiltrosBusqueda extends Activity {
         }
 
         @Override
-        protected void onPostExecute(UsuariosBusqueda[] usuariosBusquedas) {
+        protected void onPostExecute(ArrayList<UsuariosBusqueda> usuariosBusquedas) {
             super.onPostExecute(usuariosBusquedas);
-            adapterPersona.setPersonas(usuariosBusquedas);
+
+            adapterPersona.notifyDataChanged(Juan);
         }
 
-        private UsuariosBusqueda[] parsearResultado(String respuesta)   {
+        private ArrayList<UsuariosBusqueda> parsearResultado(String respuesta)   {
             if (respuesta == null || respuesta.length()==0)
                 return null;
             try {
                 Gson gson = new Gson();
-                UsuariosBusqueda[] usuariosBusquedas = gson.fromJson(respuesta, UsuariosBusqueda[].class);
-                return usuariosBusquedas;
 
+                return new ArrayList<>(Arrays.asList(gson.fromJson(respuesta, UsuariosBusqueda[].class)));
             }
             catch (Exception e) {
                 return null;

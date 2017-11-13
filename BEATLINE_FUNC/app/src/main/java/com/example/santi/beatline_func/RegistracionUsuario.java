@@ -76,15 +76,16 @@ public class RegistracionUsuario extends Activity {
         {
             if (Terminos.isChecked())
             {
-                Persona p = new Persona();
-                p.setNombre(Edit1);
-                p.setApellido(Edit2);
-                p.setEmail(Edit3);
-                p.setContraseña(Edit4);
-                p.setUbicacion(Edit5);
+                Bundle bundle = new Bundle();
+                bundle.putString("Nombre",Edit1);
+                bundle.putString("Apellido", Edit2);
+                bundle.putString("Email", Edit3);
+                bundle.putString("Pass", Edit4);
+                bundle.putString("Ubicacion", Edit5);
 
                 Intent Activity;
                 Activity = new Intent(this,RegistracionPreferencias.class);
+                Activity.putExtras(bundle);
                 startActivity(Activity);
             }
             else

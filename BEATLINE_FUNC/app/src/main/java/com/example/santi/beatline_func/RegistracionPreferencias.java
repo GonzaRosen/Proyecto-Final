@@ -25,12 +25,20 @@ public class RegistracionPreferencias extends AppCompatActivity{
     EditText Genero;
     EditText Influencia;
     EditText Instrumento;
+    String Nombre, Apellido, Email, Pass, Ubicacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registracion_preferencias);
+
+        Bundle bundle = this.getIntent().getExtras();
+        Nombre = bundle.getString("Nombre");
+        Apellido = bundle.getString("Apellido");
+        Email = bundle.getString("Email");
+        Pass = bundle.getString("Pass");
+        Ubicacion = bundle.getString("Ubicacion");
 
         Genero = (EditText)findViewById(R.id.gene);
         Influencia = (EditText)findViewById(R.id.influ);
@@ -51,6 +59,11 @@ public class RegistracionPreferencias extends AppCompatActivity{
             p.setGenero(strGenero);
             p.setInfluencias(strInfluencia);
             p.setInstrumentos(strInstrumento);
+            p.setNombre(Nombre);
+            p.setApellido(Apellido);
+            p.setEmail(Email);
+            p.setContraseña(Pass);
+            p.setUbicacion(Ubicacion);
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             System.out.println(gson.toJson(p));
