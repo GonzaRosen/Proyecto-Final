@@ -131,20 +131,65 @@ namespace ApiEjemplo.Data
 
         public static List<Usuarios> ObtenerUsuariosPorRequisitos(string Instrumentos, string Generos, string Influencias, string Ubicacion)
         {
-            string select = "select * from tusuarios where Ubicacion  = '" + Ubicacion + "' && (Instrumentos like '%" + Instrumentos + "%' || Generos like '%" + Generos + "%' || Influencias like '%" + Influencias + "%')";
-            DataTable dt = DBHelper.EjecutarSelect(select);
-            List<Usuarios> lista = new List<Usuarios>();
-            Usuarios oUsuario;
-            if (dt.Rows.Count > 0)
+            if (Instrumentos == null && Generos == null && Influencias == null)
             {
-                foreach (DataRow row in dt.Rows)
+                string select = "select * from tusuarios where Ubicacion like '%" + Ubicacion + "%'";
+                DataTable dt = DBHelper.EjecutarSelect(select);
+                List<Usuarios> lista = new List<Usuarios>();
+                Usuarios oUsuario;
+                if (dt.Rows.Count > 0)
                 {
-                    oUsuario = ObtenerPorRow(row);
-                    lista.Add(oUsuario);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        oUsuario = ObtenerPorRow(row);
+                        lista.Add(oUsuario);
+                    }
+                    oUsuario = ObtenerPorRow(dt.Rows[0]);
                 }
-                oUsuario = ObtenerPorRow(dt.Rows[0]);
+                return lista;
             }
-            return lista;
+            else
+            {
+                String[] VInstrumentos = Instrumentos.Split(' ');
+                String[] VGeneros = Generos.Split(' ');
+                String[] VInfluencias = Influencias.Split(' ');
+
+                int cantIns = VInstrumentos.Count();
+                int cantG = VGeneros.Count();
+                int cantInf = VInfluencias.Count();
+
+                DataTable dt = null;
+                string select = "select DISTINCT * from tusuarios where Ubicacion  = '" + Ubicacion + "' && (";
+                for (int i = 0; i < cantIns; i++)
+                {
+                    select = select + " Instrumentos like '%" + VInstrumentos[i] + "%' ||";
+                }
+                for (int i = 0; i < cantG; i++)
+                {
+                    select = select + " Generos like '%" + VGeneros[i] + "%' ||";
+                }
+                for (int i = 0; i < cantInf; i++)
+                {
+                    if (i == cantInf - 1)
+                        select = select + " Influencias like '%" + VInfluencias[i] + "%' )";
+                    else
+                        select = select + " Influencias like '%" + VInfluencias[i] + "%' ||";
+                }
+
+                dt = DBHelper.EjecutarSelect(select);
+                List<Usuarios> lista = new List<Usuarios>();
+                Usuarios oUsuario;
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        oUsuario = ObtenerPorRow(row);
+                        lista.Add(oUsuario);
+                    }
+                    oUsuario = ObtenerPorRow(dt.Rows[0]);
+                }
+                return lista;
+            }
         }
 
         public static Usuarios ObtenerPorRow(DataRow Row)
