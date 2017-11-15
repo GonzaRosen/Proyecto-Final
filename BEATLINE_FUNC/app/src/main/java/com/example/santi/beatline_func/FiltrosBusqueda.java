@@ -64,8 +64,8 @@ public class FiltrosBusqueda extends Activity {
                 String strGenero = Genero == null ? "" : Genero.getText().toString();
                 String strInstrumento = Instrumento == null ? "" : Instrumento.getText().toString();
                 String strInfluencia = Influencia == null ? "" : Influencia.getText().toString();
-                String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get?";
-                if (strUbicacion.length() > 0) {
+                String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get?Ubicacion=" + strUbicacion + "&Instrumentos=" + strInstrumento + "&Generos=" + strGenero + "&Influencias=" + strInfluencia;
+                /*if (strUbicacion.length() > 0) {
                     urlApi+=  "Ubicacion=" + strUbicacion;
                 }
                 if (strUbicacion.length() == 0 && strGenero.length() != 0){
@@ -93,8 +93,8 @@ public class FiltrosBusqueda extends Activity {
                     if (strInfluencia.length() != 0) {
                         urlApi += "&Influencia=" + strInfluencia;
                     }
-                }
-                Log.d("url", urlApi);
+                }*/
+                Toast.makeText(getBaseContext(), urlApi, Toast.LENGTH_LONG).show();
                 new ConectarAPITask().execute(urlApi);
                 Genero.setVisibility(View.GONE);
                 Instrumento.setVisibility(View.GONE);

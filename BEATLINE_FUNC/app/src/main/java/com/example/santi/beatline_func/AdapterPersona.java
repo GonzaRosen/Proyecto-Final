@@ -36,6 +36,7 @@ public class AdapterPersona extends ArrayAdapter<UsuariosBusqueda> {
         TextView Influencia = (TextView) view.findViewById(R.id.Influencia);
         TextView Email =(TextView) view.findViewById(R.id.E_Mail);
 
+
         UsuariosBusqueda ub = getItem(position);
         Nombre.setText(ub.getNombre() + " " + ub.getApellido() + ", ");
         Ubicacion.setText(ub.getUbicacion());
