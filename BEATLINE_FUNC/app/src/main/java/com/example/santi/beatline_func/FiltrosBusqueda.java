@@ -1,12 +1,11 @@
+//TODO: • Ordenamiento de los procesos; • Agregar descripcion a la Registracion/Mi perfil/Matching; • Dejar todo presentable (¿algún logo?); • Expandir lista (TUS MATCHEOS) ▬ {{VER MAS - USUARIO}}
+
 package com.example.santi.beatline_func;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,19 +14,13 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class FiltrosBusqueda extends Activity {
