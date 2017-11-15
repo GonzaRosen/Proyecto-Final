@@ -150,6 +150,13 @@ namespace ApiEjemplo.Data
             }
             else
             {
+                if (Instrumentos == null)
+                { Instrumentos = "ñqñ ñqñ"; }
+                if (Generos == null)
+                {Generos = "ñqñ ñqñ";}
+                if (Influencias == null)
+                { Influencias = "ñqñ ñqñ"; }
+
                 String[] VInstrumentos = Instrumentos.Split(' ');
                 String[] VGeneros = Generos.Split(' ');
                 String[] VInfluencias = Influencias.Split(' ');
