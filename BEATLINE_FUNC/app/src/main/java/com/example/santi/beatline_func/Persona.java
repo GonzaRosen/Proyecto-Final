@@ -7,6 +7,7 @@ import android.util.Log;
 import javax.crypto.spec.DESKeySpec;
 
 public class Persona {
+    private int IdUsuario;
     private String Nombre;
     private String Apellido;
     private String Fecha_Nacimiento;
@@ -17,6 +18,8 @@ public class Persona {
     private String Generos;
     private String Instrumentos;
     private String Ubicacion;
+
+    public int getIdUsuario() { return IdUsuario; }
 
     public String getNombre() { return Nombre; }
 
