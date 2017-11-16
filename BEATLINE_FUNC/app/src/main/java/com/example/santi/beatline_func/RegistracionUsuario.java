@@ -37,6 +37,7 @@ public class RegistracionUsuario extends Activity {
     EditText Email;
     EditText Pass;
     EditText Ubicacion;
+    EditText ConfPass;
 
     CheckBox Terminos;
 
@@ -53,7 +54,7 @@ public class RegistracionUsuario extends Activity {
             Email = (EditText)findViewById(R.id.Email);
             Pass = (EditText)findViewById(R.id.Contraseña);
             Ubicacion = (EditText)findViewById(R.id.Ubicacionn);
-
+            ConfPass = (EditText)findViewById(R.id.confirmar);
         }
     }
 
@@ -71,11 +72,14 @@ public class RegistracionUsuario extends Activity {
         String Edit3 = Email.getText().toString();
         String Edit4 = Pass.getText().toString();
         String Edit5 = Ubicacion.getText().toString();
+        String Edit6 = ConfPass.getText().toString();
 
         if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || Edit5.equals("") || FechaNac.isSelected()))
         {
             if (Terminos.isChecked())
             {
+                if (Edit4.equals(Edit6))
+                {
                 Bundle bundle = new Bundle();
                 bundle.putString("Nombre",Edit1);
                 bundle.putString("Apellido", Edit2);
@@ -87,19 +91,26 @@ public class RegistracionUsuario extends Activity {
                 Activity = new Intent(this,RegistracionPreferencias.class);
                 Activity.putExtras(bundle);
                 startActivity(Activity);
+                }
+                else
+                {
+                    Toast.makeText(getBaseContext(), "Las contraseñas deben coincidir", Toast.LENGTH_LONG).show();
+                }
             }
             else
             {
-                Toast toast1;
-                toast1 = Toast.makeText(RegistracionUsuario.this, "Debe aceptar los terminos y condiciones para completar la registración", Toast.LENGTH_SHORT);
-                toast1.show();
+                Toast.makeText(getBaseContext(), "Debe aceptar los terminos y condiciones para completar la registración", Toast.LENGTH_SHORT).show();
             }
         }
         else
         {
-            Toast toast1;
-            toast1 = Toast.makeText(RegistracionUsuario.this, "No deje campos en blanco", Toast.LENGTH_SHORT);
-            toast1.show();
+            Toast.makeText(getBaseContext(), "No deje campos en blanco", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void logear (View view)
+    {
+        Intent Activity = new Intent(getBaseContext(),Loginn.class);
+        startActivity(Activity);
     }
 }

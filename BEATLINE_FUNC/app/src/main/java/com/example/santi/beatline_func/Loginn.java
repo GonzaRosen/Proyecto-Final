@@ -30,8 +30,6 @@ public class Loginn extends AppCompatActivity {
         setContentView(R.layout.activity_loginn);
         Email = (EditText)findViewById(R.id.Email);
         Password = (EditText)findViewById(R.id.Contraseña);
-        continuar = (Button)findViewById(R.id.conti);
-        continuar.setVisibility(View.GONE);
     }
 
     public void Login (View view) {
@@ -111,7 +109,7 @@ public class Loginn extends AppCompatActivity {
                 Response response = client.newCall(request).execute();
                 String strResultado = response.body().string();
                 return parsearResultado(strResultado);
-                   } catch (IOException e) {
+            } catch (IOException e) {
                 Log.d("Error :", e.getMessage());
                 return null;
             }
@@ -136,6 +134,8 @@ public class Loginn extends AppCompatActivity {
                 MainActivity.usuario_logeado.setInstrumentos(p.getInstrumentos());
                 MainActivity.usuario_logeado.setEmail(Mail);
                 MainActivity.usuario_logeado.setContraseña(Contraseña);
+                MainActivity.usuario_logeado.setUbicacion(p.getUbicacion());
+                MainActivity.usuario_logeado.setDescripcion(p.getDescripcion());
                 Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
                 startActivity(intent);
             }
@@ -161,6 +161,12 @@ public class Loginn extends AppCompatActivity {
                 return null;
             }
         }
-        }
     }
+
+    public void regis (View view)
+    {
+        Intent Activity = new Intent(getBaseContext(),RegistracionUsuario.class);
+        startActivity(Activity);
+    }
+}
 

@@ -53,13 +53,23 @@
         android:onClick="Perfil"/>
 
     <Button
-        android:layout_width="170dp"
+    android:layout_width="170dp"
+    android:layout_height="30dp"
+    android:background="#7D22"
+    android:text="Buscar Personas"
+    android:textSize="18sp"
+    android:layout_marginLeft="115dp"
+    android:layout_marginTop="20dp"
+    android:onClick="Buscar"/>
+
+    <Button
+        android:layout_width="140dp"
         android:layout_height="30dp"
-        android:background="#7D22"
-        android:text="Buscar Personas"
+        android:background="@color/Verde"
+        android:text="Cerrar Sesión"
         android:textSize="18sp"
-        android:layout_marginLeft="115dp"
+        android:layout_marginLeft="130dp"
         android:layout_marginTop="20dp"
-        android:onClick="Buscar"/>
+        android:onClick="Cerrar"/>
 
 </LinearLayout>

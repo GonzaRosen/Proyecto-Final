@@ -25,6 +25,7 @@ public class RegistracionPreferencias extends AppCompatActivity{
     EditText Genero;
     EditText Influencia;
     EditText Instrumento;
+    EditText Descripcion;
     String Nombre, Apellido, Email, Pass, Ubicacion;
 
     @Override
@@ -43,7 +44,7 @@ public class RegistracionPreferencias extends AppCompatActivity{
         Genero = (EditText)findViewById(R.id.gene);
         Influencia = (EditText)findViewById(R.id.influ);
         Instrumento = (EditText)findViewById(R.id.instru);
-
+        Descripcion = (EditText)findViewById(R.id.desc);
     }
 
     public void registrar(View view)
@@ -51,14 +52,16 @@ public class RegistracionPreferencias extends AppCompatActivity{
         String strGenero = Genero.getText().toString();
         String strInfluencia = Influencia.getText().toString();
         String strInstrumento = Instrumento.getText().toString();
+        String strDescripcion = Descripcion.getText().toString();
 
-        if(!(strGenero.equals("") || strInfluencia.equals("") || strInstrumento.equals("")))
+        if(!(strGenero.equals("") || strInfluencia.equals("") || strInstrumento.equals("") || strDescripcion.equals("")))
         {
             String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Post";
             Persona p = new Persona();
             p.setGenero(strGenero);
             p.setInfluencias(strInfluencia);
             p.setInstrumentos(strInstrumento);
+            p.setDescripcion(strDescripcion);
             p.setNombre(Nombre);
             p.setApellido(Apellido);
             p.setEmail(Email);
@@ -68,6 +71,7 @@ public class RegistracionPreferencias extends AppCompatActivity{
             Gson gson = builder.create();
             System.out.println(gson.toJson(p));
             new ConectarAPITask().execute("POST",urlApi, gson.toJson(p));
+            Toast.makeText(getBaseContext(), "¡Registración completada exitosamente!", Toast.LENGTH_LONG).show();
             Intent Activity;
             Activity = new Intent(this,MainActivity.class);
             startActivity(Activity);

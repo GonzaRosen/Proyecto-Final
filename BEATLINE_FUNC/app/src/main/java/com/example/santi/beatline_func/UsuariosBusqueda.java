@@ -5,7 +5,7 @@ package com.example.santi.beatline_func;
  */
 
 public class UsuariosBusqueda {
-    private String Nombre, Apellido, Instrumentos, Generos, Influencias, Ubicacion, Email;
+    private String Nombre, Apellido, Instrumentos, Generos, Influencias, Ubicacion, Email, Descripcion;
 
     public String getNombre() { return Nombre; }
 
@@ -34,4 +34,8 @@ public class UsuariosBusqueda {
     public String getEmail() { return Email; }
 
     public void setEmail(String email) { Email = email; }
+
+    public String getDescripcion() { return Descripcion; }
+
+    public void setDescripcion(String descripcion) { Descripcion = descripcion; }
 }

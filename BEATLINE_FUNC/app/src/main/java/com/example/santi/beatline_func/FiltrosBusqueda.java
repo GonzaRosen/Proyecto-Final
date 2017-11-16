@@ -32,14 +32,15 @@ public class FiltrosBusqueda extends Activity {
     AdapterPersona adapterPersona;
     ListView lv;
     ArrayList<UsuariosBusqueda> Juan = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_filtro);
-        Genero = (EditText)findViewById(R.id.Genero);
-        Instrumento = (EditText)findViewById(R.id.Instrumento);
-        Influencia = (EditText)findViewById(R.id.Influencia);
-        Ubicacion = (EditText)findViewById(R.id.Ubicacion);
+        Genero = (EditText) findViewById(R.id.Genero);
+        Instrumento = (EditText) findViewById(R.id.Instrumento);
+        Influencia = (EditText) findViewById(R.id.Influencia);
+        Ubicacion = (EditText) findViewById(R.id.Ubicacion);
         tv1 = (TextView) findViewById(R.id.textView);
         tv2 = (TextView) findViewById(R.id.tvInstrumento);
         tv3 = (TextView) findViewById(R.id.tvInfluencia);
@@ -47,7 +48,7 @@ public class FiltrosBusqueda extends Activity {
         tv5 = (TextView) findViewById(R.id.tvUbicacion);
         Logo = (ImageView) findViewById(R.id.Logo);
         volver = (Button) findViewById(R.id.Volver);
-        buscar =(Button) findViewById(R.id.Buscar);
+        buscar = (Button) findViewById(R.id.Buscar);
         lv = (ListView) findViewById(R.id.Lista);
 
         buscar.setOnClickListener(new View.OnClickListener() {
@@ -92,9 +93,9 @@ public class FiltrosBusqueda extends Activity {
                 Genero.setVisibility(View.GONE);
                 Instrumento.setVisibility(View.GONE);
                 Influencia.setVisibility(View.GONE);
+                Ubicacion.setVisibility(View.GONE);
                 tv1.setVisibility(View.GONE);
                 tv2.setVisibility(View.GONE);
-                Ubicacion.setVisibility(View.GONE);
                 tv3.setVisibility(View.GONE);
                 tv4.setVisibility(View.GONE);
                 tv5.setVisibility(View.GONE);
@@ -123,8 +124,7 @@ public class FiltrosBusqueda extends Activity {
                 Response response = client.newCall(request).execute();
                 Juan = parsearResultado(response.body().string());
                 return Juan;
-            }
-            catch (IOException e){
+            } catch (IOException e) {
                 return null;
             }
         }
@@ -136,15 +136,14 @@ public class FiltrosBusqueda extends Activity {
             adapterPersona.notifyDataChanged(Juan);
         }
 
-        private ArrayList<UsuariosBusqueda> parsearResultado(String respuesta)   {
-            if (respuesta == null || respuesta.length()==0)
+        private ArrayList<UsuariosBusqueda> parsearResultado(String respuesta) {
+            if (respuesta == null || respuesta.length() == 0)
                 return null;
             try {
                 Gson gson = new Gson();
 
                 return new ArrayList<>(Arrays.asList(gson.fromJson(respuesta, UsuariosBusqueda[].class)));
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 return null;
             }
 
@@ -152,28 +151,9 @@ public class FiltrosBusqueda extends Activity {
 
     }
 
-    public void link1(View Vista)
-    {
-        Toast toast1;
-        toast1 = Toast.makeText(FiltrosBusqueda.this, "Vista agregar instrumento nuevo", Toast.LENGTH_SHORT);
-        toast1.show();
-    }
-    public void link2(View Vista)
-    {
-        Toast toast1;
-        toast1 = Toast.makeText(FiltrosBusqueda.this, "Vista agregar género nuevo", Toast.LENGTH_SHORT);
-        toast1.show();
-    }
-    public void link3(View Vista)
-    {
-        Toast toast1;
-        toast1 = Toast.makeText(FiltrosBusqueda.this, "Vista agregar influencia nueva", Toast.LENGTH_SHORT);
-        toast1.show();
-    }
     public void Volver (View vista)
     {
-        Intent Activity;
-        Activity = new Intent(this, MainActivity.class);
+        Intent Activity = new Intent(getBaseContext(), MenuPrincipal.class);
         startActivity(Activity);
     }
 }

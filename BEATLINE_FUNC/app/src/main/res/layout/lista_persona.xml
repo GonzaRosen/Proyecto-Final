@@ -73,4 +73,14 @@
             android:layout_marginLeft="20dp"/>
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100px"
+        android:layout_marginRight="100px"
+        android:id="@+id/descripcionn"
+        android:textSize="35px"
+        android:textColor="@color/Negro"
+        android:text="Me gusta comer lechuga con aceite"/>
+
 </LinearLayout>
