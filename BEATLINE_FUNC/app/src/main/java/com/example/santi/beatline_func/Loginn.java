@@ -22,6 +22,7 @@ public class Loginn extends AppCompatActivity {
     EditText Email;
     EditText Password;
     Button continuar;
+    Boolean Logeo = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +43,6 @@ public class Loginn extends AppCompatActivity {
             String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get2";
             urlApi = urlApi + "?Email=" + Mail + "&Password=" + Contraseña;
             new Loginn.ConectarAPITask().execute("GET",urlApi);
-
-
         }
         else
         {
@@ -55,8 +54,7 @@ public class Loginn extends AppCompatActivity {
 
     public void Continuar (View view)
     {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
+
     }
 
     /*ArrayList<Persona> parseResultGSON(String resultado) {
@@ -65,11 +63,11 @@ public class Loginn extends AppCompatActivity {
         return new ArrayList<>(Arrays.asList(arr));
     }
 */
-    private class ConectarAPITask extends AsyncTask<String, Void, Persona> {
+    private class ConectarAPITask extends AsyncTask<String, Void, String> {
         public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
         @Override
-        protected Persona doInBackground(String... params) {
+        protected String doInBackground(String... params) {
 
             String method = params[0];
             String urlApi = params[1];
@@ -82,7 +80,7 @@ public class Loginn extends AppCompatActivity {
         }
 
 
-        private Persona getPersona(String urlApi) {
+        private String getPersona(String urlApi) {
             String strResultado;
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
@@ -92,8 +90,8 @@ public class Loginn extends AppCompatActivity {
             try {
                 Response response = client.newCall(request).execute();
                 strResultado = response.body().string();
-                Persona p = parsearResultado(strResultado);
-                return p;
+
+                return strResultado;
             } catch (IOException e) {
                 return null;
 
@@ -120,10 +118,15 @@ public class Loginn extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(Persona p) {
-            super.onPostExecute(p);
-            String Mail = Email.getText().toString();
-            String Contraseña = Password.getText().toString();
+        protected void onPostExecute(String res) {
+            super.onPostExecute(res);
+
+
+            if (res.compareTo("") != 0)
+            {
+                Persona p = parsearResultado(res);
+                String Mail = Email.getText().toString();
+                String Contraseña = Password.getText().toString();
                 MainActivity.usuario_logeado.setNombre(p.getNombre());
                 MainActivity.usuario_logeado.setApellido(p.getApellido());
                 MainActivity.usuario_logeado.setFechaNac(p.getFechaNac());
@@ -133,15 +136,13 @@ public class Loginn extends AppCompatActivity {
                 MainActivity.usuario_logeado.setInstrumentos(p.getInstrumentos());
                 MainActivity.usuario_logeado.setEmail(Mail);
                 MainActivity.usuario_logeado.setContraseña(Contraseña);
-            if (p.getNombre() != null)
-            {
-                continuar.setVisibility(View.VISIBLE);
+                Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
+                startActivity(intent);
             }
             else
             {
-                Toast toast1;
-                toast1 = Toast.makeText(Loginn.this, "Usuario y/o contraseña incorrectos.", Toast.LENGTH_SHORT);
-                toast1.show();
+
+                Toast.makeText(Loginn.this, "Usuario y/o contraseña incorrectos, compruebe sus credenciales", Toast.LENGTH_SHORT).show();
                 Password.setText("");
             }
         }

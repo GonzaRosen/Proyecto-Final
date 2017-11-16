@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    tools:context="com.example.santi.beatline_func.MenuPrincipal"
+    android:layout_gravity="center"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -21,47 +23,43 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Bienvenido!"
+            android:text="BeatLine"
             android:textSize="29sp"
             android:textAlignment="center"
             android:textColor="@color/Verde"
             android:textStyle="bold"
             android:layout_marginTop="60dp"
-            android:layout_marginLeft="16dp"/>
+            android:layout_marginLeft="38dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Bienvenido!"
+            android:text="BeatLine"
             android:textSize="30sp"
             android:textAlignment="center"
             android:textColor="@color/Violeta"
             android:layout_marginTop="60dp"
-            android:layout_marginLeft="16dp"/>
+            android:layout_marginLeft="38dp"/>
 
     </RelativeLayout>
 
     <Button
-        android:layout_width="130dp"
+        android:layout_width="100dp"
         android:layout_height="30dp"
-        android:text="Registrarme"
-        android:onClick="Regusu"
-        android:background="@color/Verde"
+        android:background="#7D22"
+        android:text="Mi Perfil"
         android:textSize="18sp"
-        android:id="@+id/Regusu"
+        android:layout_marginLeft="150dp"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="130dp"
-        android:textColor="@color/Violeta"
-        android:textStyle="italic"/>
+        android:onClick="Perfil"/>
 
     <Button
-        android:layout_width="140dp"
+        android:layout_width="170dp"
         android:layout_height="30dp"
-        android:onClick="Login"
-        android:background="@color/Verde"
-        android:text="Iniciar Sesión"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="125dp"
+        android:background="#7D22"
+        android:text="Buscar Personas"
         android:textSize="18sp"
-        android:textColor="@color/Violeta"/>
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="20dp"
+        android:onClick="Buscar"/>
 
 </LinearLayout>

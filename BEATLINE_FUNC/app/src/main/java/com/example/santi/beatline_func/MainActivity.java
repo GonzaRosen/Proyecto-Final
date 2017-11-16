@@ -20,21 +20,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Activity);
 
     }
-    public void Filtros (View view)
-    {
-        Intent Activity = new Intent(getApplicationContext(), FiltrosBusqueda.class);
-        startActivity(Activity);
-    }
-    public void PerfilU (View view)
-    {
-        Intent Activity = new Intent(getApplicationContext(), PerfilUsuario.class);
-        startActivity(Activity);
-    }
-    public void RecuPass (View view)
-    {
-        Intent Activity = new Intent(getApplicationContext(), PerfilUsuario.class);
-        startActivity(Activity);
-    }
+
     public void Login (View view)
     {
         Intent Activity = new Intent(getApplicationContext(), Loginn.class);
