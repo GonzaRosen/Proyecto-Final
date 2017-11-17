@@ -88,7 +88,6 @@ public class FiltrosBusqueda extends Activity {
                         urlApi += "&Influencia=" + strInfluencia;
                     }
                 }*/
-                Toast.makeText(getBaseContext(), urlApi, Toast.LENGTH_LONG).show();
                 new ConectarAPITask().execute(urlApi);
                 Genero.setVisibility(View.GONE);
                 Instrumento.setVisibility(View.GONE);
@@ -100,7 +99,6 @@ public class FiltrosBusqueda extends Activity {
                 tv4.setVisibility(View.GONE);
                 tv5.setVisibility(View.GONE);
                 Logo.setVisibility(View.GONE);
-                volver.setVisibility(View.GONE);
                 buscar.setVisibility(View.GONE);
                 adapterPersona = new AdapterPersona(getApplicationContext(), new ArrayList<UsuariosBusqueda>());
                 lv.setAdapter(adapterPersona);
