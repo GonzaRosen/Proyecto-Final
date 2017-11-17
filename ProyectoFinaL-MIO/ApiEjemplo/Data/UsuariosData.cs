@@ -150,13 +150,215 @@ namespace ApiEjemplo.Data
             }
             else
             {
-                if (Instrumentos == null)
-                { Instrumentos = "ñqñ ñqñ"; }
-                if (Generos == null)
-                {Generos = "ñqñ ñqñ";}
-                if (Influencias == null)
-                { Influencias = "ñqñ ñqñ"; }
+                if (Instrumentos == null && Generos != null && Influencias != null)
+                { Instrumentos = "ñqñ ñqñ";
+                    String[] VGeneros = Generos.Split(' ');
+                    String[] VInfluencias = Influencias.Split(' ');
 
+                    int cantG = VGeneros.Count();
+                    int cantInf = VInfluencias.Count();
+
+                    DataTable dt = null;
+                    string select = "select DISTINCT * from tusuarios where Ubicacion  = '" + Ubicacion + "' && (";
+
+                    for (int i = 0; i < cantG; i++)
+                    {
+                        select = select + " Generos like '%" + VGeneros[i] + "%' &&";
+                    }
+                    for (int i = 0; i < cantInf; i++)
+                    {
+                        if (i == cantInf - 1)
+                            select = select + " Influencias like '%" + VInfluencias[i] + "%' )";
+                        else
+                            select = select + " Influencias like '%" + VInfluencias[i] + "%' &&";
+                    }
+
+                    dt = DBHelper.EjecutarSelect(select);
+                    List<Usuarios> lista = new List<Usuarios>();
+                    Usuarios oUsuario;
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            oUsuario = ObtenerPorRow(row);
+                            lista.Add(oUsuario);
+                        }
+                        oUsuario = ObtenerPorRow(dt.Rows[0]);
+                    }
+                    return lista;
+
+                }
+                if (Generos == null && Instrumentos != null && Influencias != null)
+                {Generos = "ñqñ ñqñ";
+                    String[] VInstrumentos = Instrumentos.Split(' ');
+                    String[] VInfluencias = Influencias.Split(' ');
+
+                    int cantIns = VInstrumentos.Count();
+                    int cantInf = VInfluencias.Count();
+
+                    DataTable dt = null;
+                    string select = "select DISTINCT * from tusuarios where Ubicacion  = '" + Ubicacion + "' && (";
+                    for (int i = 0; i < cantIns; i++)
+                    {
+                        select = select + " Instrumentos like '%" + VInstrumentos[i] + "%' &&";
+                    }
+                    for (int i = 0; i < cantInf; i++)
+                    {
+                        if (i == cantInf - 1)
+                            select = select + " Influencias like '%" + VInfluencias[i] + "%' )";
+                        else
+                            select = select + " Influencias like '%" + VInfluencias[i] + "%' &&";
+                    }
+
+                    dt = DBHelper.EjecutarSelect(select);
+                    List<Usuarios> lista = new List<Usuarios>();
+                    Usuarios oUsuario;
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            oUsuario = ObtenerPorRow(row);
+                            lista.Add(oUsuario);
+                        }
+                        oUsuario = ObtenerPorRow(dt.Rows[0]);
+                    }
+                    return lista;
+                }
+                if (Influencias == null && Instrumentos != null && Generos != null)
+                { Influencias = "ñqñ ñqñ";
+                    String[] VInstrumentos = Instrumentos.Split(' ');
+                    String[] VGeneros = Generos.Split(' ');
+
+                    int cantIns = VInstrumentos.Count();
+                    int cantG = VGeneros.Count();
+
+                    DataTable dt = null;
+                    string select = "select DISTINCT * from tusuarios where Ubicacion  = '" + Ubicacion + "' && (";
+                    for (int i = 0; i < cantIns; i++)
+                    {
+                        select = select + " Instrumentos like '%" + VInstrumentos[i] + "%' &&";
+                    }
+                    for (int i = 0; i < cantG; i++)
+                    {
+                        if (i == cantG - 1)
+                            select = select + " Generos like '%" + VGeneros[i] + "%' )";
+                        else
+                            select = select + " Generos like '%" + VGeneros[i] + "%' &&";
+                    }
+
+                    dt = DBHelper.EjecutarSelect(select);
+                    List<Usuarios> lista = new List<Usuarios>();
+                    Usuarios oUsuario;
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            oUsuario = ObtenerPorRow(row);
+                            lista.Add(oUsuario);
+                        }
+                        oUsuario = ObtenerPorRow(dt.Rows[0]);
+                    }
+                    return lista;
+                }
+
+                if (Instrumentos == null && Generos == null && Influencias != null)
+                {
+                    Instrumentos = "ñqñ ñqñ";
+                    Generos = "ñqñ ñqñ";
+                    String[] VInfluencias = Influencias.Split(' ');
+                    int cantInf = VInfluencias.Count();
+
+                    DataTable dt = null;
+                    string select = "select DISTINCT * from tusuarios where Ubicacion  = '" + Ubicacion + "' && (";
+                    for (int i = 0; i < cantInf; i++)
+                    {
+                        if (i == cantInf - 1)
+                            select = select + " Influencias like '%" + VInfluencias[i] + "%' )";
+                        else
+                            select = select + " Influencias like '%" + VInfluencias[i] + "%' &&";
+                    }
+                    dt = DBHelper.EjecutarSelect(select);
+                    List<Usuarios> lista = new List<Usuarios>();
+                    Usuarios oUsuario;
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            oUsuario = ObtenerPorRow(row);
+                            lista.Add(oUsuario);
+                        }
+                        oUsuario = ObtenerPorRow(dt.Rows[0]);
+                    }
+                    return lista;
+
+                }
+
+                if (Instrumentos == null && Generos != null && Influencias == null)
+                {
+                    Instrumentos = "ñqñ ñqñ";
+                    Influencias = "ñqñ ñqñ";
+                    String[] VGeneros = Generos.Split(' ');
+                    int cantG = VGeneros.Count();
+
+                    DataTable dt = null;
+                    string select = "select DISTINCT * from tusuarios where Ubicacion  = '" + Ubicacion + "' && (";
+                    for (int i = 0; i < cantG; i++)
+                    {
+                        if (i == cantG - 1)
+                            select = select + " Generos like '%" + VGeneros[i] + "%' )";
+                        else
+                            select = select + " Generos like '%" + VGeneros[i] + "%' &&";
+                    }
+                    dt = DBHelper.EjecutarSelect(select);
+                    List<Usuarios> lista = new List<Usuarios>();
+                    Usuarios oUsuario;
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            oUsuario = ObtenerPorRow(row);
+                            lista.Add(oUsuario);
+                        }
+                        oUsuario = ObtenerPorRow(dt.Rows[0]);
+                    }
+                    return lista;
+
+                }
+
+                if (Instrumentos != null && Generos == null && Influencias == null)
+                {
+                    Generos = "ñqñ ñqñ";
+                    Influencias = "ñqñ ñqñ";
+                    String[] VInstrumento = Instrumentos.Split(' ');
+                    int cantIns = VInstrumento.Count();
+
+                    DataTable dt = null;
+                    string select = "select DISTINCT * from tusuarios where Ubicacion  = '" + Ubicacion + "' && (";
+                    for (int i = 0; i < cantIns; i++)
+                    {
+                        if (i == cantIns - 1)
+                            select = select + " Instrumentos like '%" + VInstrumentos[i] + "%' )";
+                        else
+                            select = select + " Instrumentos like '%" + VInstrumentos[i] + "%' &&";
+                    }
+                    dt = DBHelper.EjecutarSelect(select);
+                    List<Usuarios> lista = new List<Usuarios>();
+                    Usuarios oUsuario;
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            oUsuario = ObtenerPorRow(row);
+                            lista.Add(oUsuario);
+                        }
+                        oUsuario = ObtenerPorRow(dt.Rows[0]);
+                    }
+                    return lista;
+
+                }
+
+                if (Instrumentos != null && Generos != null && Influencias != null)
+                { 
                 String[] VInstrumentos = Instrumentos.Split(' ');
                 String[] VGeneros = Generos.Split(' ');
                 String[] VInfluencias = Influencias.Split(' ');
@@ -196,6 +398,7 @@ namespace ApiEjemplo.Data
                     oUsuario = ObtenerPorRow(dt.Rows[0]);
                 }
                 return lista;
+                }
             }
         }
 
