@@ -169,18 +169,18 @@ namespace ApiEjemplo.Data
                 string select = "select DISTINCT * from tusuarios where Ubicacion  = '" + Ubicacion + "' && (";
                 for (int i = 0; i < cantIns; i++)
                 {
-                    select = select + " Instrumentos like '%" + VInstrumentos[i] + "%' ||";
+                    select = select + " Instrumentos like '%" + VInstrumentos[i] + "%' &&";
                 }
                 for (int i = 0; i < cantG; i++)
                 {
-                    select = select + " Generos like '%" + VGeneros[i] + "%' ||";
+                    select = select + " Generos like '%" + VGeneros[i] + "%' &&";
                 }
                 for (int i = 0; i < cantInf; i++)
                 {
                     if (i == cantInf - 1)
                         select = select + " Influencias like '%" + VInfluencias[i] + "%' )";
                     else
-                        select = select + " Influencias like '%" + VInfluencias[i] + "%' ||";
+                        select = select + " Influencias like '%" + VInfluencias[i] + "%' &&";
                 }
 
                 dt = DBHelper.EjecutarSelect(select);
