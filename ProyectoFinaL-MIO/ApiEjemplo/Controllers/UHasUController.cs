@@ -10,10 +10,10 @@ using System.Web.Http.Description;
 
 namespace ApiEjemplo.Controllers
 {
-    public class UHasUController
+    public class UHasUController : ApiController
     {
         [ResponseType(typeof(UHasU))]
-        public IHttpActionResult PostIUHU(UsuariosHasInstrumentos oUsuario, int IdUsuario, string IdSeguido)
+        public IHttpActionResult PostIUHU(UHasU oUsuario, int IdUsuario, int IdSeguido)
         {
             UHasUData.InsertarUHU(oUsuario, IdUsuario, IdSeguido);
             return Ok();

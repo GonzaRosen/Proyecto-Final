@@ -95,9 +95,9 @@ namespace ApiEjemplo.Controllers
             return Ok(lista);
         }
 
-        public IList<Usuarios> GetS(int IdUsuario)
+        public IHttpActionResult GetS(int IdUsuario, string Nombre)
         {
-            List<Usuarios> lista = UsuariosData.ObtenerSeguidosPorUsuario(IdUsuario);                        
+            List<Usuarios> lista = UsuariosData.ObtenerSeguidosPorUsuario(IdUsuario, Nombre);                        
             return Ok(lista);
         }
 

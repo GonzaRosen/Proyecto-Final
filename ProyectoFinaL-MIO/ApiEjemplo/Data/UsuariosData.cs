@@ -93,9 +93,9 @@ namespace ApiEjemplo.Data
             return lista;
         }
 
-        public static List<Usuarios> ObtenerSeguidosPorUsuario(int IdUsuario)
+        public static List<Usuarios> ObtenerSeguidosPorUsuario(int IdUsuario, string Nombre)
         {
-            string select = "select tusuarios.IdUsuario, tusuarios.Nombre, tusuarios.Apellido, tusuarios.Email  from tusuarios inner join tusuarios_has_tusuarios on" +
+            string select = "select tusuarios.*  from tusuarios inner join tusuarios_has_tusuarios on" +
             " tusuarios.IdUsuario = tusuarios_has_tusuarios.tSeguidos_IdSeguido" +
             " WHERE tusuarios_has_tusuarios.tUsuarios_IdUsuario = " + IdUsuario.ToString();
             DataTable dt = DBHelper.EjecutarSelect(select);

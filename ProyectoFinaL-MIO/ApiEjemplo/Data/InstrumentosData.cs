@@ -43,23 +43,6 @@ namespace ApiEjemplo.Data
             return lista;
         }
 
-        public static List<Usuarios> ObtenerSeguidosPorUsuario(int IdUsuario)
-        {
-            string select = "select tusuarios_has_tusuarios.tSeguidos_IdSeguido from tusuarios inner join tusuarios_has_tusuarios on" +
-            " tusuarios.IdUsuario = tusuarios_has_tusuarios.tUsuarios_IdUsuario" +
-            " WHERE tusuarios_has_tusuarios.tUsuarios_IdUsuario = " + IdUsuario.ToString();
-            DataTable dt = DBHelper.EjecutarSelect(select);
-            List<Instrumentos> lista = new List<Instrumentos>();
-            if (dt.Rows.Count > 0)
-            {
-                foreach (DataRow row in dt.Rows)
-                {
-                    lista.Add(ObtenerPorRow(row));
-                }
-            }
-            return lista;
-        }
-
         public static List<Instrumentos> ObtenerInstrumentos()
         {
             string select = "select * from tinstrumentos";

@@ -8,7 +8,7 @@ namespace ApiEjemplo.Data
 {
     public class UHasUData
     {      
-        public static void InsertarUHU(UsuariosHasUsuarios oUHU, int IdUsuario, int IdSeguido)
+        public static void InsertarUHU(UHasU oUHU, int IdUsuario, int IdSeguido)
         {
             string sInsert =
                 string.Format(
