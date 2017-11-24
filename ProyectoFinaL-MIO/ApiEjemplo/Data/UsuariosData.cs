@@ -93,6 +93,26 @@ namespace ApiEjemplo.Data
             return lista;
         }
 
+        public static List<Usuarios> ObtenerSeguidosPorUsuario(int IdUsuario, string Nombre)
+        {
+            string select = "select tusuarios.*  from tusuarios inner join tusuarios_has_tusuarios on" +
+            " tusuarios.IdUsuario = tusuarios_has_tusuarios.tSeguidos_IdSeguido" +
+            " WHERE tusuarios_has_tusuarios.tUsuarios_IdUsuario = " + IdUsuario.ToString();
+            DataTable dt = DBHelper.EjecutarSelect(select);
+            List<Usuarios> lista = new List<Usuarios>();
+            Usuarios oUsuario;
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    oUsuario = ObtenerPorRow(row);
+                    lista.Add(oUsuario);
+                }
+                oUsuario = ObtenerPorRow(dt.Rows[0]);
+            }
+            return lista;
+        }
+
         public static List<Usuarios> Login(string Email, string Password)
         {
             string select = "select * from tusuarios WHERE tusuarios.Email = '" + Email + "' AND tusuarios.Password = '" + Password + "'";

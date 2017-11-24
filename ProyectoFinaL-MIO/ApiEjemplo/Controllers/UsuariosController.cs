@@ -22,7 +22,6 @@ namespace ApiEjemplo.Controllers
             try
             {
                 UsuariosData.InsertarUsuario(oUsuario);
-
             }
             catch (Exception e)
             {
@@ -93,6 +92,12 @@ namespace ApiEjemplo.Controllers
             {
                 return NotFound();
             }
+            return Ok(lista);
+        }
+
+        public IHttpActionResult GetS(int IdUsuario, string Nombre)
+        {
+            List<Usuarios> lista = UsuariosData.ObtenerSeguidosPorUsuario(IdUsuario, Nombre);                        
             return Ok(lista);
         }
 
