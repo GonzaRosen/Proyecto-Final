@@ -36,10 +36,11 @@ public class RegistracionUsuario extends Activity {
     CalendarView FechaNac;
     EditText Email;
     EditText Pass;
-    EditText Ubicacion;
     EditText ConfPass;
-
     CheckBox Terminos;
+
+    Spinner SpUbicacion;
+    ArrayAdapter<String> AdapterUbi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +54,14 @@ public class RegistracionUsuario extends Activity {
             FechaNac = (CalendarView)findViewById(R.id.FechaNac);
             Email = (EditText)findViewById(R.id.Email);
             Pass = (EditText)findViewById(R.id.Contraseña);
-            Ubicacion = (EditText)findViewById(R.id.Ubicacionn);
             ConfPass = (EditText)findViewById(R.id.confirmar);
+            SpUbicacion = (Spinner) findViewById(R.id.spUbicacionn);
+
+            AdapterUbi = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosUbi);
+            AdapterUbi.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+            SpUbicacion.setAdapter(AdapterUbi);
+
+
         }
     }
 
@@ -71,10 +78,10 @@ public class RegistracionUsuario extends Activity {
         String Edit2 = Apellido.getText().toString();
         String Edit3 = Email.getText().toString();
         String Edit4 = Pass.getText().toString();
-        String Edit5 = Ubicacion.getText().toString();
+        String SpinnerU = SpUbicacion.getSelectedItem().toString();
         String Edit6 = ConfPass.getText().toString();
 
-        if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || Edit5.equals("") || FechaNac.isSelected()))
+        if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || SpinnerU.equals("") || FechaNac.isSelected()))
         {
             if (Terminos.isChecked())
             {
@@ -85,7 +92,7 @@ public class RegistracionUsuario extends Activity {
                 bundle.putString("Apellido", Edit2);
                 bundle.putString("Email", Edit3);
                 bundle.putString("Pass", Edit4);
-                bundle.putString("Ubicacion", Edit5);
+                bundle.putString("Ubicacion", SpinnerU);
 
                 Intent Activity;
                 Activity = new Intent(this,RegistracionPreferencias.class);

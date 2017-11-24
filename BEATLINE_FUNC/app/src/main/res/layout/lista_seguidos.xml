@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Nombre"
+                android:text="Gonzalo Rosen,"
+                android:textSize="20dp"
+                android:textColor="@color/Violeta"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Ubicacion"
+                android:text="Villa Crespo"
+                android:textSize="35px"
+                android:textColor="@color/Negro"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Instrumento"
+        android:text="Theremin"
+        android:textSize="35px"
+        android:textColor="@color/Negro"
+        android:layout_marginLeft="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Genero"
+        android:text="Jazz"
+        android:textSize="35px"
+        android:textColor="@color/Negro"
+        android:layout_marginLeft="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Influencia"
+        android:text="Juan Theremin"
+        android:textSize="35px"
+        android:textColor="@color/Negro"
+        android:layout_marginLeft="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Mail"
+        android:text="gonzarosen@mailloco.com"
+        android:textSize="35px"
+        android:textColor="@color/Negro"
+        android:layout_marginLeft="15dp"/>
+
+</LinearLayout>

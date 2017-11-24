@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.santi.beatline_func.EditarPerfil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/logo"
+                android:alpha="0.1"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar Perfil"
+                android:textSize="29sp"
+                android:textAlignment="center"
+                android:textColor="@color/Verde"
+                android:textStyle="bold"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar Perfil"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:textColor="@color/Violeta"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="20dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Nombre"
+            android:textColor="#222051"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/ENombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:width="280dp"
+            android:textColor="#222051"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Apellido"
+            android:textColor="#222051"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/EApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:width="280dp"
+            android:textColor="#222051"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Descripcion"
+            android:textColor="#222051"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/EDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:width="280dp"
+            android:textColor="#222051"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Instrumentos"
+            android:textColor="#222051"
+            android:textSize="17sp" />
+
+        <Spinner
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/spInstru"/>
+
+        <EditText
+            android:id="@+id/EInstrumentos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:width="280dp"
+            android:textColor="#222051"
+            android:textSize="13sp"/>
+
+        <Button
+            android:layout_width="86dp"
+            android:layout_height="40dp"
+            android:text="Borrar todo"
+            android:textSize="12sp"
+            android:layout_marginLeft="50dp"
+            android:background="@color/Verde"
+            android:textColor="@color/Violeta"
+            android:onClick="limpiar"
+            android:id="@+id/bins"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Géneros"
+            android:textColor="#222051"
+            android:textSize="17sp" />
+
+        <Spinner
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/spGen"/>
+
+        <EditText
+            android:id="@+id/EGeneros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:width="280dp"
+            android:textColor="#222051"
+            android:textSize="13sp"/>
+
+        <Button
+            android:layout_width="86dp"
+            android:layout_height="40dp"
+            android:text="Borrar todo"
+            android:textSize="12sp"
+            android:layout_marginLeft="50dp"
+            android:background="@color/Verde"
+            android:textColor="@color/Violeta"
+            android:onClick="limpiar"
+            android:id="@+id/bgen"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Influencias"
+            android:textColor="#222051"
+            android:textSize="17sp" />
+
+        <Spinner
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/spInf"/>
+
+        <EditText
+            android:id="@+id/EInfluencias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:width="280dp"
+            android:textColor="#222051"
+            android:textSize="13sp" />
+
+        <Button
+            android:layout_width="86dp"
+            android:layout_height="40dp"
+            android:text="Borrar todo"
+            android:textSize="12sp"
+            android:layout_marginLeft="50dp"
+            android:background="@color/Verde"
+            android:textColor="@color/Violeta"
+            android:onClick="limpiar"
+            android:id="@+id/binf"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Ubicación"
+            android:textColor="#222051"
+            android:textSize="17sp" />
+
+        <Spinner
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/spUbi"/>
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:background="@color/Violeta"
+            android:textColor="@color/Verde"
+            android:textSize="22sp"
+            android:onClick="editarperfil"
+            android:text="Editar"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="20dp"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>

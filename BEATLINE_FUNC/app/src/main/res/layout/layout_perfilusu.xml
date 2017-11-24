@@ -8,40 +8,68 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="20dp">
+            android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:src="@drawable/logo"
-                android:alpha="0.1"
-                android:layout_marginLeft="20dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mi Perfil"
-                android:textSize="29sp"
-                android:textAlignment="center"
-                android:textColor="@color/Verde"
-                android:textStyle="bold"
-                android:layout_marginTop="60dp"
-                android:layout_marginLeft="40dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mi Perfil"
-                android:textSize="30sp"
-                android:textAlignment="center"
+            <Button
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:text="Volver"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Verde"
                 android:textColor="@color/Violeta"
-                android:layout_marginTop="60dp"
-                android:layout_marginLeft="40dp"/>
+                android:onClick="volver"
+                android:textSize="14sp"/>
 
-        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/logo"
+                    android:alpha="0.1"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mi Perfil"
+                    android:textSize="29sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/Verde"
+                    android:textStyle="bold"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="40dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mi Perfil"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/Violeta"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="40dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar Perfil"
+                android:textColor="@color/Violeta"
+                android:onClick="editar"
+                android:layout_marginTop="20dp"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -114,14 +142,23 @@
             android:layout_marginTop="20dp"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Volver"
-            android:layout_marginLeft="170dp"
-            android:background="@color/Verde"
-            android:textColor="@color/Negro"
-            android:onClick="volver"
+            android:text="Ver Seguidos"
+            android:layout_marginLeft="5dp"
+            android:background="@color/Violeta"
+            android:textColor="@color/Verde"
+            android:onClick="mostrar"
             android:layout_marginTop="15dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:id="@+id/listaSeguidos"/>
 
     </LinearLayout>
 

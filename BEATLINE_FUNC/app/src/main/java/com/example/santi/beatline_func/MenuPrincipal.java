@@ -34,11 +34,7 @@ public class MenuPrincipal extends Activity {
 
     public void Cerrar (View view)
     {
-        Intent mStartActivity = new Intent(getBaseContext(), MainActivity.class);
-        int mPendingIntentId = 123456;
-        PendingIntent mPendingIntent = PendingIntent.getActivity(getBaseContext(), mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
-        AlarmManager mgr = (AlarmManager)getBaseContext().getSystemService(Context.ALARM_SERVICE);
-        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
-        System.exit(0);
+        Intent Activity = new Intent(getApplicationContext(), Loginn.class);
+        startActivity(Activity);
     }
 }

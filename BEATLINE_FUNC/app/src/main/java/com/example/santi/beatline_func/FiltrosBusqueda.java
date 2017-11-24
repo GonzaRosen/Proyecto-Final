@@ -1,17 +1,19 @@
-//TODO: • Ordenamiento de los procesos; • Agregar descripcion a la Registracion/Mi perfil/Matching; • Dejar todo presentable (¿algún logo?); • Expandir lista (TUS MATCHEOS) ▬ {{VER MAS - USUARIO}}
-
 package com.example.santi.beatline_func;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.gson.Gson;
@@ -21,10 +23,12 @@ import java.util.Arrays;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class FiltrosBusqueda extends Activity {
-    EditText Genero, Instrumento, Influencia, Ubicacion;
+    EditText Generos, Instrumentos, Influencias;
+    Spinner SpInstrumentos, SpInfluencias, SpUbicacion, SpGenero;
     TextView tv1, tv2, tv3, tv4, tv5;
     ImageView Logo;
     Button volver, buscar;
@@ -32,15 +36,19 @@ public class FiltrosBusqueda extends Activity {
     AdapterPersona adapterPersona;
     ListView lv;
     ArrayList<UsuariosBusqueda> Juan = new ArrayList<>();
+    ArrayAdapter<String> AdapterIns, AdapterGen, AdapterInf, AdapterUbi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_filtro);
-        Genero = (EditText) findViewById(R.id.Genero);
-        Instrumento = (EditText) findViewById(R.id.Instrumento);
-        Influencia = (EditText) findViewById(R.id.Influencia);
-        Ubicacion = (EditText) findViewById(R.id.Ubicacion);
+        Generos = (EditText) findViewById(R.id.Genero);
+        Instrumentos = (EditText) findViewById(R.id.Instrumento);
+        Influencias = (EditText) findViewById(R.id.Influencia);
+        SpInstrumentos = (Spinner) findViewById(R.id.spInstrumentos);
+        SpGenero = (Spinner) findViewById(R.id.spGeneros);
+        SpInfluencias = (Spinner) findViewById(R.id.spInfluencias);
+        SpUbicacion = (Spinner) findViewById(R.id.spUbicacion);
         tv1 = (TextView) findViewById(R.id.textView);
         tv2 = (TextView) findViewById(R.id.tvInstrumento);
         tv3 = (TextView) findViewById(R.id.tvInfluencia);
@@ -51,48 +59,37 @@ public class FiltrosBusqueda extends Activity {
         buscar = (Button) findViewById(R.id.Buscar);
         lv = (ListView) findViewById(R.id.Lista);
 
+        Generos.setEnabled(false);
+        Instrumentos.setEnabled(false);
+        Influencias.setEnabled(false);
+
+        AdapterIns = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosIns);
+        AdapterGen = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosGen);
+        AdapterInf = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosInf);
+        AdapterUbi = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosUbi);
+
+        AdapterIns.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        AdapterGen.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        AdapterInf.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        AdapterUbi.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
+        SpInstrumentos.setAdapter(AdapterIns);
+        SpGenero.setAdapter(AdapterGen);
+        SpInfluencias.setAdapter(AdapterInf);
+        SpUbicacion.setAdapter(AdapterUbi);
+
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String strUbicacion = Ubicacion == null ? "" : Ubicacion.getText().toString();
-                String strGenero = Genero == null ? "" : Genero.getText().toString();
-                String strInstrumento = Instrumento == null ? "" : Instrumento.getText().toString();
-                String strInfluencia = Influencia == null ? "" : Influencia.getText().toString();
+                String strUbicacion = SpUbicacion.getSelectedItem().toString();
+                String strGenero = Generos == null ? "" : Generos.getText().toString();
+                String strInstrumento = Instrumentos == null ? "" : Instrumentos.getText().toString();
+                String strInfluencia = Influencias == null ? "" : Influencias.getText().toString();
                 String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get?Ubicacion=" + strUbicacion + "&Instrumentos=" + strInstrumento + "&Generos=" + strGenero + "&Influencias=" + strInfluencia;
-                /*if (strUbicacion.length() > 0) {
-                    urlApi+=  "Ubicacion=" + strUbicacion;
-                }
-                if (strUbicacion.length() == 0 && strGenero.length() != 0){
-                    urlApi+= "Genero=" + strGenero;
-                }
-                else {
-                    if (strGenero.length() != 0) {
-                        urlApi += "&Genero=" + strGenero;
-                    }
-                }
-                if (strGenero.length() == 0 && strUbicacion.length() == 0 && strInstrumento.length() != 0){
-                    urlApi+= "Instrumento=" + strInstrumento;
-                }
-                else
-                {
-                    if (strInstrumento.length() != 0) {
-                        urlApi += "&Instrumento=" + strInstrumento;
-                    }
-                }
-                if (strUbicacion.length() == 0 && strGenero.length() == 0 && strInfluencia.length() == 0 && strInfluencia.length() != 0){
-                    urlApi+= "Influencia=" + strInfluencia;
-                }
-                else
-                {
-                    if (strInfluencia.length() != 0) {
-                        urlApi += "&Influencia=" + strInfluencia;
-                    }
-                }*/
                 new ConectarAPITask().execute(urlApi);
-                Genero.setVisibility(View.GONE);
-                Instrumento.setVisibility(View.GONE);
-                Influencia.setVisibility(View.GONE);
-                Ubicacion.setVisibility(View.GONE);
+                Generos.setVisibility(View.GONE);
+                Instrumentos.setVisibility(View.GONE);
+                Influencias.setVisibility(View.GONE);
                 tv1.setVisibility(View.GONE);
                 tv2.setVisibility(View.GONE);
                 tv3.setVisibility(View.GONE);
@@ -100,8 +97,62 @@ public class FiltrosBusqueda extends Activity {
                 tv5.setVisibility(View.GONE);
                 Logo.setVisibility(View.GONE);
                 buscar.setVisibility(View.GONE);
-                adapterPersona = new AdapterPersona(getApplicationContext(), new ArrayList<UsuariosBusqueda>());
+                SpInstrumentos.setVisibility(View.GONE);
+                SpInfluencias.setVisibility(View.GONE);
+                SpGenero.setVisibility(View.GONE);
+                SpUbicacion.setVisibility(View.GONE);
+                adapterPersona = new AdapterPersona(getApplicationContext(), new ArrayList<UsuariosBusqueda>(),new BtnClickListener() {
+                    @Override
+                    public void onBtnClick(int position) {
+                        // Call your function which creates and shows the dialog here
+                        int id =adapterPersona.getId(position);
+                        String urlSeguir = "http://thebealineproject.azurewebsites.net/api/usuarios/PostIUHU?IdUsuario=" + MainActivity.usuario_logeado.getIdUsuario() + "&IdSeguido=" + id;
+                        new FiltrosBusqueda.ConectarAPITask().execute("GET",urlSeguir);
+                        Toast.makeText(getApplicationContext(), "Mi id: " + MainActivity.usuario_logeado.getIdUsuario() + ", id a seguir: " + id, Toast.LENGTH_LONG).show();
+                    }});
                 lv.setAdapter(adapterPersona);
+            }
+        });
+
+        SpInstrumentos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int pos = SpInstrumentos.getSelectedItemPosition();
+                String text = SpInstrumentos.getItemAtPosition(pos).toString();
+                Instrumentos.setText(Instrumentos.getText() + " " + text);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        SpGenero.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int pos = SpGenero.getSelectedItemPosition();
+                String text = SpGenero.getItemAtPosition(pos).toString();
+                Generos.setText(Generos.getText() + " " + text);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        SpInfluencias.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int pos = SpInfluencias.getSelectedItemPosition();
+                String text = SpInfluencias.getItemAtPosition(pos).toString();
+                Influencias.setText(Influencias.getText() + " " + text);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }
@@ -148,6 +199,83 @@ public class FiltrosBusqueda extends Activity {
         }
 
     }
+
+    private class SeguirUsuario extends AsyncTask<String, Void, String> {
+        public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            String method = params[0];
+            String urlApi = params[1];
+
+            if (method.equals("GET")) {
+                //String json = params[2];
+                return getPersona(urlApi);
+            }
+            return null;
+        }
+
+
+        private String getPersona(String urlApi) {
+            String strResultado;
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .url(urlApi)
+                    .build();
+
+            try {
+                Response response = client.newCall(request).execute();
+                strResultado = response.body().string();
+
+                return strResultado;
+            } catch (IOException e) {
+                return null;
+
+            }
+        }
+
+
+        private Persona postPersona(String urlApi, String json) {
+            OkHttpClient client = new OkHttpClient();
+            RequestBody body = RequestBody.create(JSON, json);
+            Request request = new Request.Builder()
+                    .url(urlApi)
+                    .post(body)
+                    .build();
+
+            try {
+                Response response = client.newCall(request).execute();
+                String strResultado = response.body().string();
+                return parsearResultado(strResultado);
+            } catch (IOException e) {
+                Log.d("Error :", e.getMessage());
+                return null;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String res) {
+            super.onPostExecute(res);
+        }
+
+
+        private Persona parsearResultado(String respuesta)   {
+            if (respuesta == null || respuesta.length()==0)
+                return null;
+            try {
+                Gson gson = new Gson();
+                Persona[] p = gson.fromJson(respuesta, Persona[].class);
+                return p[0];
+
+            }
+            catch (Exception e) {
+                return null;
+            }
+        }
+    }
+
+
 
     public void Volver (View vista)
     {

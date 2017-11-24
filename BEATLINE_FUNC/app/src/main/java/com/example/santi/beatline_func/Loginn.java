@@ -21,8 +21,6 @@ public class Loginn extends AppCompatActivity {
 
     EditText Email;
     EditText Password;
-    Button continuar;
-    Boolean Logeo = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +36,7 @@ public class Loginn extends AppCompatActivity {
         Persona p = new Persona();
         if(!(Mail.equals("") || Contraseña.equals("")))
         {
-            String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get2";
-            urlApi = urlApi + "?Email=" + Mail + "&Password=" + Contraseña;
+            String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get2" + "?Email=" + Mail + "&Password=" + Contraseña;
             new Loginn.ConectarAPITask().execute("GET",urlApi);
         }
         else
@@ -48,11 +45,6 @@ public class Loginn extends AppCompatActivity {
             toast1 = Toast.makeText(Loginn.this, "No deje campos en blanco.", Toast.LENGTH_SHORT);
             toast1.show();
         }
-    }
-
-    public void Continuar (View view)
-    {
-
     }
 
     /*ArrayList<Persona> parseResultGSON(String resultado) {
@@ -136,6 +128,7 @@ public class Loginn extends AppCompatActivity {
                 MainActivity.usuario_logeado.setContraseña(Contraseña);
                 MainActivity.usuario_logeado.setUbicacion(p.getUbicacion());
                 MainActivity.usuario_logeado.setDescripcion(p.getDescripcion());
+                MainActivity.usuario_logeado.setIdUsuario(p.getIdUsuario());
                 Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
                 startActivity(intent);
             }

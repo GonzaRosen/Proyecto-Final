@@ -35,6 +35,13 @@
             android:textStyle="italic"
             android:id="@+id/tvInstrumento"/>
 
+        <Spinner
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:id="@+id/spInstrumentos"
+            />
+
         <EditText
             android:layout_width="180dp"
             android:layout_height="40dp"
@@ -51,6 +58,12 @@
             android:textColor="#222051"
             android:textStyle="italic"
             android:id="@+id/tvGenero"/>
+
+        <Spinner
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:id="@+id/spGeneros"/>
 
         <EditText
             android:layout_width="180dp"
@@ -69,6 +82,12 @@
             android:layout_marginTop="20dp"
             android:id="@+id/tvInfluencia"/>
 
+        <Spinner
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:id="@+id/spInfluencias"/>
+
         <EditText
             android:layout_width="180dp"
             android:layout_height="40dp"
@@ -86,12 +105,11 @@
             android:layout_marginTop="20dp"
             android:id="@+id/tvUbicacion"/>
 
-        <EditText
+        <Spinner
             android:layout_width="180dp"
             android:layout_height="40dp"
-            android:textSize="13sp"
             android:layout_marginLeft="100dp"
-            android:id="@+id/Ubicacion"/>
+            android:id="@+id/spUbicacion"/>
 
         <LinearLayout
             android:layout_width="wrap_content"

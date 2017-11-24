@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -29,6 +30,7 @@ public class PerfilUsuario extends Activity{
     TextView Influ;
     TextView Instru;
     TextView Ubicacion;
+    ArrayList<UsuariosBusqueda> Juan = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,7 @@ public class PerfilUsuario extends Activity{
         Instru = (TextView) findViewById(R.id.instrumentos);
         Ubicacion = (TextView) findViewById(R.id.Ubicacion);
 
-        Nomape.setText(MainActivity.usuario_logeado.getNombre() + MainActivity.usuario_logeado.getApellido());
+        Nomape.setText(MainActivity.usuario_logeado.getNombre() + " " + MainActivity.usuario_logeado.getApellido());
         Desc.setText("Descripción: " + MainActivity.usuario_logeado.getDescripcion());
         Influ.setText("Influencias: " + MainActivity.usuario_logeado.getInfluencias());
         Genero.setText("Géneros: " + MainActivity.usuario_logeado.getGenero());
@@ -53,6 +55,11 @@ public class PerfilUsuario extends Activity{
     public void volver (View vista)
     {
         Intent Activity = new Intent(getBaseContext(), MenuPrincipal.class);
+        startActivity(Activity);
+    }
+    public void editar (View view)
+    {
+        Intent Activity = new Intent(getBaseContext(), EditarPerfil.class);
         startActivity(Activity);
     }
 }

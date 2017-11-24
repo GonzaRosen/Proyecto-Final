@@ -6,6 +6,11 @@ package com.example.santi.beatline_func;
 
 public class UsuariosBusqueda {
     private String Nombre, Apellido, Instrumentos, Generos, Influencias, Ubicacion, Email, Descripcion;
+    private int IdUsuario;
+
+    public int getIdUsuario() { return IdUsuario; }
+
+    public void setIdUsuario(int idUsuario) { IdUsuario = idUsuario;}
 
     public String getNombre() { return Nombre; }
 

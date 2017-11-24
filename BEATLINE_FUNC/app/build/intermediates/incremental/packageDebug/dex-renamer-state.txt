@@ -1,7 +1,0 @@
-#Fri Nov 10 12:01:36 ART 2017
-base.0=C\:\\Users\\42660700\\Desktop\\proyecto-final\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c4fc1b5bccb86e5c4f96bfd17328df36dec0baea
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=C\:\\Users\\42660700\\Desktop\\proyecto-final\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_d62ad248cda160c704798e39cba5b957398533e4\\classes.dex
-base.1=C\:\\Users\\42660700\\Desktop\\proyecto-final\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_d62ad248cda160c704798e39cba5b957398533e4
-file.0=C\:\\Users\\42660700\\Desktop\\proyecto-final\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c4fc1b5bccb86e5c4f96bfd17328df36dec0baea\\classes.dex

@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -27,6 +30,8 @@ public class RegistracionPreferencias extends AppCompatActivity{
     EditText Instrumento;
     EditText Descripcion;
     String Nombre, Apellido, Email, Pass, Ubicacion;
+    Spinner SpInstrumentos, SpGeneros, SpInfluencias;
+    ArrayAdapter<String> AdapterIns, AdapterGen, AdapterInf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -45,6 +50,69 @@ public class RegistracionPreferencias extends AppCompatActivity{
         Influencia = (EditText)findViewById(R.id.influ);
         Instrumento = (EditText)findViewById(R.id.instru);
         Descripcion = (EditText)findViewById(R.id.desc);
+
+        Genero.setEnabled(false);
+        Instrumento.setEnabled(false);
+        Influencia.setEnabled(false);
+
+        SpInstrumentos = (Spinner)findViewById(R.id.spInstrumento);
+        SpInfluencias = (Spinner)findViewById(R.id.spInfluencia);
+        SpGeneros = (Spinner)findViewById(R.id.spGenero);
+
+        AdapterIns = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosIns);
+        AdapterGen = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosGen);
+        AdapterInf = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosInf);
+
+        AdapterIns.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        AdapterGen.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        AdapterInf.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
+        SpInstrumentos.setAdapter(AdapterIns);
+        SpGeneros.setAdapter(AdapterGen);
+        SpInfluencias.setAdapter(AdapterInf);
+
+
+        SpInstrumentos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int pos = SpInstrumentos.getSelectedItemPosition();
+                String text = SpInstrumentos.getItemAtPosition(pos).toString();
+                Instrumento.setText(Instrumento.getText() + " " + text);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        SpGeneros.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int pos = SpGeneros.getSelectedItemPosition();
+                String text = SpGeneros.getItemAtPosition(pos).toString();
+                Genero.setText(Genero.getText() + " " + text);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        SpInfluencias.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int pos = SpInfluencias.getSelectedItemPosition();
+                String text = SpInfluencias.getItemAtPosition(pos).toString();
+                Influencia.setText(Influencia.getText() + " " + text);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     public void registrar(View view)

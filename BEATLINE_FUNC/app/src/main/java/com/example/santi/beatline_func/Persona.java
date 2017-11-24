@@ -21,6 +21,8 @@ public class Persona {
 
     public int getIdUsuario() { return IdUsuario; }
 
+    public void setIdUsuario(int idUsuario) { IdUsuario = idUsuario; }
+
     public String getNombre() { return Nombre; }
 
     public void setNombre(String nombre) { Nombre = nombre; }

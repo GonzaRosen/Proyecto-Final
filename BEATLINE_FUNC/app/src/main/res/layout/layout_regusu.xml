@@ -149,14 +149,11 @@
 
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/Ubicacionn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <Spinner
+                android:layout_width="280dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="50dp"
-                android:width="280dp"
-                android:textColor="#222051"
-                android:textSize="13sp" />
+                android:id="@+id/spUbicacionn"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -223,11 +220,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:background="#4EFFBB"
+                android:background="@color/Verde"
                 android:fontFamily="sans-serif-condensed"
                 android:onClick="Continuar"
                 android:text="Continuar"
-                android:textColor="#222051"
+                android:textColor="@color/Violeta"
                 android:textSize="32dp" />
 
         </LinearLayout>
