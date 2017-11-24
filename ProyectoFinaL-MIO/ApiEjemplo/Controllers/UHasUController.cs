@@ -13,9 +13,9 @@ namespace ApiEjemplo.Controllers
     public class UHasUController : ApiController
     {
         [ResponseType(typeof(UHasU))]
-        public IHttpActionResult PostIUHU(UHasU oUsuario, int IdUsuario, int IdSeguido)
+        public IHttpActionResult PostIUHU(int IdUsuario, int IdSeguido)
         {
-            UHasUData.InsertarUHU(oUsuario, IdUsuario, IdSeguido);
+            UHasUData.InsertarUHU(IdUsuario, IdSeguido);
             return Ok();
         }
     }

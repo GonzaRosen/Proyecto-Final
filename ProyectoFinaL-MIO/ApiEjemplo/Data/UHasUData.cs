@@ -8,14 +8,10 @@ namespace ApiEjemplo.Data
 {
     public class UHasUData
     {      
-        public static void InsertarUHU(UHasU oUHU, int IdUsuario, int IdSeguido)
+        public static void InsertarUHU(int IdUsuario, int IdSeguido)
         {
-            string sInsert =
-                string.Format(
-            "Insert into tusuarios_has_tusuarios (" + IdUsuario + "," + IdSeguido + ") " +
-                "values ({0},{1})",
-                oUHU.IdUsuario,
-                oUHU.IdSeguido
+            string sInsert = string.Format("Insert into tusuarios_has_tusuarios (" + IdUsuario + "," + IdSeguido + ") " +
+                "values ({0},{1})"
                     );
             DBHelper.EjecutarIUD(sInsert);
         }
