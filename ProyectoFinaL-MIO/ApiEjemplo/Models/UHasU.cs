@@ -5,9 +5,9 @@ using System.Web;
 
 namespace ApiEjemplo.Models
 {
-    public class UsuariosHasInstrumentos
+    public class UHasU
     {
         public int IdUsuario { get; set; }
-        public int IdInstrumento { get; set; }
+        public int IdSeguido { get; set; }
     }
 }
