@@ -1,142 +1,142 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
-MERGED from [com.android.support:design:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\7c4112bbb672df273f6680f6d3e0bcd1\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\47e0389d30015bc8500cd1d5ebd7d61b\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3975365628f49475624e547f99cf25a7\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\89a2a22aeb4885f017c3b5aa95c6f395\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\bce032604893d4d309cf753dcf1a157c\AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\c08b9b6461bc75d5fc82a2649c1e40f5\AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\7a801c7aacda599ce5df92cb3ca5920c\AndroidManifest.xml:17:1-24:12
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
+MERGED from [com.android.support:design:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\672020ff8471c98550788e2325c8b331\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\49dc01a51c2fbc9ea8a1e4684335048a\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ca6a826fb8fed54a7b6a1887a65cf2d4\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\226fd7b353479362609e4d7ce525f0e3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\da9eda11d089251410228e4de23f58a3\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\6fbe13efda045e9623bbe8a9a480a3f1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\be737875def25e1cc58933e4ef605fd3\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:3:5-46
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:3:5-46
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:1-32:12
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:6:5-79
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:6:22-76
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:6:22-76
 application
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:8:5-30:19
-MERGED from [com.android.support:design:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\7c4112bbb672df273f6680f6d3e0bcd1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\7c4112bbb672df273f6680f6d3e0bcd1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\47e0389d30015bc8500cd1d5ebd7d61b\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\47e0389d30015bc8500cd1d5ebd7d61b\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3975365628f49475624e547f99cf25a7\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3975365628f49475624e547f99cf25a7\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\bce032604893d4d309cf753dcf1a157c\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\bce032604893d4d309cf753dcf1a157c\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\c08b9b6461bc75d5fc82a2649c1e40f5\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\c08b9b6461bc75d5fc82a2649c1e40f5\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\7a801c7aacda599ce5df92cb3ca5920c\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\7a801c7aacda599ce5df92cb3ca5920c\AndroidManifest.xml:22:5-20
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:8:5-30:19
+MERGED from [com.android.support:design:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\672020ff8471c98550788e2325c8b331\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\672020ff8471c98550788e2325c8b331\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\49dc01a51c2fbc9ea8a1e4684335048a\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\49dc01a51c2fbc9ea8a1e4684335048a\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ca6a826fb8fed54a7b6a1887a65cf2d4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ca6a826fb8fed54a7b6a1887a65cf2d4\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\da9eda11d089251410228e4de23f58a3\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\da9eda11d089251410228e4de23f58a3\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\6fbe13efda045e9623bbe8a9a480a3f1\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\6fbe13efda045e9623bbe8a9a480a3f1\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\be737875def25e1cc58933e4ef605fd3\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\be737875def25e1cc58933e4ef605fd3\AndroidManifest.xml:22:5-20
 	android:supportsRtl
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:11:9-33
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:11:9-33
 	android:icon
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:10:9-38
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:10:9-38
 	android:allowBackup
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:13:9-40
 activity#com.example.santi.beatline_func.MainActivity
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:14:9-20:20
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:14:19-47
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:14:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:15:13-19:29
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:16:17-69
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:16:25-66
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:18:17-77
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:18:27-74
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:18:27-74
 activity#com.example.santi.beatline_func.PerfilUsuario
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:21:9-51
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:21:9-51
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:21:19-48
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:21:19-48
 activity#com.example.santi.beatline_func.FiltrosBusqueda
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:22:9-53
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:22:9-53
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:22:19-50
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:22:19-50
 activity#com.example.santi.beatline_func.RegistracionUsuario
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:23:9-57
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:23:9-57
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:23:19-54
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:23:19-54
 activity#com.example.santi.beatline_func.RecuperarContrasenia
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:24:9-58
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:24:9-58
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:24:19-55
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:24:19-55
 activity#com.example.santi.beatline_func.ConfirmacionRecu
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:25:9-54
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:25:9-54
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:25:19-51
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:25:19-51
 activity#com.example.santi.beatline_func.Loginn
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:26:9-44
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:26:9-44
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:26:19-41
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:26:19-41
 activity#com.example.santi.beatline_func.RegistracionPreferencias
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:27:9-62
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:27:9-62
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:27:19-59
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:27:19-59
 activity#com.example.santi.beatline_func.MenuPrincipal
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:28:9-51
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:28:9-51
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:28:19-48
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:28:19-48
 activity#com.example.santi.beatline_func.EditarPerfil
-ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:29:9-59
+ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:29:9-59
 	android:name
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:29:19-47
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml:29:19-47
 uses-sdk
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\7c4112bbb672df273f6680f6d3e0bcd1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\7c4112bbb672df273f6680f6d3e0bcd1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\47e0389d30015bc8500cd1d5ebd7d61b\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\47e0389d30015bc8500cd1d5ebd7d61b\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3975365628f49475624e547f99cf25a7\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\3975365628f49475624e547f99cf25a7\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\89a2a22aeb4885f017c3b5aa95c6f395\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\89a2a22aeb4885f017c3b5aa95c6f395\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\bce032604893d4d309cf753dcf1a157c\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\bce032604893d4d309cf753dcf1a157c\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\c08b9b6461bc75d5fc82a2649c1e40f5\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\c08b9b6461bc75d5fc82a2649c1e40f5\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\7a801c7aacda599ce5df92cb3ca5920c\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\7a801c7aacda599ce5df92cb3ca5920c\AndroidManifest.xml:20:5-43
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\672020ff8471c98550788e2325c8b331\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\672020ff8471c98550788e2325c8b331\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\49dc01a51c2fbc9ea8a1e4684335048a\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\49dc01a51c2fbc9ea8a1e4684335048a\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ca6a826fb8fed54a7b6a1887a65cf2d4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ca6a826fb8fed54a7b6a1887a65cf2d4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\226fd7b353479362609e4d7ce525f0e3\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\226fd7b353479362609e4d7ce525f0e3\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\da9eda11d089251410228e4de23f58a3\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\da9eda11d089251410228e4de23f58a3\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\6fbe13efda045e9623bbe8a9a480a3f1\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\6fbe13efda045e9623bbe8a9a480a3f1\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\be737875def25e1cc58933e4ef605fd3\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\be737875def25e1cc58933e4ef605fd3\AndroidManifest.xml:20:5-43
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\42660700\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\47e0389d30015bc8500cd1d5ebd7d61b\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\Santi\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\49dc01a51c2fbc9ea8a1e4684335048a\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-		ADDED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
-		INJECTED from F:\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Santi\Desktop\proyecto-final\BEATLINE_FUNC\app\src\main\AndroidManifest.xml

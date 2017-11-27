@@ -23,7 +23,6 @@ import java.util.Arrays;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class FiltrosBusqueda extends Activity {
@@ -107,7 +106,7 @@ public class FiltrosBusqueda extends Activity {
                         // Call your function which creates and shows the dialog here
                         int id =adapterPersona.getId(position);
                         String urlSeguir = "http://thebealineproject.azurewebsites.net/api/usuarios/PostIUHU?IdUsuario=" + MainActivity.usuario_logeado.getIdUsuario() + "&IdSeguido=" + id;
-                        new FiltrosBusqueda.ConectarAPITask().execute("GET",urlSeguir);
+                        new FiltrosBusqueda.SeguirUsuario().execute("GET",urlSeguir);
                         Toast.makeText(getApplicationContext(), "Mi id: " + MainActivity.usuario_logeado.getIdUsuario() + ", id a seguir: " + id, Toast.LENGTH_LONG).show();
                     }});
                 lv.setAdapter(adapterPersona);
@@ -235,25 +234,6 @@ public class FiltrosBusqueda extends Activity {
             }
         }
 
-
-        private Persona postPersona(String urlApi, String json) {
-            OkHttpClient client = new OkHttpClient();
-            RequestBody body = RequestBody.create(JSON, json);
-            Request request = new Request.Builder()
-                    .url(urlApi)
-                    .post(body)
-                    .build();
-
-            try {
-                Response response = client.newCall(request).execute();
-                String strResultado = response.body().string();
-                return parsearResultado(strResultado);
-            } catch (IOException e) {
-                Log.d("Error :", e.getMessage());
-                return null;
-            }
-        }
-
         @Override
         protected void onPostExecute(String res) {
             super.onPostExecute(res);
@@ -275,12 +255,9 @@ public class FiltrosBusqueda extends Activity {
         }
     }
 
-
-
     public void Volver (View vista)
     {
         Intent Activity = new Intent(getBaseContext(), MenuPrincipal.class);
         startActivity(Activity);
     }
 }
-
