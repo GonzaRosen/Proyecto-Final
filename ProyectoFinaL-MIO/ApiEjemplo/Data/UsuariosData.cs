@@ -50,11 +50,11 @@ namespace ApiEjemplo.Data
             DBHelper.EjecutarIUD(sInsert);
         }
 
-        /*public static void Update(Usuarios oUsuario)
+        public static void Update(Usuarios oUsuario)
         {
-            string sUpdate = "update tusuario set Nombre='" + oUsuario.Nombre + "',FechaNac='" + oUsuario.FechaNacimiento.ToString("yyyy-MM-dd HH:mm") + "' where IdUsuario = " + oUsuario.IdUsuario.ToString();
+            string sUpdate = "update tusuario set Nombre='" + oUsuario.Nombre + "',Apellido = '" + oUsuario.Apellido + "',Instrumentos = '" + oUsuario.Instrumentos + "',Generos = '" + oUsuario.Generos + "',Influencias = '" + oUsuario.Influencias + "',Descripcion = '" + oUsuario.Descripcion + "',Ubicacion = '" + oUsuario.Ubicacion + "' where IdUsuario = " + oUsuario.IdUsuario.ToString();
             DBHelper.EjecutarIUD(sUpdate);
-        }*/
+        }
 
         public static void Delete(int IdUsuario)
         {

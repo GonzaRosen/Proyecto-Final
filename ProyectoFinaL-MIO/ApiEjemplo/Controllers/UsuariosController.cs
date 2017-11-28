@@ -30,19 +30,11 @@ namespace ApiEjemplo.Controllers
             return Ok();
         }
 
-        /*public IHttpActionResult Put(int IdUsuario, Usuarios oUsuario)
+        public IHttpActionResult Put(Usuarios oUsuario)
         {
-            if (IdUsuario != oUsuario.IdUsuario)//Nos tiene que llegar el objeto correctamente
-            {
-                return BadRequest("El id de la persona es incorrecto.");
-            }
-            if (UsuariosData.ObtenerPorId(IdUsuario) == null)
-            {
-                return NotFound();
-            }
             UsuariosData.Update(oUsuario);
             return Ok();
-        }*/
+        }
 
         public IHttpActionResult Delete(int IdUsuario)
         {
