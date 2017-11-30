@@ -18,5 +18,11 @@ namespace ApiEjemplo.Controllers
             UHasUData.InsertarUHU(oUHasU);
             return Ok();
         }
+
+        /*public IHttpActionResult GetIUHU(int IdUsuario, int IdSeguido)
+        {
+            UHasUData.InsertarUHU(IdUsuario, IdSeguido);
+            return Ok();
+        }*/
     }
 }
