@@ -12,10 +12,10 @@ namespace ApiEjemplo.Controllers
 {
     public class UHasUController : ApiController
     {
-        [ResponseType(typeof(UHasU))] [HttpGet]
-        public IHttpActionResult GetIUHU(int IdUsuario, int IdSeguido)
+        [HttpGet][ResponseType(typeof(UHasU))] 
+        public IHttpActionResult GetIUHU(UHasU oUHasU)
         {
-            UHasUData.InsertarUHU(IdUsuario, IdSeguido);
+            UHasUData.InsertarUHU(oUHasU);
             return Ok();
         }
     }
