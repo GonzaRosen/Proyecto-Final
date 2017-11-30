@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,7 +50,7 @@ public class PerfilUsuario extends Activity{
         Instru.setText("Instrumentos: " + MainActivity.usuario_logeado.getInstrumentos());
         Ubicacion.setText("Ubicacion: " + MainActivity.usuario_logeado.getUbicacion());
 
-        String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/URLDELAAPI";
+        String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/GetS?IdUsuario=" + MainActivity.usuario_logeado.getIdUsuario() + "&Nombre=" + MainActivity.usuario_logeado.getNombre();
         new PerfilUsuario.ConectarAPITask().execute(urlApi);
         LvSeguidos.setAdapter(adapterSeguidos);
     }
@@ -93,8 +95,10 @@ public class PerfilUsuario extends Activity{
             try {
                 Response response = client.newCall(request).execute();
                 Juan = parsearResultado(response.body().string());
+                Log.d("Juanchi", Juan.toString());
                 return Juan;
             } catch (IOException e) {
+                Toast.makeText(getApplicationContext(), "es null", Toast.LENGTH_LONG).show();
                 return null;
             }
         }
@@ -102,7 +106,6 @@ public class PerfilUsuario extends Activity{
         @Override
         protected void onPostExecute(ArrayList<UsuariosBusqueda> usuariosBusquedas) {
             super.onPostExecute(usuariosBusquedas);
-
             adapterSeguidos.notifyDataChanged(Juan);
         }
 
