@@ -52,7 +52,7 @@ namespace ApiEjemplo.Data
 
         public static void Update(Usuarios oUsuario)
         {
-            string sUpdate = "update tusuario set Nombre='" + oUsuario.Nombre + "',Apellido = '" + oUsuario.Apellido + "',Instrumentos = '" + oUsuario.Instrumentos + "',Generos = '" + oUsuario.Generos + "',Influencias = '" + oUsuario.Influencias + "',Descripcion = '" + oUsuario.Descripcion + "',Ubicacion = '" + oUsuario.Ubicacion + "' where IdUsuario = " + oUsuario.IdUsuario.ToString();
+            string sUpdate = "update tusuarios set Nombre='" + oUsuario.Nombre + "',Apellido = '" + oUsuario.Apellido + "',Instrumentos = '" + oUsuario.Instrumentos + "',Generos = '" + oUsuario.Generos + "',Influencias = '" + oUsuario.Influencias + "',Descripcion = '" + oUsuario.Descripcion + "',Ubicacion = '" + oUsuario.Ubicacion + "' where IdUsuario = " + oUsuario.IdUsuario.ToString();
             DBHelper.EjecutarIUD(sUpdate);
         }
 
