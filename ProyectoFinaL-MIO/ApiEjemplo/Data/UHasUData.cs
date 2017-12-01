@@ -10,7 +10,7 @@ namespace ApiEjemplo.Data
     {      
         public static void InsertarUHU(UHasU oUHasU)
         {
-            string sInsert = string.Format("Insert into tusuarios_has_tusuarios (" + oUHasU.IdUsuario + "," + oUHasU.IdSeguido + ") values ({0},{1})",
+            string sInsert = string.Format("Insert into tusuarios_has_tusuarios (tUsuarios_IdUsuario, tSeguidos_IdSeguido) values ({0},{1})",
             oUHasU.IdUsuario,
             oUHasU.IdSeguido);
             DBHelper.EjecutarIUD(sInsert);
