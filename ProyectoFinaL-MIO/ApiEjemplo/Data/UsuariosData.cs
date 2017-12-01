@@ -50,7 +50,7 @@ namespace ApiEjemplo.Data
             DBHelper.EjecutarIUD(sInsert);
         }
 
-        public static void Update(Usuarios oUsuario)
+        public static void Update(Usuarios oUsuario, String A)
         {
             string sUpdate = "update tusuarios set Nombre='" + oUsuario.Nombre + "',Apellido = '" + oUsuario.Apellido + "',Instrumentos = '" + oUsuario.Instrumentos + "',Generos = '" + oUsuario.Generos + "',Influencias = '" + oUsuario.Influencias + "',Descripcion = '" + oUsuario.Descripcion + "',Ubicacion = '" + oUsuario.Ubicacion + "' where IdUsuario = " + oUsuario.IdUsuario.ToString();
             DBHelper.EjecutarIUD(sUpdate);
