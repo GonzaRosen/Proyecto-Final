@@ -144,7 +144,7 @@ public class EditarPerfil extends AppCompatActivity {
 
         if(!(strGeneros.equals("") || strInfluencias.equals("") || strInstrumentos.equals("") || strDescripcion.equals("") || strUbicacion.equals("")) || strNombre.equals("") || strApellido.equals(""))
         {
-            String urlApi = "http://10.0.3.2:8080/api/usuarios/Put";
+            String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Update";
             Editar p = new Editar();
             p.setGenero(strGeneros);
             p.setInfluencias(strInfluencias);
