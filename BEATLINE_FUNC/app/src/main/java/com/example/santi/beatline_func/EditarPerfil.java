@@ -184,6 +184,7 @@ public class EditarPerfil extends AppCompatActivity {
             if (method.equals("PUT")) {
                 String json = params[2];
                 postPersona(urlApi, json);
+                Log.d("a",method + " , " + urlApi);
             }
             return null;
         }
@@ -193,7 +194,7 @@ public class EditarPerfil extends AppCompatActivity {
             RequestBody body = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
                     .url(urlApi)
-                    .post(body)
+                    .put(body)
                     .build();
 
             try {

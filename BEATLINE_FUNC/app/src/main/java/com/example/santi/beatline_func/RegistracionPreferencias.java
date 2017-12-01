@@ -158,6 +158,7 @@ public class RegistracionPreferencias extends AppCompatActivity{
         @Override
         protected Persona doInBackground(String... params) {
 
+
             String method = params[0];
             String urlApi = params[1];
             String Resultado;
@@ -165,6 +166,7 @@ public class RegistracionPreferencias extends AppCompatActivity{
             if (method.equals("POST")) {
                 String json = params[2];
                 postPersona(urlApi, json);
+
             }
             return null;
         }

@@ -15,7 +15,6 @@ namespace ApiEjemplo.Controllers
         [ResponseType(typeof(Usuarios))]
         public IHttpActionResult Post(Usuarios oUsuario)
         {
-            return BadRequest("Datos vacios.");
             if (oUsuario == null || string.IsNullOrEmpty(oUsuario.Nombre) || string.IsNullOrEmpty(oUsuario.Apellido))
             {
                 return BadRequest("Datos vacios.");
