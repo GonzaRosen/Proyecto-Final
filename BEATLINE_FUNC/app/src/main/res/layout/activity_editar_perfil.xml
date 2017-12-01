@@ -227,7 +227,7 @@
             android:id="@+id/spUbi"/>
 
         <Button
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="40dp"
             android:background="@color/Violeta"
             android:textColor="@color/Verde"

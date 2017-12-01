@@ -60,12 +60,12 @@ public class AdapterPersona extends ArrayAdapter<UsuariosBusqueda> {
 
             @Override
             public void onClick(View v) {
-                if(mClickListener != null)
-                mClickListener.onBtnClick(position);
-                Toast.makeText(getContext(), pos, Toast.LENGTH_LONG).show();
+                if(mClickListener != null) {
+                    mClickListener.onBtnClick(position);
+                    Toast.makeText(getContext(), pos, Toast.LENGTH_LONG).show();
+                }
             }
         });
-
         return view;
     }
 

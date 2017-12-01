@@ -18,6 +18,7 @@ public class Persona {
     private String Generos;
     private String Instrumentos;
     private String Ubicacion;
+    private String A;
 
     public int getIdUsuario() { return IdUsuario; }
 
@@ -62,4 +63,6 @@ public class Persona {
     public String getUbicacion() { return Ubicacion; }
 
     public void setUbicacion(String ubicacion) { Ubicacion = ubicacion; }
+
+    public void setA(String aa) { A = aa; }
 }

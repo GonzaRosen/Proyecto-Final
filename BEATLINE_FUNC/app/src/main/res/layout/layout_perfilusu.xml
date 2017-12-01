@@ -14,7 +14,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="45dp"
+                android:layout_width="55dp"
                 android:layout_height="30dp"
                 android:text="Volver"
                 android:layout_marginLeft="5dp"

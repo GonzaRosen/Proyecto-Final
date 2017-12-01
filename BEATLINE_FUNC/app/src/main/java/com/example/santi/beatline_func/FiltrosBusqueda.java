@@ -39,7 +39,7 @@ public class FiltrosBusqueda extends Activity {
     ListView lv;
     ArrayList<UsuariosBusqueda> Juan = new ArrayList<>();
     ArrayAdapter<String> AdapterIns, AdapterGen, AdapterInf, AdapterUbi;
-    Seguir seguir;
+    Seguir seguir=new Seguir();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

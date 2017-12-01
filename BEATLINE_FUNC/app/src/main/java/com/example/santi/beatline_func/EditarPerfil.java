@@ -145,7 +145,7 @@ public class EditarPerfil extends AppCompatActivity {
         if(!(strGeneros.equals("") || strInfluencias.equals("") || strInstrumentos.equals("") || strDescripcion.equals("") || strUbicacion.equals("")) || strNombre.equals("") || strApellido.equals(""))
         {
             String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Put";
-            Persona p = new Persona();
+            Editar p = new Editar();
             p.setGenero(strGeneros);
             p.setInfluencias(strInfluencias);
             p.setInstrumentos(strInstrumentos);
@@ -153,10 +153,11 @@ public class EditarPerfil extends AppCompatActivity {
             p.setNombre(strNombre);
             p.setApellido(strApellido);
             p.setUbicacion(strUbicacion);
+            p.setIdUsuario(MainActivity.usuario_logeado.getIdUsuario());
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             System.out.println(gson.toJson(p));
-            new EditarPerfil.ConectarAPITask().execute("POST",urlApi, gson.toJson(p));
+            new EditarPerfil.ConectarAPITask().execute("PUT",urlApi, gson.toJson(p));
             Toast.makeText(getBaseContext(), "¡Se han guardado sus cambios!", Toast.LENGTH_LONG).show();
             Intent Activity;
             Activity = new Intent(this,PerfilUsuario.class);
@@ -180,7 +181,7 @@ public class EditarPerfil extends AppCompatActivity {
             String urlApi = params[1];
             String Resultado;
 
-            if (method.equals("POST")) {
+            if (method.equals("PUT")) {
                 String json = params[2];
                 postPersona(urlApi, json);
             }
