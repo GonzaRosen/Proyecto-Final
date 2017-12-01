@@ -30,9 +30,9 @@ namespace ApiEjemplo.Controllers
             return Ok();
         }
 
-        public IHttpActionResult Put(Usuarios oUsuario, string A)
+        public IHttpActionResult Put(Usuarios oUsuario)
         {
-            UsuariosData.Update(oUsuario, A);
+            UsuariosData.Update(oUsuario);
             return Ok();
         }
 
