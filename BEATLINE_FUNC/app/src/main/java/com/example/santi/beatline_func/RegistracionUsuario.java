@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -39,8 +40,9 @@ public class RegistracionUsuario extends Activity {
     EditText ConfPass;
     CheckBox Terminos;
 
-    Spinner SpUbicacion;
-    ArrayAdapter<String> AdapterUbi;
+    Spinner SpUbicacion, Dia, Mes, Año;
+    ArrayAdapter<String> AdapterUbi, AdapterDia, AdapterMes, AdapterAño;
+    public static ArrayList<String> DatosDia, DatosMes, DatosAño;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,17 +53,121 @@ public class RegistracionUsuario extends Activity {
             Terminos = (CheckBox)findViewById(R.id.ChkBox);
             Nombre = (EditText)findViewById(R.id.Nombre);
             Apellido = (EditText)findViewById(R.id.Apellido);
-            FechaNac = (CalendarView)findViewById(R.id.FechaNac);
             Email = (EditText)findViewById(R.id.Email);
             Pass = (EditText)findViewById(R.id.Contraseña);
             ConfPass = (EditText)findViewById(R.id.confirmar);
             SpUbicacion = (Spinner) findViewById(R.id.spUbicacionn);
+            Dia = (Spinner)findViewById(R.id.dia);
+            Mes = (Spinner)findViewById(R.id.mes);
+            Año = (Spinner)findViewById(R.id.año);
+
+            DatosDia = new ArrayList<>();
+
+            DatosDia.add("1");
+            DatosDia.add("2");
+            DatosDia.add("3");
+            DatosDia.add("4");
+            DatosDia.add("5");
+            DatosDia.add("6");
+            DatosDia.add("7");
+            DatosDia.add("8");
+            DatosDia.add("9");
+            DatosDia.add("10");
+            DatosDia.add("11");
+            DatosDia.add("12");
+            DatosDia.add("13");
+            DatosDia.add("14");
+            DatosDia.add("15");
+            DatosDia.add("16");
+            DatosDia.add("17");
+            DatosDia.add("18");
+            DatosDia.add("19");
+            DatosDia.add("20");
+            DatosDia.add("21");
+            DatosDia.add("22");
+            DatosDia.add("23");
+            DatosDia.add("24");
+            DatosDia.add("25");
+            DatosDia.add("26");
+            DatosDia.add("27");
+            DatosDia.add("28");
+            DatosDia.add("29");
+            DatosDia.add("30");
+            DatosDia.add("31");
+
+            DatosMes = new ArrayList<>();
+
+            DatosMes.add("Enero");
+            DatosMes.add("Febreo");
+            DatosMes.add("Marzo");
+            DatosMes.add("Abril");
+            DatosMes.add("Mayo");
+            DatosMes.add("Junio");
+            DatosMes.add("Julio");
+            DatosMes.add("Agosto");
+            DatosMes.add("Septiembre");
+            DatosMes.add("Octubre");
+            DatosMes.add("Noviembre");
+            DatosMes.add("Diciembre");
+
+            DatosAño = new ArrayList<>();
+
+            DatosAño.add("2000");
+            DatosAño.add("1999");
+            DatosAño.add("1998");
+            DatosAño.add("1997");
+            DatosAño.add("1996");
+            DatosAño.add("1995");
+            DatosAño.add("1994");
+            DatosAño.add("1993");
+            DatosAño.add("1992");
+            DatosAño.add("1991");
+            DatosAño.add("1990");
+            DatosAño.add("1989");
+            DatosAño.add("1988");
+            DatosAño.add("1987");
+            DatosAño.add("1986");
+            DatosAño.add("1985");
+            DatosAño.add("1984");
+            DatosAño.add("1983");
+            DatosAño.add("1982");
+            DatosAño.add("1981");
+            DatosAño.add("1980");
+            DatosAño.add("1979");
+            DatosAño.add("1978");
+            DatosAño.add("1977");
+            DatosAño.add("1976");
+            DatosAño.add("1975");
+            DatosAño.add("1974");
+            DatosAño.add("1973");
+            DatosAño.add("1972");
+            DatosAño.add("1971");
+            DatosAño.add("1970");
+            DatosAño.add("1969");
+            DatosAño.add("1968");
+            DatosAño.add("1967");
+            DatosAño.add("1966");
+            DatosAño.add("1965");
+            DatosAño.add("1964");
+            DatosAño.add("1963");
+            DatosAño.add("1962");
+            DatosAño.add("1961");
+            DatosAño.add("1960");
 
             AdapterUbi = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosUbi);
+            AdapterDia = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, DatosDia);
+            AdapterMes = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, DatosMes);
+            AdapterAño = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, DatosAño);
+
             AdapterUbi.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+            AdapterDia.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+            AdapterMes.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+            AdapterAño.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
             SpUbicacion.setAdapter(AdapterUbi);
-
-
+            Dia.setAdapter(AdapterDia);
+            Mes.setAdapter(AdapterMes);
+            Año.setAdapter(AdapterAño);
         }
     }
 
@@ -79,6 +185,9 @@ public class RegistracionUsuario extends Activity {
         String Edit3 = Email.getText().toString();
         String Edit4 = Pass.getText().toString();
         String SpinnerU = SpUbicacion.getSelectedItem().toString();
+        String SpinnerDia = Dia.getSelectedItem().toString();
+        String SpinnerMes = Mes.getSelectedItem().toString();
+        String SpinnerAño = Año.getSelectedItem().toString();
         String Edit6 = ConfPass.getText().toString();
 
         if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || SpinnerU.equals("") || FechaNac.isSelected()))
@@ -93,6 +202,9 @@ public class RegistracionUsuario extends Activity {
                 bundle.putString("Email", Edit3);
                 bundle.putString("Pass", Edit4);
                 bundle.putString("Ubicacion", SpinnerU);
+                bundle.putString("Dia", SpinnerDia);
+                bundle.putString("Mes", SpinnerMes);
+                bundle.putString("Año", SpinnerAño);
 
                 Intent Activity;
                 Activity = new Intent(this,RegistracionPreferencias.class);

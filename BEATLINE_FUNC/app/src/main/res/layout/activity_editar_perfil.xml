@@ -225,6 +225,14 @@
             android:layout_height="40dp"
             android:layout_marginLeft="50dp"
             android:id="@+id/spUbi"/>
+        <EditText
+            android:id="@+id/EUbicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:width="280dp"
+            android:textColor="#222051"
+            android:textSize="13sp" />
 
         <Button
             android:layout_width="80dp"

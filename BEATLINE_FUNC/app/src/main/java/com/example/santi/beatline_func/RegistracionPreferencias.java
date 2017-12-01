@@ -29,7 +29,7 @@ public class RegistracionPreferencias extends AppCompatActivity{
     EditText Influencia;
     EditText Instrumento;
     EditText Descripcion;
-    String Nombre, Apellido, Email, Pass, Ubicacion;
+    String Nombre, Apellido, Email, Pass, Ubicacion, Dia, Mes, Año;
     Spinner SpInstrumentos, SpGeneros, SpInfluencias;
     ArrayAdapter<String> AdapterIns, AdapterGen, AdapterInf;
 
@@ -45,6 +45,9 @@ public class RegistracionPreferencias extends AppCompatActivity{
         Email = bundle.getString("Email");
         Pass = bundle.getString("Pass");
         Ubicacion = bundle.getString("Ubicacion");
+        Dia = bundle.getString("Dia");
+        Mes = bundle.getString("Mes");
+        Año = bundle.getString("Año");
 
         Genero = (EditText)findViewById(R.id.gene);
         Influencia = (EditText)findViewById(R.id.influ);
@@ -121,6 +124,7 @@ public class RegistracionPreferencias extends AppCompatActivity{
         String strInfluencia = Influencia.getText().toString();
         String strInstrumento = Instrumento.getText().toString();
         String strDescripcion = Descripcion.getText().toString();
+        String FechaNac = Dia + "/" + Mes + "/" + Año;
 
         if(!(strGenero.equals("") || strInfluencia.equals("") || strInstrumento.equals("") || strDescripcion.equals("")))
         {
@@ -135,6 +139,7 @@ public class RegistracionPreferencias extends AppCompatActivity{
             p.setEmail(Email);
             p.setContraseña(Pass);
             p.setUbicacion(Ubicacion);
+            p.setFechaNac(FechaNac);
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             System.out.println(gson.toJson(p));

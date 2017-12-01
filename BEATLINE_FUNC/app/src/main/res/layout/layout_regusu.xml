@@ -97,11 +97,28 @@
                 android:textColor="#222051"
                 android:textSize="17sp" />
 
-            <CalendarView
-                android:id="@+id/FechaNac"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp">
+
+                <Spinner
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dia" />
+
+                <Spinner
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mes" />
+
+                <Spinner
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/año" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tvEmail"

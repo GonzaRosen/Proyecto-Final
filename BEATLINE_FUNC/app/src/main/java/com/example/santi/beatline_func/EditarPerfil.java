@@ -27,7 +27,7 @@ import okhttp3.Response;
 
 public class EditarPerfil extends AppCompatActivity {
 
-    EditText Nombre, Apellido, Descripcion, Influencias, Generos, Instrumentos;
+    EditText Nombre, Apellido, Descripcion, Influencias, Generos, Instrumentos, Ubicacion;
     Spinner SpInstrumentos, SpInfluencias, SpUbicacion, SpGenero;
     ArrayAdapter<String> AdapterIns, AdapterGen, AdapterInf, AdapterUbi;
 
@@ -42,6 +42,7 @@ public class EditarPerfil extends AppCompatActivity {
         Influencias = (EditText) findViewById(R.id.EInfluencias);
         Generos = (EditText) findViewById(R.id.EGeneros);
         Instrumentos = (EditText) findViewById(R.id.EInstrumentos);
+        Ubicacion = (EditText) findViewById(R.id.EUbicacion);
 
         Nombre.setText(MainActivity.usuario_logeado.getNombre());
         Apellido.setText(MainActivity.usuario_logeado.getApellido());
@@ -49,6 +50,7 @@ public class EditarPerfil extends AppCompatActivity {
         Instrumentos.setText(MainActivity.usuario_logeado.getInstrumentos());
         Influencias.setText(MainActivity.usuario_logeado.getInfluencias());
         Generos.setText(MainActivity.usuario_logeado.getGenero());
+        Ubicacion.setText(MainActivity.usuario_logeado.getUbicacion());
 
         SpInstrumentos = (Spinner) findViewById(R.id.spInstru);
         SpGenero = (Spinner) findViewById(R.id.spGen);
@@ -144,6 +146,7 @@ public class EditarPerfil extends AppCompatActivity {
 
         if(!(strGeneros.equals("") || strInfluencias.equals("") || strInstrumentos.equals("") || strDescripcion.equals("") || strUbicacion.equals("")) || strNombre.equals("") || strApellido.equals(""))
         {
+            try {
             String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Pepe";
             Editar p = new Editar();
             p.setGenero(strGeneros);
@@ -157,11 +160,25 @@ public class EditarPerfil extends AppCompatActivity {
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             System.out.println(gson.toJson(p));
-            new EditarPerfil.ConectarAPITask().execute("PUT",urlApi, gson.toJson(p));
-            Toast.makeText(getBaseContext(), "¡Se han guardado sus cambios!", Toast.LENGTH_LONG).show();
-            Intent Activity;
-            Activity = new Intent(this,PerfilUsuario.class);
-            startActivity(Activity);
+
+                new EditarPerfil.ConectarAPITask().execute("PUT", urlApi, gson.toJson(p));
+                Toast.makeText(getBaseContext(), "¡Se han guardado sus cambios!", Toast.LENGTH_LONG).show();
+                MainActivity.usuario_logeado.setNombre(strNombre);
+                MainActivity.usuario_logeado.setApellido(strApellido);
+                MainActivity.usuario_logeado.setInstrumentos(strInstrumentos);
+                MainActivity.usuario_logeado.setGenero(strGeneros);
+                MainActivity.usuario_logeado.setInfluencias(strInfluencias);
+                MainActivity.usuario_logeado.setDescripcion(strDescripcion);
+                MainActivity.usuario_logeado.setUbicacion(strUbicacion);
+                Intent Activity;
+                Activity = new Intent(this, PerfilUsuario.class);
+                startActivity(Activity);
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(getApplicationContext(), "Se ha producido un error, intente nuevamente. --> " + e.toString(), Toast.LENGTH_LONG).show();
+                return;
+            }
         }
         else
         {
