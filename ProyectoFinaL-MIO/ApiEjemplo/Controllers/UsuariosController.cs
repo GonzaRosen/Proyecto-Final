@@ -63,7 +63,6 @@ namespace ApiEjemplo.Controllers
             return UsuariosData.ObtenerUsuarios();
         }
 
-
         [ResponseType(typeof(IList<Usuarios>))]
         public IHttpActionResult Get(string Nombre)
         {
@@ -104,7 +103,5 @@ namespace ApiEjemplo.Controllers
             }
             return Ok(lista);
         }
-
-        //http://localhost:8080/api/usuarios/Get2?Email=lkristal@gmail.com%20Password=aguantepf
     }
 }

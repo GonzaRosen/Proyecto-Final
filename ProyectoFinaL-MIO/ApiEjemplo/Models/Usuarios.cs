@@ -12,7 +12,7 @@ namespace ApiEjemplo.Models
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public DateTime Fecha_Nacimiento { get; set; }
+        public string Fecha_Nacimiento { get; set; }
         public string  Instrumentos { get; set; }   
         public string  Generos { get; set; }
         public string Influencias { get; set; }  
