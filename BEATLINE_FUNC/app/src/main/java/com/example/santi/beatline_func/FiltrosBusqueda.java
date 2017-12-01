@@ -17,12 +17,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class FiltrosBusqueda extends Activity {
@@ -36,6 +39,7 @@ public class FiltrosBusqueda extends Activity {
     ListView lv;
     ArrayList<UsuariosBusqueda> Juan = new ArrayList<>();
     ArrayAdapter<String> AdapterIns, AdapterGen, AdapterInf, AdapterUbi;
+    Seguir seguir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,13 +104,19 @@ public class FiltrosBusqueda extends Activity {
                 SpInfluencias.setVisibility(View.GONE);
                 SpGenero.setVisibility(View.GONE);
                 SpUbicacion.setVisibility(View.GONE);
+
                 adapterPersona = new AdapterPersona(getApplicationContext(), new ArrayList<UsuariosBusqueda>(),new BtnClickListener() {
                     @Override
                     public void onBtnClick(int position) {
                         // Call your function which creates and shows the dialog here
                         int id =adapterPersona.getId(position);
-                        String urlSeguir = "http://thebealineproject.azurewebsites.net/api/usuarios/PostIUHU?IdUsuario=" + MainActivity.usuario_logeado.getIdUsuario() + "&IdSeguido=" + id;
-                        new FiltrosBusqueda.SeguirUsuario().execute("GET",urlSeguir);
+                        String urlSeguir = "http://thebealineproject.azurewebsites.net/api/usuarios/PostIUHU";
+                        seguir.setIdSeguido(id);
+                        seguir.setIdUsuario(MainActivity.usuario_logeado.getIdUsuario());
+                        GsonBuilder builder = new GsonBuilder();
+                        Gson gson = builder.create();
+                        System.out.println(gson.toJson(seguir));
+                        new FiltrosBusqueda.SeguirUsuario().execute("POST",urlSeguir, gson.toJson(seguir));
                         Toast.makeText(getApplicationContext(), "Mi id: " + MainActivity.usuario_logeado.getIdUsuario() + ", id a seguir: " + id, Toast.LENGTH_LONG).show();
                     }});
                 lv.setAdapter(adapterPersona);
@@ -207,30 +217,31 @@ public class FiltrosBusqueda extends Activity {
 
             String method = params[0];
             String urlApi = params[1];
+            String Resultado;
 
-            if (method.equals("GET")) {
-                //String json = params[2];
-                return getPersona(urlApi);
+            if (method.equals("POST")) {
+                String json = params[2];
+                postPersona(urlApi, json);
             }
             return null;
         }
 
-
-        private String getPersona(String urlApi) {
+        private String postPersona(String urlApi, String json) {
             String strResultado;
             OkHttpClient client = new OkHttpClient();
+            RequestBody body = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
                     .url(urlApi)
+                    .post(body)
                     .build();
 
             try {
                 Response response = client.newCall(request).execute();
                 strResultado = response.body().string();
-
                 return strResultado;
             } catch (IOException e) {
+                Log.d("Error :", e.getMessage());
                 return null;
-
             }
         }
 

@@ -35,6 +35,8 @@ public class PerfilUsuario extends Activity{
         setContentView(R.layout.layout_perfilusu);
         Intent intent = getIntent();
 
+        adapterSeguidos = new AdapterSeguidos(getApplicationContext(), new ArrayList<UsuariosBusqueda>());
+
         Nomape = (TextView) findViewById(R.id.nomape);
         Desc = (TextView) findViewById(R.id.descripcion);
         Influ = (TextView) findViewById(R.id.influencias);
@@ -73,7 +75,7 @@ public class PerfilUsuario extends Activity{
             LvSeguidos.setVisibility(View.VISIBLE);
             visible = true;
         }
-        else
+        else if (visible == true)
         {
             LvSeguidos.setVisibility(View.INVISIBLE);
             visible = false;

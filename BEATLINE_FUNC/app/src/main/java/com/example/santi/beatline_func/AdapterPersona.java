@@ -1,5 +1,6 @@
 package com.example.santi.beatline_func;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +40,8 @@ public class AdapterPersona extends ArrayAdapter<UsuariosBusqueda> {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.lista_persona, viewGroup, false);
         }
+        final String pos = String.valueOf(position);
+
         TextView Nombre = (TextView) view.findViewById(R.id.Nombre);
         TextView Ubicacion = (TextView) view.findViewById(R.id.Distancia);
         TextView Instrumento = (TextView) view.findViewById(R.id.Instrumento);
@@ -58,7 +61,8 @@ public class AdapterPersona extends ArrayAdapter<UsuariosBusqueda> {
             @Override
             public void onClick(View v) {
                 if(mClickListener != null)
-                    mClickListener.onBtnClick(position);
+                mClickListener.onBtnClick(position);
+                Toast.makeText(getContext(), pos, Toast.LENGTH_LONG).show();
             }
         });
 
