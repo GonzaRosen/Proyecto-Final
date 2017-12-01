@@ -31,7 +31,7 @@ namespace ApiEjemplo.Controllers
         }
 
         [HttpPut]
-        public IHttpActionResult Put(Usuarios oUsuario)
+        public IHttpActionResult Pepe(Usuarios oUsuario)
         {
             UsuariosData.Update(oUsuario);
             return Ok();
