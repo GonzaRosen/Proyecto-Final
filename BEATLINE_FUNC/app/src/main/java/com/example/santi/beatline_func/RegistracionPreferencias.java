@@ -124,7 +124,7 @@ public class RegistracionPreferencias extends AppCompatActivity{
 
         if(!(strGenero.equals("") || strInfluencia.equals("") || strInstrumento.equals("") || strDescripcion.equals("")))
         {
-            String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Post";
+            String urlApi = "http://10.0.3.2:8080/api/usuarios/Post";
             Persona p = new Persona();
             p.setGenero(strGenero);
             p.setInfluencias(strInfluencia);

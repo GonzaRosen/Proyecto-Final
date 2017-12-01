@@ -110,7 +110,7 @@ public class FiltrosBusqueda extends Activity {
                     public void onBtnClick(int position) {
                         // Call your function which creates and shows the dialog here
                         int id =adapterPersona.getId(position);
-                        String urlSeguir = "http://thebealineproject.azurewebsites.net/api/usuarios/PostIUHU";
+                        String urlSeguir = "http://thebealineproject.azurewebsites.net/api/UHasU/PostIUHU";
                         seguir.setIdSeguido(id);
                         seguir.setIdUsuario(MainActivity.usuario_logeado.getIdUsuario());
                         GsonBuilder builder = new GsonBuilder();
