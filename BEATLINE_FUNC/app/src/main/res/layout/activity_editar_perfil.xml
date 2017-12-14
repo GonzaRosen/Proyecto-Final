@@ -225,6 +225,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="50dp"
             android:id="@+id/spUbi"/>
+
         <EditText
             android:id="@+id/EUbicacion"
             android:layout_width="wrap_content"
@@ -240,10 +241,11 @@
             android:background="@color/Violeta"
             android:textColor="@color/Verde"
             android:textSize="22sp"
-            android:onClick="editarperfil"
             android:text="Editar"
             android:layout_marginLeft="145dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:id="@+id/editarr"
+            android:onClick="editarperfil"/>
 
         <android.support.v4.widget.Space
             android:layout_width="match_parent"

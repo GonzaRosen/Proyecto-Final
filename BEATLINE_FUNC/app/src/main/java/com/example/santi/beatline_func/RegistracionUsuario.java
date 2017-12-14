@@ -97,18 +97,18 @@ public class RegistracionUsuario extends Activity {
 
             DatosMes = new ArrayList<>();
 
-            DatosMes.add("Enero");
-            DatosMes.add("Febreo");
-            DatosMes.add("Marzo");
-            DatosMes.add("Abril");
-            DatosMes.add("Mayo");
-            DatosMes.add("Junio");
-            DatosMes.add("Julio");
-            DatosMes.add("Agosto");
-            DatosMes.add("Septiembre");
-            DatosMes.add("Octubre");
-            DatosMes.add("Noviembre");
-            DatosMes.add("Diciembre");
+            DatosMes.add("1");
+            DatosMes.add("2");
+            DatosMes.add("3");
+            DatosMes.add("4");
+            DatosMes.add("5");
+            DatosMes.add("6");
+            DatosMes.add("7");
+            DatosMes.add("8");
+            DatosMes.add("9");
+            DatosMes.add("10");
+            DatosMes.add("11");
+            DatosMes.add("12");
 
             DatosAño = new ArrayList<>();
 
@@ -190,7 +190,7 @@ public class RegistracionUsuario extends Activity {
         String SpinnerAño = Año.getSelectedItem().toString();
         String Edit6 = ConfPass.getText().toString();
 
-        if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || SpinnerU.equals("") || FechaNac.isSelected()))
+        if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || SpinnerU.equals("")))
         {
             if (Terminos.isChecked())
             {

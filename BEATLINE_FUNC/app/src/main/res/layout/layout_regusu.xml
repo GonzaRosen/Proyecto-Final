@@ -104,17 +104,17 @@
                 android:layout_marginLeft="50dp">
 
                 <Spinner
-                    android:layout_width="50dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/dia" />
 
                 <Spinner
-                    android:layout_width="50dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/mes" />
 
                 <Spinner
-                    android:layout_width="50dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/año" />
 

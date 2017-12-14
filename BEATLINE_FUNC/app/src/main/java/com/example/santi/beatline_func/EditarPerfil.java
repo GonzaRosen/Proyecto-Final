@@ -60,6 +60,7 @@ public class EditarPerfil extends AppCompatActivity {
         Generos.setEnabled(false);
         Instrumentos.setEnabled(false);
         Influencias.setEnabled(false);
+        Ubicacion.setEnabled(false);
 
         AdapterIns = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosIns);
         AdapterGen = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosGen);
@@ -117,6 +118,20 @@ public class EditarPerfil extends AppCompatActivity {
 
             }
         });
+
+        SpUbicacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                int pos = SpUbicacion.getSelectedItemPosition();
+                String text = SpUbicacion.getItemAtPosition(pos).toString();
+                Ubicacion.setText(text);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     public void limpiar (View view)
@@ -126,11 +141,11 @@ public class EditarPerfil extends AppCompatActivity {
         switch (btn.getId())
         {
             case R.id.bins: Instrumentos.setText("");
-            break;
+                break;
             case R.id.bgen: Generos.setText("");
-            break;
+                break;
             case R.id.binf: Influencias.setText("");
-            break;
+                break;
         }
     }
 
@@ -147,19 +162,19 @@ public class EditarPerfil extends AppCompatActivity {
         if(!(strGeneros.equals("") || strInfluencias.equals("") || strInstrumentos.equals("") || strDescripcion.equals("") || strUbicacion.equals("")) || strNombre.equals("") || strApellido.equals(""))
         {
             try {
-            String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Pepe";
-            Editar p = new Editar();
-            p.setGenero(strGeneros);
-            p.setInfluencias(strInfluencias);
-            p.setInstrumentos(strInstrumentos);
-            p.setDescripcion(strDescripcion);
-            p.setNombre(strNombre);
-            p.setApellido(strApellido);
-            p.setUbicacion(strUbicacion);
-            p.setIdUsuario(MainActivity.usuario_logeado.getIdUsuario());
-            GsonBuilder builder = new GsonBuilder();
-            Gson gson = builder.create();
-            System.out.println(gson.toJson(p));
+                String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Pepe";
+                Editar p = new Editar();
+                p.setGenero(strGeneros);
+                p.setInfluencias(strInfluencias);
+                p.setInstrumentos(strInstrumentos);
+                p.setDescripcion(strDescripcion);
+                p.setNombre(strNombre);
+                p.setApellido(strApellido);
+                p.setUbicacion(strUbicacion);
+                p.setIdUsuario(MainActivity.usuario_logeado.getIdUsuario());
+                GsonBuilder builder = new GsonBuilder();
+                Gson gson = builder.create();
+                System.out.println(gson.toJson(p));
 
                 new EditarPerfil.ConectarAPITask().execute("PUT", urlApi, gson.toJson(p));
                 Toast.makeText(getBaseContext(), "¡Se han guardado sus cambios!", Toast.LENGTH_LONG).show();
