@@ -1,4 +1,0 @@
-git pull
-git add ProyectoFinaL-MIO
-git commit -m "API"
-git push

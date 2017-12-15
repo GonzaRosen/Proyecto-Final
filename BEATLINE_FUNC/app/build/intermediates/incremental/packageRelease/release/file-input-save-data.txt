@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Fri Dec 15 09:29:16 ART 2017
+0.baseType=DIRECTORY
+0.base=C\:\\Users\\42660700\\Desktop\\proyecto-final\\BEATLINE_FUNC\\app\\build\\intermediates\\transforms\\dex\\release\\0
+0.path=classes.dex
+0.set=DEX
+count=1

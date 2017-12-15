@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.santi.registracionusuariopf"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@drawable/logo"
+        android:label="Beatline"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.example.santi.beatline_func.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.santi.beatline_func.PerfilUsuario" />
+        <activity android:name="com.example.santi.beatline_func.FiltrosBusqueda" />
+        <activity android:name="com.example.santi.beatline_func.RegistracionUsuario" />
+        <activity android:name="com.example.santi.beatline_func.Loginn" />
+        <activity android:name="com.example.santi.beatline_func.RegistracionPreferencias" />
+        <activity android:name="com.example.santi.beatline_func.MenuPrincipal" />
+        <activity android:name="com.example.santi.beatline_func.EditarPerfil" />
+    </application>
+
+</manifest>
