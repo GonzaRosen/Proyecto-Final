@@ -27,7 +27,7 @@ import okhttp3.Response;
 
 public class EditarPerfil extends AppCompatActivity {
 
-    EditText Nombre, Apellido, Descripcion, Influencias, Generos, Instrumentos, Ubicacion;
+    EditText Nombre, Apellido, Descripcion, Influencias, Generos, Instrumentos;
     Spinner SpInstrumentos, SpInfluencias, SpUbicacion, SpGenero;
     ArrayAdapter<String> AdapterIns, AdapterGen, AdapterInf, AdapterUbi;
 
@@ -42,7 +42,6 @@ public class EditarPerfil extends AppCompatActivity {
         Influencias = (EditText) findViewById(R.id.EInfluencias);
         Generos = (EditText) findViewById(R.id.EGeneros);
         Instrumentos = (EditText) findViewById(R.id.EInstrumentos);
-        Ubicacion = (EditText) findViewById(R.id.EUbicacion);
 
         Nombre.setText(MainActivity.usuario_logeado.getNombre());
         Apellido.setText(MainActivity.usuario_logeado.getApellido());
@@ -50,8 +49,6 @@ public class EditarPerfil extends AppCompatActivity {
         Instrumentos.setText(MainActivity.usuario_logeado.getInstrumentos());
         Influencias.setText(MainActivity.usuario_logeado.getInfluencias());
         Generos.setText(MainActivity.usuario_logeado.getGenero());
-        Ubicacion.setText(MainActivity.usuario_logeado.getUbicacion());
-        Toast.makeText(getApplicationContext(), "ubicacion: " + MainActivity.usuario_logeado.getUbicacion(), Toast.LENGTH_LONG).show();
 
         SpInstrumentos = (Spinner) findViewById(R.id.spInstru);
         SpGenero = (Spinner) findViewById(R.id.spGen);
@@ -61,7 +58,6 @@ public class EditarPerfil extends AppCompatActivity {
         Generos.setEnabled(false);
         Instrumentos.setEnabled(false);
         Influencias.setEnabled(false);
-        Ubicacion.setEnabled(false);
 
         AdapterIns = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosIns);
         AdapterGen = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.DatosGen);
@@ -120,19 +116,18 @@ public class EditarPerfil extends AppCompatActivity {
             }
         });
 
-        SpUbicacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*SpUbicacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int pos = SpUbicacion.getSelectedItemPosition();
                 String text = SpUbicacion.getItemAtPosition(pos).toString();
-                Ubicacion.setText(text);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
     }
 
     public void limpiar (View view)
@@ -156,7 +151,7 @@ public class EditarPerfil extends AppCompatActivity {
         String strInfluencias = Influencias.getText().toString();
         String strInstrumentos = Instrumentos.getText().toString();
         String strDescripcion = Descripcion.getText().toString();
-        String strUbicacion = Ubicacion.getText().toString();
+        String strUbicacion = SpUbicacion.getSelectedItem().toString();
         String strNombre = Nombre.getText().toString();
         String strApellido = Apellido.getText().toString();
 

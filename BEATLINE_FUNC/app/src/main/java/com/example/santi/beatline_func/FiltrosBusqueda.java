@@ -84,10 +84,14 @@ public class FiltrosBusqueda extends Activity {
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String strUbicacion = SpUbicacion.getSelectedItem().toString();
+                String strUbicacion =  SpUbicacion.getSelectedItem().toString();
                 String strGenero = Generos == null ? "" : Generos.getText().toString();
                 String strInstrumento = Instrumentos == null ? "" : Instrumentos.getText().toString();
                 String strInfluencia = Influencias == null ? "" : Influencias.getText().toString();
+                strInstrumento = strInstrumento.trim();
+                strUbicacion = strUbicacion.trim();
+                strGenero = strGenero.trim();
+                strInfluencia = strInfluencia.trim();
                 String urlApi = "http://thebealineproject.azurewebsites.net/api/usuarios/Get?Ubicacion=" + strUbicacion + "&Instrumentos=" + strInstrumento + "&Generos=" + strGenero + "&Influencias=" + strInfluencia;
                 new ConectarAPITask().execute(urlApi);
                 Generos.setVisibility(View.GONE);
@@ -104,7 +108,6 @@ public class FiltrosBusqueda extends Activity {
                 SpInfluencias.setVisibility(View.GONE);
                 SpGenero.setVisibility(View.GONE);
                 SpUbicacion.setVisibility(View.GONE);
-
                 adapterPersona = new AdapterPersona(getApplicationContext(), new ArrayList<UsuariosBusqueda>(),new BtnClickListener() {
                     @Override
                     public void onBtnClick(int position) {
@@ -117,7 +120,6 @@ public class FiltrosBusqueda extends Activity {
                         Gson gson = builder.create();
                         System.out.println(gson.toJson(seguir));
                         new FiltrosBusqueda.SeguirUsuario().execute("POST",urlSeguir, gson.toJson(seguir));
-                        Toast.makeText(getApplicationContext(), "Mi id: " + MainActivity.usuario_logeado.getIdUsuario() + ", id a seguir: " + id, Toast.LENGTH_LONG).show();
                     }});
                 lv.setAdapter(adapterPersona);
             }

@@ -21,8 +21,6 @@
         <activity android:name=".PerfilUsuario" />
         <activity android:name=".FiltrosBusqueda" />
         <activity android:name=".RegistracionUsuario" />
-        <activity android:name=".RecuperarContrasenia" />
-        <activity android:name=".ConfirmacionRecu" />
         <activity android:name=".Loginn" />
         <activity android:name=".RegistracionPreferencias" />
         <activity android:name=".MenuPrincipal" />
