@@ -1,7 +1,5 @@
 package com.example.santi.beatline_func;
 
-import android.widget.ArrayAdapter;
-
 /**
  * Created by 42660700 on 1/12/2017.
  */
@@ -15,8 +13,6 @@ public class Editar {
     private String Generos;
     private String Instrumentos;
     private String Ubicacion;
-
-    ArrayAdapter<String> AdapterIns, AdapterGen, AdapterInf, AdapterUbi;
 
     public int getIdUsuario() {
         return IdUsuario;

@@ -241,11 +241,10 @@
             android:background="@color/Violeta"
             android:textColor="@color/Verde"
             android:textSize="22sp"
+            android:onClick="editarperfil"
             android:text="Editar"
             android:layout_marginLeft="145dp"
-            android:layout_marginTop="20dp"
-            android:id="@+id/editarr"
-            android:onClick="editarperfil"/>
+            android:layout_marginTop="20dp"/>
 
         <android.support.v4.widget.Space
             android:layout_width="match_parent"

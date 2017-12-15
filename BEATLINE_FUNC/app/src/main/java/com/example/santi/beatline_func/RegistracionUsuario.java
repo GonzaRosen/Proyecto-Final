@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -21,7 +20,6 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
 import okhttp3.MediaType;
@@ -34,12 +32,10 @@ public class RegistracionUsuario extends Activity {
 
     EditText Nombre;
     EditText Apellido;
-    CalendarView FechaNac;
     EditText Email;
     EditText Pass;
     EditText ConfPass;
     CheckBox Terminos;
-
     Spinner SpUbicacion, Dia, Mes, Año;
     ArrayAdapter<String> AdapterUbi, AdapterDia, AdapterMes, AdapterAño;
     public static ArrayList<String> DatosDia, DatosMes, DatosAño;
@@ -168,10 +164,12 @@ public class RegistracionUsuario extends Activity {
             Dia.setAdapter(AdapterDia);
             Mes.setAdapter(AdapterMes);
             Año.setAdapter(AdapterAño);
+
+
         }
     }
 
-        public void Volver (View view)
+    public void Volver (View view)
     {
         Intent Activity;
         Activity = new Intent(this,MainActivity.class);
@@ -185,10 +183,10 @@ public class RegistracionUsuario extends Activity {
         String Edit3 = Email.getText().toString();
         String Edit4 = Pass.getText().toString();
         String SpinnerU = SpUbicacion.getSelectedItem().toString();
+        String Edit6 = ConfPass.getText().toString();
         String SpinnerDia = Dia.getSelectedItem().toString();
         String SpinnerMes = Mes.getSelectedItem().toString();
         String SpinnerAño = Año.getSelectedItem().toString();
-        String Edit6 = ConfPass.getText().toString();
 
         if(!(Edit1.equals("") || Edit2.equals("") || Edit3.equals("") || Edit4.equals("") || SpinnerU.equals("")))
         {
@@ -196,20 +194,19 @@ public class RegistracionUsuario extends Activity {
             {
                 if (Edit4.equals(Edit6))
                 {
-                Bundle bundle = new Bundle();
-                bundle.putString("Nombre",Edit1);
-                bundle.putString("Apellido", Edit2);
-                bundle.putString("Email", Edit3);
-                bundle.putString("Pass", Edit4);
-                bundle.putString("Ubicacion", SpinnerU);
-                bundle.putString("Dia", SpinnerDia);
-                bundle.putString("Mes", SpinnerMes);
-                bundle.putString("Año", SpinnerAño);
+                    String FechaNac = SpinnerDia + "/" + SpinnerMes + "/" + SpinnerAño;
+                    Bundle bundle = new Bundle();
+                    bundle.putString("Nombre",Edit1);
+                    bundle.putString("Apellido", Edit2);
+                    bundle.putString("Email", Edit3);
+                    bundle.putString("Pass", Edit4);
+                    bundle.putString("Ubicacion", SpinnerU);
+                    bundle.putString("Fecha", FechaNac);
 
-                Intent Activity;
-                Activity = new Intent(this,RegistracionPreferencias.class);
-                Activity.putExtras(bundle);
-                startActivity(Activity);
+                    Intent Activity;
+                    Activity = new Intent(this,RegistracionPreferencias.class);
+                    Activity.putExtras(bundle);
+                    startActivity(Activity);
                 }
                 else
                 {
